@@ -1,0 +1,110 @@
+:root{
+   --heading-color: #3a4d69;
+   --p-color: #82959f;
+   --color-Link: #09609a;
+   --color-Text: #ffffff;
+}
+.hanger-United{
+    position: relative;
+    width: 100%;
+    height: 900px;
+    margin-bottom: -14px;
+}
+.hanger-United .background-image{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: -1;
+}
+.hanger-United .background-image img{
+    width: 100%;
+    height: 100%;
+}
+.hanger-United .container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.hanger-United .container .lorem-content{
+    position: absolute;
+    left: 30%;
+    width: 320px;
+    background-color: var(--color-Link);
+    padding: 40px 20px;
+    height: 350px;
+}
+@media (max-width: 1370px){
+    .hanger-United .container .lorem-content{
+        left: 25%;
+    }
+}
+@media (max-width: 1300px) {
+    .hanger-United .container .lorem-content{
+        width: 265px;
+    }
+}
+.hanger-United .container .lorem-content p{
+    color: var(--color-Text);
+    font-family: Arial, Helvetica, sans-serif;
+    padding-right: 35px;
+    opacity: 0;
+}
+.hanger-United .container .hanger-Content{
+    position: absolute;
+    left: 55%;
+    margin-top: 40px;
+    max-width: 35%;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 65px;
+}
+.hanger-United .container .hanger-Content h3{
+    text-transform: uppercase;
+    color: var(--heading-color);
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 60px;
+}
+.hanger-United .container .hanger-Content p{
+    line-height: 1.6;
+    color: var(--p-color);
+    font-size: 15px;
+}
+.hanger-United .container .hanger-Content .p-one{
+    margin-bottom: 20px;
+}
+@media (max-width: 1050px){
+    .hanger-United .container .lorem-content{
+        display: none;
+    }
+    .hanger-United .container .hanger-Content{
+        margin: 40px 0 0 0;
+        left: 32%;
+        max-width: 100%;
+        margin-right: 20px;
+    }
+}
+@media (max-width: 768px){
+    .hanger-United .container .hanger-Content{
+        left: 0%;
+        padding-left: 30px;
+    }
+}
+@media (max-width: 420px){
+    .hanger-United{
+        overflow: hidden;
+    }
+    .hanger-United .container .hanger-Content h3{
+        font-size: 25px;
+    }
+}
+@media (max-width: 992px){
+    .hanger-United{
+        min-height: 80vh;
+    }
+}
+@media (max-width: 768px){
+    .hanger-United .container{
+        height: 650px;
+    }
+}

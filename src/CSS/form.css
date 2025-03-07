@@ -1,0 +1,210 @@
+:root{
+    --background-form: #07934b;
+    --color-text-form: #ffffff;
+    --heading-color-form: #5894c5;
+    --border-color: #e0e0df;
+    --placeholder-color: #a1b0b6;
+    --submit-color: #2271b3;
+}
+.form-Departemant{
+    position: relative;
+    width: calc(100% - 120px);
+    margin-left: 120px;
+    display: flex;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.form-Departemant .address-content{
+    background-color: var(--background-form);
+    padding: 10px 0px 40px 40px;
+    min-width: 300px;
+    height: 520px;
+}
+.form-Departemant .address-content .address-content-one{
+    margin-bottom: 30px;
+}
+.form-Departemant .address-content .address-content-one p:nth-child(4){
+    cursor: pointer;
+}
+.form-Departemant .address-content .address-content-one p,
+.form-Departemant .address-content .address-content-two p{
+    font-size: 13px;
+    font-weight: 200;
+    color: var(--color-text-form);
+    line-height: 1.6;
+}
+.form-Departemant .address-content .address-content-two{
+    color: var(--color-text-form);
+}
+.form-Departemant .address-content .address-content-two h2{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.form-Departemant .form-content{
+    position: relative;
+    margin-top: 40px;
+    margin-left: 60px;
+    margin-right: 100px;
+   width: calc(100% - 400px);
+}
+.form-Departemant .form-content h2{
+    color: var(--heading-color-form);
+    text-transform: uppercase;
+    font-weight: 200;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 22px;
+    margin-right: 50px;
+}
+.form-Departemant .form-content form{
+    margin-right: 110px;
+}
+.form-Departemant .form-content form .input-content{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.form-Departemant .form-content form .input-content .input-name,
+.form-Departemant .form-content form .input-content .input-number{
+    width: 30%;
+    margin-right: 20px;
+}
+.form-Departemant .form-content form .input-content .input-email{
+    width: 40%;
+}
+.form-Departemant .form-content form .input-content input{
+    padding: 15px;
+}
+.form-Departemant .form-content form textarea{
+    width: 100%;
+    height: 220px;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 100;
+    caret-color: var(--submit-color);
+    color: var(--placeholder-color);
+    font-family: Arial, Helvetica, sans-serif;
+    border-color: var(--border-color);
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.form-Departemant .form-content form .input-content input{
+    font-size: 14px;
+    font-weight: 100;
+    caret-color: var(--submit-color);
+    color: var(--placeholder-color);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.form-Departemant .form-content form .input-content input::placeholder,
+.form-Departemant .form-content form textarea::placeholder{
+    padding-left: 5px;
+}
+.form-Departemant .form-content form .input-content input:focus,
+.form-Departemant .form-content form textarea:focus{
+    outline: none;
+}
+.form-Departemant .form-content form .submit-button{
+    background-color: var(--submit-color);
+    color: var(--color-text-form);
+    width: 150px;
+    padding: 15px;
+    text-transform: capitalize;
+    font-size: 17px;
+    font-weight: 200;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    -webkit-transition: background-color 0.5s ease;
+    -moz-transition: background-color 0.5s ease;
+    -ms-transition: background-color 0.5s ease;
+    -o-transition: background-color 0.5s ease;
+}
+.form-Departemant .form-content form .submit-button:hover{
+    background-color: var(--background-form);
+}
+@media (max-width: 1300px){
+    .form-Departemant .form-content{
+        margin-right: 0px;
+    }
+    .form-Departemant .form-content form{
+        margin-right: 20px;
+    }
+    .form-Departemant .form-content h2{
+        font-size: 20px;
+        margin-right: 0px;
+    }
+}
+@media (max-width: 1100px){
+    .form-Departemant .form-content h2{
+        font-size: 17px;
+        font-weight: 300;
+    }
+    .form-Departemant .form-content form .input-content .input-name,
+    .form-Departemant .form-content form .input-content .input-number{
+         margin-right: 10px;
+}
+.form-Departemant .form-content form .input-content .input-number{
+    width: 45%;
+}
+    .form-Departemant .form-content form .input-content .input-email{
+         width: 30%;
+}
+}
+@media (max-width: 992px){
+    .form-Departemant{
+        width: 100%;
+        margin-left: 0;
+    }
+    .form-Departemant .form-content{
+        margin-left: 30px;
+    }
+}
+@media (max-width: 768px){
+    .form-Departemant .form-content{
+        width: 100%;
+        margin-top: 20px;
+        padding-right: 5px;
+    }
+    .form-Departemant .form-content h2{
+        font-size: 15px;
+        font-weight: 300;
+    }
+    .form-Departemant .form-content form .input-content{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0px;
+    }
+    .form-Departemant .form-content form .input-content .input-name,
+    .form-Departemant .form-content form .input-content .input-number,
+    .form-Departemant .form-content form .input-content .input-email{
+         width: 100%;
+         margin-bottom: 15px;
+}
+.form-Departemant .form-content form textarea{
+    margin-top: 5px;
+}
+.form-Departemant .address-content {
+    height: 620px;
+}
+}
+@media (max-width: 620px){
+    .form-Departemant .address-content{
+        display: none;
+    }
+}

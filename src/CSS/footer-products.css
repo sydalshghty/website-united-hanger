@@ -1,0 +1,27 @@
+:root{
+    --background-footer-products: #2271b3;
+    --color-footer-products-text: #ffffff;
+}
+.footer-products{
+    width: 100%;
+    height: 350px;
+    background-color: var(--background-footer-products);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-products p{
+    color: var(--color-footer-products-text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+    padding: 15px;
+    line-height: 1.6;
+}
+@media (max-width: 400px){
+    .footer-products p{
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 14px;
+    }
+}

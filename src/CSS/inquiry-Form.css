@@ -1,0 +1,154 @@
+:root{
+    --label-Color: #1572b5;
+    --background-Input: #ffffff;
+    --border-Input: #afb0af;
+    --background-Submit: #1572b5;
+    --color-Submit: #f9f9fa;
+    --color-Text: #afb0af;
+    --background-Form: #e9f1f8;
+    --color-Icon: #afb0af;
+}
+.inquiry-Form{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-Submit);
+    width: 100%;
+    height: 100vh;
+    margin-top: -116px;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 1;
+}
+.inquiry-Form form{
+    position: relative;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--background-Form);
+    padding: 20px;
+    border-radius: 20px;
+    transition: border 0.5s ease;
+    -webkit-transition: border 0.5s ease;
+    -moz-transition: border 0.5s ease;
+    -ms-transition: border 0.5s ease;
+    -o-transition: border 0.5s ease;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.inquiry-Form form:hover{
+    border: 2px solid var(--background-Submit);
+}
+.inquiry-Form form .icon-Mark{
+    position: absolute;
+    right: 0;
+    padding-right: 20px;
+    font-size: 20px;
+    color: var(--color-Icon);
+    cursor: pointer;
+}
+@media (max-width: 768px){
+    .inquiry-Form{
+        margin-top: 0;
+    }
+    .inquiry-Form form .icon-Mark{
+        position: absolute;
+    }
+}
+.inquiry-Form form .all-Inputs{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+}
+.inquiry-Form form .all-Inputs .input-Name,
+.inquiry-Form form .all-Inputs .input-Email,
+.inquiry-Form form .all-Inputs .input-Phone{
+    width: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.inquiry-Form form .all-Inputs .input-Name label,
+.inquiry-Form form .all-Inputs .input-Email label,
+.inquiry-Form form .all-Inputs .input-Phone label{
+    text-transform: uppercase;
+    color: var(--label-Color);
+    text-align: start;
+    margin-right: 20px;
+    width: 100px;
+}
+.inquiry-Form form .all-Inputs .input-Name input,
+.inquiry-Form form .all-Inputs .input-Email input,
+.inquiry-Form form .all-Inputs .input-Phone input,
+.inquiry-Form form .all-Inputs .input-Submit input{
+    width: calc(340px - 120px);
+    padding: 5px 10px;
+    caret-color: var(--label-Color);
+    background-color: var(--background-Input);
+    outline: none;
+    border: 1px solid var(--border-Input);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.inquiry-Form form .all-Inputs .input-Submit input{
+    margin-left: 120px;
+    background-color: var(--background-Submit);
+    color: var(--color-Submit);
+    text-transform: uppercase;
+    border: transparent;
+    font-size: 15px;
+    font-weight: 100;
+    cursor: pointer;
+}
+.inquiry-Form form .all-Inputs .text-Content{
+    width: 320px;
+    margin-top: 40px;
+}
+.inquiry-Form form .all-Inputs .text-Content p{
+    text-transform: capitalize;
+    font-size: 13px;
+    color: var(--color-Text);
+    line-height: 1.6;
+}
+@media (max-width: 768px){
+    .inquiry-Form form{
+        width: 450px;
+    }
+}
+@media (max-width: 500px){
+    .inquiry-Form form{
+        width: 350px;
+    }
+    .inquiry-Form form .all-Inputs .input-Name,
+    .inquiry-Form form .all-Inputs .input-Email,
+    .inquiry-Form form .all-Inputs .input-Phone,
+    .inquiry-Form form .all-Inputs .input-Submit{
+        width: 280px;
+    }
+    .inquiry-Form form .all-Inputs .input-Name label,
+    .inquiry-Form form .all-Inputs .input-Email label,
+    .inquiry-Form form .all-Inputs .input-Phone label{
+        font-size: 15px;
+        margin-right: 7px;
+    }
+    .inquiry-Form form .all-Inputs .input-Submit input{
+        margin-left: 90px;
+        width: 190px;
+    }
+}
+@media (max-width: 768px){
+    .inquiry-Form{
+        height: 100vh;
+        z-index: 1000;
+        margin-top: -116px;
+    }
+}

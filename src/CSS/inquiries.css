@@ -1,0 +1,417 @@
+:root{
+    --background-color: #2271b3;
+    --background-col: #ffffff;
+    --color-h3-icon: #1572b5;
+    --color-p: #afb0af;
+    --border-color-p: #e1e1e1;
+    --background-add-inquiry: #11954c;
+    --border-color-inquiry: #ffffff;
+}
+.inquiries-departemant{
+    display: flex;
+    width: 100%;
+    height: 120vh;
+    margin-top: -116px;
+    position: relative;
+    z-index: 500;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.inquiries-departemant .hanger-Name{
+    width: 45%;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inquiries-departemant .inquiries-Details{
+    width: 55%;
+    padding-right: 180px;
+}
+.inquiries-departemant .hanger-Name .col-one,
+.inquiries-departemant .hanger-Name .col-materials{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-col);
+    padding: 5px 15px;
+    width: 340px;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+}
+.inquiries-departemant .hanger-Name .col-materials{
+    margin-top: 20px;
+}
+.inquiries-departemant .hanger-Name .col-one h3,
+.inquiries-departemant .hanger-Name .col-Size div h3,
+.inquiries-departemant .hanger-Name .col-Color .color h3,
+.inquiries-departemant .hanger-Name .col-materials h3{
+    color: var(--color-h3-icon);
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 400;
+}
+.inquiries-departemant .hanger-Name .col-one p,
+.inquiries-departemant .hanger-Name .col-Size div p,
+.inquiries-departemant .hanger-Name .col-Color .color p,
+.inquiries-departemant .hanger-Name .col-materials p{
+    margin-top: 10px;
+    border-width: 9px;
+    border-style: solid;
+    border-color: var(--color-h3-icon) transparent transparent transparent;
+}
+.inquiries-departemant .hanger-Name .col-Size,
+.inquiries-departemant .hanger-Name .col-Color{
+    margin-top: 20px;
+    width: 340px;
+    background-color: var(--background-col);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.inquiries-departemant .hanger-Name .col-Size div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color-p);
+    padding-bottom: 25px;
+}
+.inquiries-departemant .hanger-Name .col-Size div h3,
+.inquiries-departemant .hanger-Name .col-Color .color h3{
+    padding-top: 10px;
+    padding-left: 15px;
+}
+.inquiries-departemant .hanger-Name .col-Size div p,
+.inquiries-departemant .hanger-Name .col-Color .color p{
+    padding-top: 10px;
+    margin-right: 15px;
+}
+.inquiries-departemant .hanger-Name .col-Size .paragraph{
+    border-bottom: 1px solid var(--border-color-p);
+    padding: 4px 15px;
+    text-transform: uppercase;
+    color: var(--color-p);
+}
+.inquiries-departemant .hanger-Name .col-Size .paragraph:last-child{
+    margin-bottom: 50px;
+}
+.inquiries-departemant .hanger-Name .col-Color .color{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color-p);
+}
+.inquiries-departemant .hanger-Name .col-Color .color h3,
+.inquiries-departemant .hanger-Name .col-Color .color p{
+    margin-bottom: 20px;
+}
+.inquiries-departemant .hanger-Name .col-Color .white,
+.inquiries-departemant .hanger-Name .col-Color .black{
+    display: flex;
+    border-bottom: 1px solid var(--border-color-p);
+    padding: 4px 15px;
+}
+.inquiries-departemant .hanger-Name .col-Color .black{
+    margin-bottom: 40px;
+}
+.inquiries-departemant .hanger-Name .col-Color .white .paragraph,
+.inquiries-departemant .hanger-Name .col-Color .black .paragraph{
+    text-transform: uppercase;
+    color: var(--color-p);
+    margin-right: 15px;
+}
+.inquiries-departemant .hanger-Name .col-Color .white .icon,
+.inquiries-departemant .hanger-Name .col-Color .black .icon{
+    width: 20px;
+    border: 1px solid var(--border-color-p);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.inquiries-departemant .hanger-Name .col-Color .black .icon{
+    background-color: #0b0b0c;
+}
+.inquiries-departemant .hanger-Name .col-logo{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 340px;
+}
+.inquiries-departemant .hanger-Name .col-logo h3{
+    text-align: start;
+    padding-left: 15px;
+    text-transform: uppercase;
+    color: var(--background-col);
+    font-size: 17px;
+    font-weight: 400;
+}
+.inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    margin-top: 10px;
+}
+.inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .no,
+.inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .yes{
+    display: flex;
+    height: 20px;
+}
+.inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .no .icon,
+.inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .yes .icon{
+    width: 20px;
+    background-color: var(--background-col);
+    margin-right: 7px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .no .paragraph,
+.inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .yes .paragraph{
+    text-transform: uppercase;
+    color: var(--background-col);
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+.inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .upload-logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 7px;
+    margin-top: -10px;
+    margin-left: 10px;
+    width: 170px;
+    background-color: var(--background-col);
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+}
+.inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .upload-logo .paragraph{
+    text-transform: uppercase;
+    color: var(--color-h3-icon);
+    font-size: 15px;
+}
+.inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .upload-logo div{
+    background-color: var(--color-h3-icon);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .upload-logo div .icon{
+    border-width: 9px;
+    border-style: solid;
+    border-color: transparent transparent #ffffff transparent;
+    margin-top: -10px;
+}
+.inquiries-departemant .hanger-Name .add-inquiry{
+    background-color: var(--background-add-inquiry);
+    width: 340px;
+    padding: 10px 5px;
+    text-align: center;
+    border:  1px solid var(--border-color-inquiry);
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+}
+.inquiries-departemant .hanger-Name .add-inquiry p{
+    text-transform: uppercase;
+    color: var(--background-col);
+    cursor: pointer;
+}
+.inquiries-departemant .inquiries-Details{
+    margin-top: 130px;
+    margin-left: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.inquiries-departemant .inquiries-Details .content-Details{
+    position: relative;
+    border-left: 2px solid var(--background-color);
+    padding-left: 50px;
+    height: 450px;
+}
+.inquiries-departemant .inquiries-Details .content-Details .heading{
+    margin-bottom: 50px;
+}
+.inquiries-departemant .inquiries-Details .content-Details .heading h3{
+    text-transform: uppercase;
+    color: var(--color-h3-icon);
+    font-weight: 300;
+}
+.inquiries-departemant .inquiries-Details .content-Details .model-MH{
+    border-bottom: 2px solid var(--border-color-p);
+    padding-bottom: 20px;
+}
+.inquiries-departemant .inquiries-Details .content-Details .model-MH p,
+.inquiries-departemant .inquiries-Details .content-Details .model-RH p{
+    text-transform: uppercase;
+    color: var(--color-p);
+    line-height: 1.6;
+}
+.inquiries-departemant .inquiries-Details .content-Details .model-RH{
+    padding-top: 20px;
+}
+.inquiries-departemant .inquiries-Details .content-Details .number-One,
+.inquiries-departemant .inquiries-Details .content-Details .number-two{
+    position: absolute;
+    left: -10px;
+    background-color: var(--color-h3-icon);
+    color: var(--background-col);
+    width: 20px;
+    padding: 1px;
+    text-align: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.inquiries-departemant .inquiries-Details .content-Details .number-One{
+    top: 75px;
+}
+.inquiries-departemant .inquiries-Details .content-Details .number-two{
+    top: 245px;
+}
+.inquiries-departemant .inquiries-Details .send-inquiry{
+    display: flex;
+    justify-content: center;
+    background-color: var(--background-add-inquiry);
+    width: 340px;
+    margin-top: 130px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 5px;
+    transition: background-color 0.5s ease;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    -webkit-transition: background-color 0.5s ease;
+    -moz-transition: background-color 0.5s ease;
+    -ms-transition: background-color 0.5s ease;
+    -o-transition: background-color 0.5s ease;
+}
+.inquiries-departemant .inquiries-Details .send-inquiry:hover{
+    background-color: var(--background-color);
+}
+.inquiries-departemant .inquiries-Details .send-inquiry p{
+    text-transform: uppercase;
+    color: var(--background-col);
+    cursor: pointer;
+}
+@media (max-width: 1200px){
+    .inquiries-departemant .hanger-Name{
+        width: 37%;
+    }
+}
+@media (max-width: 1100px){
+    .inquiries-departemant .hanger-Name{
+        width: 34%;
+    }
+    .inquiries-departemant .hanger-Name .col-one,
+    .inquiries-departemant .hanger-Name .col-Color,
+    .inquiries-departemant .hanger-Name .col-logo,
+    .inquiries-departemant .hanger-Name .col-materials,
+    .inquiries-departemant .hanger-Name .col-Yes-and-No,
+    .inquiries-departemant .hanger-Name .col-Size,
+    .inquiries-departemant .hanger-Name .add-inquiry,
+    .inquiries-departemant .inquiries-Details .send-inquiry{
+        width: 300px;
+    }
+}
+@media (max-width: 992px){
+    .inquiries-departemant .hanger-Name .col-one,
+    .inquiries-departemant .hanger-Name .col-Color,
+    .inquiries-departemant .hanger-Name .col-logo,
+    .inquiries-departemant .hanger-Name .col-materials,
+    .inquiries-departemant .hanger-Name .col-Yes-and-No,
+    .inquiries-departemant .hanger-Name .col-Size,
+    .inquiries-departemant .hanger-Name .add-inquiry,
+    .inquiries-departemant .inquiries-Details .send-inquiry{
+        width: 250px;
+    }
+    .inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No{
+        flex-direction: column;
+    }
+    .inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No div{
+        display: flex;
+    }
+    .inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .no,
+    .inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .yes{
+        display: none;
+    }
+    .inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .upload-logo{
+        width: 250px;
+        margin-left: -15px;
+        margin-top: 10px;
+    }
+}
+@media (max-width: 860px){
+    .inquiries-departemant{
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    .inquiries-departemant .hanger-Name{
+        width: 100%;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .inquiries-departemant .hanger-Name .col-one,
+    .inquiries-departemant .hanger-Name .col-Color,
+    .inquiries-departemant .hanger-Name .col-logo,
+    .inquiries-departemant .hanger-Name .col-materials,
+    .inquiries-departemant .hanger-Name .col-Yes-and-No,
+    .inquiries-departemant .hanger-Name .col-Size,
+    .inquiries-departemant .hanger-Name .add-inquiry,
+    .inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .upload-logo,
+    .inquiries-departemant .inquiries-Details .send-inquiry{
+        width: 350px;
+    }
+    .inquiries-departemant .inquiries-Details{
+        width: 100%;
+        margin-left: 0;
+        padding: 20px 100px;
+        margin-top: 40px;
+    }
+}
+@media (max-width: 500px){
+    .inquiries-departemant .hanger-Name .col-one,
+    .inquiries-departemant .hanger-Name .col-Color,
+    .inquiries-departemant .hanger-Name .col-logo,
+    .inquiries-departemant .hanger-Name .col-materials,
+    .inquiries-departemant .hanger-Name .col-Yes-and-No,
+    .inquiries-departemant .hanger-Name .col-Size,
+    .inquiries-departemant .hanger-Name .add-inquiry,
+    .inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .upload-logo,
+    .inquiries-departemant .inquiries-Details .send-inquiry{
+        width: 300px;
+    }
+    .inquiries-departemant .inquiries-Details .send-inquiry{
+        margin-top: 20px;
+    }
+}
+@media (max-width: 450px){
+    .inquiries-departemant .inquiries-Details{
+        padding: 20px 30px;
+    }
+}

@@ -1,0 +1,36 @@
+:root{
+    --background-mobile: #07934b;
+    --color-text-mobile: #ffffff;
+}
+.address-content-mobile{
+    width: 100%;
+    display: flex;
+    background-color: var(--background-mobile);
+    padding: 30px;
+    display: none;
+}
+@media (max-width: 620px){
+    .address-content-mobile{
+        display: block;
+    }
+}
+.address-content-mobile .address-mobile-one{
+    margin-bottom: 20px;
+}
+.address-content-mobile .address-mobile-one h2,
+.address-content-mobile .address-mobile-two h2{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: var(--color-text-mobile);
+}
+.address-content-mobile .address-mobile-one p,
+.address-content-mobile .address-mobile-two p{
+    font-size: 13px;
+    font-weight: 200;
+    color: var(--color-text-form);
+    line-height: 1.6;
+}
+.address-content-mobile .address-mobile-one p:nth-child(5){
+    cursor: pointer;
+}
