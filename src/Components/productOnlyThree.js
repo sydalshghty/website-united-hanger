@@ -1,14 +1,49 @@
 import "../CSS/productOnly-3.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import mainImgProduct from "../images/PRODUCT (16).png";
-import imgOne from "../images/PRODUCT (13)_LE_auto_x2_LE_auto_x2.webp";
-import imgTwo from "../images/PRODUCT (9)_LE_auto_x2_LE_auto_x2.webp";
-import imgThree from "../images/PRODUCT (10) (1)_LE_auto_x2_LE_auto_x2.webp";
-import imgFour from "../images/PRODUCT (11) (1)_LE_auto_x2_LE_auto_x2.webp";
-import { useState } from "react";
+import { useState,useEffect,useCallback} from "react";
+import { useParams } from "react-router-dom";
+
 function ProductOnlyThree() {
+    const [Material,setMaterial] = useState([]);
+
+    const {ProductID} = useParams();
+
+    console.log(ProductID);
+
+    const getProductInformation = useCallback(async () => {
+        await fetch(`https://united-hanger-2025.up.railway.app/api/products/product/${ProductID}`,{
+            method: "GET"
+        })
+        .then(response => response.json())
+        .then(data => setMaterial(data.product.images))
+    },[ProductID])
+
+    useEffect(() => {
+        getProductInformation()
+    },[getProductInformation])
+
+    console.log(Material);
+
+    const AllImgesProduct = []
+    AllImgesProduct.push(Material.map((img,index) => {
+        return img.image_path
+    }));
+
+    console.log(AllImgesProduct[0][0]);
+
+    /*const ALLImagesProduct = [...Material.images.map((img) => {
+        return img.image_path
+    })]
+*/
+    //console.log(ALLImagesProduct)
+    const mainImgProduct = AllImgesProduct[0][0];
+    const imgOne = AllImgesProduct[0][0];
+    const imgTwo = AllImgesProduct[0][1];
+    const imgThree = AllImgesProduct[0][2];
+    const imgFour = AllImgesProduct[0][3];
     
+
     const allImagesProduct = [
         mainImgProduct,
         imgOne,

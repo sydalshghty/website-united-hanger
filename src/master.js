@@ -20,6 +20,7 @@ function Master(){
             <Route path="inquiries" element= {<Inquiries/>} />
             <Route path="product" element= {<ProductOnly/>} />
             <Route path="inquiry-Form" element = {<Inquiryform/>}/>
+            <Route path="products/:ProductID" element={<ProductOnly/>}/>
         </Routes>
         </>
     )

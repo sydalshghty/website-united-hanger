@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 //import catalogImgThree from "../images/Cataloge-images-7__6_-removebg-preview.png";
 //import catalogImgFour from "../images/Cataloge-images-7__7_-removebg-preview.png";
 import { useState,useEffect } from "react";
+//import Footerproducts from "./footer-Products";
 function AllProducts(){
 
     const navigate = useNavigate();
@@ -31,6 +32,7 @@ function AllProducts(){
     console.log(products);
 
     return(
+        <>
         <div className="all-Products">
             <img className="background-products" src= {productimgone} alt="img-product-one"/>
             <div className="content-products">
@@ -66,6 +68,7 @@ function AllProducts(){
                 })}
             </div>
         </div>
+        </>
     )
 }
 export default AllProducts;

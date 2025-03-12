@@ -1,12 +1,13 @@
 import ProductsHome from "./products-Home";
-import AllProducts from "./all-Products";
+//import AllProducts from "./all-Products";
 import Footerproducts from "./footer-Products";
+import NewAllProducts from "./newAllProducts";
 function Products(){
     return(
         <>
-            <ProductsHome/>
-            <AllProducts/>
-            <Footerproducts/>
+        <ProductsHome/>
+        <NewAllProducts/>
+        <Footerproducts/>
         </>
     )
 }
