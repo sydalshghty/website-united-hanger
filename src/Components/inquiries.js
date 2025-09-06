@@ -1,11 +1,11 @@
 import "../CSS/inquiries.css";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 function Inquiries(){
-    const navigate = useNavigate();
+/*    const navigate = useNavigate();
 
     const handleInquiry = () => {
         navigate("/inquiry-Form")
-    }
+    }*/
     return(
         <div className="inquiries-departemant">
             <div className="hanger-Name">
@@ -60,7 +60,7 @@ function Inquiries(){
                     </div>
                 </div>
                 <div className="add-inquiry">
-                    <p onClick={handleInquiry}>add inquiry</p>
+                    <p>add inquiry</p>
                 </div>
             </div>
             <div className="inquiries-Details">
@@ -86,7 +86,7 @@ function Inquiries(){
                     <p className="number-two">2</p>
                 </div>
                 <div className="send-inquiry">
-                    <p onClick={handleInquiry}>send inquiry</p>
+                    <p>send inquiry</p>
                 </div>
             </div>
         </div>

@@ -187,49 +187,49 @@ function Header(){
     //
     return(
         <div className="header">
-            <div className="container">
-                <div className="text-content">
-                    <p className="p-one" ref={TitleSlider}>a style in every hang</p>
-                    <div className="paragraphs">
-                        <p ref={descriptionSlider}>extensive product range caters to various sectors of the clothing industry, including babywear, kid's wear, teenage wear, lingerie,men's and women's wear.</p>
-                    </div>
-                </div>
-                <div className="icons" ref={myIcons}>
-                        <FontAwesomeIcon onClick={allLeftClickIcon} id="icon-left" className="icon-left" icon={faArrowLeft} />
-                        <FontAwesomeIcon onClick={allRightClickIcon} id="icon-right" className="icon-right active" icon={faArrowRight} />
-                </div>
-            </div>
-            <div className="images-slider">
-                <div className="all-images">
-                {images.map((image, index) => (
-                    <img
-                        key={index}
-                        className={activeIndex === index ? 'active' : ''}
-                        src={image}
-                        alt={`imgSlider${index + 1}`}
-                    />
-                ))}
-            </div>
-            </div>
-            <div className="about-us">
-                <div className="about-content">
-                    <h3>about us ?</h3>
-                    <div className="p-one-content">
-                            <p style={{letterSpacing: "0.5px"}}>
-                                {aboutus}
-                            </p>
-                    </div>
-                </div>
-                <div className="img-about">
-                    <img src= { imgHome23 } alt="img-about"/>
-                </div>
-            </div>
-            <div className="about-mobile">
                 <div className="container">
-                    <h3>about us ?</h3>
-                    <p style={{letterSpacing: "0.5px"}}>{aboutus}</p>
+                    <div className="text-content">
+                        <p className="p-one" ref={TitleSlider}>a style in every hang</p>
+                        <div className="paragraphs">
+                            <p ref={descriptionSlider}>extensive product range caters to various sectors of the clothing industry, including babywear, kid's wear, teenage wear, lingerie,men's and women's wear.</p>
+                        </div>
+                    </div>
+                    <div className="icons" ref={myIcons}>
+                            <FontAwesomeIcon onClick={allLeftClickIcon} id="icon-left" className="icon-left" icon={faArrowLeft} />
+                            <FontAwesomeIcon onClick={allRightClickIcon} id="icon-right" className="icon-right active" icon={faArrowRight} />
+                    </div>
                 </div>
-            </div>
+                <div className="images-slider">
+                    <div className="all-images">
+                    {images.map((image, index) => (
+                        <img
+                            key={index}
+                            className={activeIndex === index ? 'active' : ''}
+                            src={image}
+                            alt={`imgSlider${index + 1}`}
+                        />
+                    ))}
+                </div>
+                </div>
+                <div className="about-us">
+                    <div className="about-content">
+                        <h3>about us ?</h3>
+                        <div className="p-one-content">
+                                <p style={{letterSpacing: "0.5px"}}>
+                                    {aboutus}
+                                </p>
+                        </div>
+                    </div>
+                    <div className="img-about">
+                        <img src= { imgHome23 } alt="img-about"/>
+                    </div>
+                </div>
+                <div className="about-mobile">
+                    <div className="container">
+                        <h3>about us ?</h3>
+                        <p style={{letterSpacing: "0.5px"}}>{aboutus}</p>
+                    </div>
+                </div>
         </div>
     )
 }

@@ -4,7 +4,8 @@
 }
 .header{
     position: relative;
-    height: 900px;
+  /*  height: 900px;*/
+  height: 100vh;
     box-sizing: border-box; 
     overflow: hidden;
     margin: auto;
@@ -26,17 +27,19 @@
     position: absolute;
     top: 0;
     width: 100%;
-    height: 900px;
+    height: 100%;
 }
 .header .images-slider .all-images{
     position: relative;
     width: 100%;
-    height: 900px;
+    min-width: 100%;
+    object-fit: cover;
+    height: fit-content;
 }
 .header .images-slider .all-images img{
     position: absolute;
+    height: 100vh;
     width: 100%;
-    height: 900px;
     opacity: 0;
     transition: opacity 1s ease;
     -webkit-transition: opacity 1s ease;
@@ -110,7 +113,7 @@
 .header .container .icons{
     position: absolute;
     margin-left: 60px;
-    top: 55%;
+    top: 50%;
     z-index: 75;
 }
 @media (max-width: 1020px) {
@@ -195,12 +198,14 @@
     }
 }
 .header .about-us{
-    position: absolute;
+    float: left;
+   position: absolute;
     z-index: 200;
-    transform: translateY(60%);
+  /* transform: translatex(-60%);*/
+   transform: translateY(60%);
     display: flex;
-    left: 30%;
-    bottom: -7px;
+    left: 50%;
+    bottom: -25px;
     width: 100%;
     height: 100%;
     -webkit-transform: translateY(60%);
@@ -208,8 +213,11 @@
     -ms-transform: translateY(60%);
     -o-transform: translateY(60%);
 }
+.header .about-us .img-about img{
+    height: 500px;
+}
 .header .about-us .about-content{
-    width: 320px;
+    width: 400px;
     height: 100%;
     background-color: var(--color-link);
     color: var(--color-text);
@@ -223,6 +231,16 @@
     margin-bottom: 40px;
     margin-top: 20px;
 }
+@media (max-width: 2300px) {
+    .header .about-us{
+        left: 40%;
+    }
+}
+@media (max-width: 1900px) {
+    .header .about-us{
+        left: 20%;
+    }
+}
 .header .about-us .about-content .p-one-content{
     margin-bottom: 60px;
 }
@@ -230,11 +248,16 @@
     margin-bottom: 40px;
 }
 .header .about-us .about-content p{
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.6;
     font-weight: 100;
     font-family: Arial, Helvetica, sans-serif;
     text-transform: capitalize;
+}
+@media (max-width: 1400px) {
+    .header .about-us .about-content{
+        min-width: 300px
+    }
 }
 @media (max-width: 992px){
     .header .about-us .about-content{
@@ -331,7 +354,41 @@
     }
 }
 @media (max-width: 992px){
+    .header .about-us{
+        display: none;
+    }
     .header .about-us .about-content h3{
         margin-top: 20px;
+    }
+    .header .about-us .about-content{
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .header,
+    .header .images-slider .all-images img{
+        height: 80vh;
+    }
+    .header .about-us{
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .header,
+    .header .images-slider .all-images img{
+        height: 70vh;
+    }
+}
+@media (max-width: 520px) {
+     .header,
+    .header .images-slider .all-images img{
+        height: 100vh;
+    }
+}
+@media (max-width: 420px) {
+     .header,
+    .header .images-slider .all-images img{
+        height: 120vh;
     }
 }

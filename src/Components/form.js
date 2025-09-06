@@ -1,7 +1,7 @@
 import "../CSS/form.css";
 import { useState,useEffect } from "react";
 import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 function Form(){
 
     const [DataSettings,setDataSettings] = useState([]);
@@ -20,10 +20,11 @@ function Form(){
 
     console.log(DataSettings)
 
-    const navigate = useNavigate();
-    const handleClick = () => {
+/*   const navigate = useNavigate();*/
+  /*  const handleClick = () => {
         navigate("/inquiry-Form")
-    }
+    }*/
+
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
@@ -141,7 +142,7 @@ function Form(){
                     <p>Address: VG/C3 Industrial zone,</p>
                     <p>10th of Ramadan City, Cairo, Egypt</p>
                     <p>Phone: +20 111 43 777 - +20 112 21 13 999</p>
-                    <p onClick={handleClick}>Email: info@unitedhanger.com</p>
+                    <a href="mailto:info@unitedhanger.com" style={{textDecoration: "none", color: "white", fontSize: "15px"}}>Email: info@unitedhanger.com</a>
                 </div>
                 <div className="address-content-two">
                     <h2 className="head">Business Hours</h2>

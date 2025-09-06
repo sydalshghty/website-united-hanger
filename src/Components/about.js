@@ -8,7 +8,7 @@ function About(){
     }
     return(
         <>
-          <div className="hanger-United">
+          <div className="hanger-United" id="aboutunited">
             <div className="background-image">
                 <img src={myHangerImg} alt="img"/>
             </div>

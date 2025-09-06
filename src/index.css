@@ -55,3 +55,6 @@ ul{
     width: 1170px;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
