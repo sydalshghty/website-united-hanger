@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/website-united-hanger/static/css/main.d3079a0d.css",
-    "main.js": "/website-united-hanger/static/js/main.d9c7a87a.js",
+    "main.js": "/website-united-hanger/static/js/main.e5d485c4.js",
     "static/media/home (24).png": "/website-united-hanger/static/media/home (24).2a60b2a6558548b8d783.png",
     "static/media/home (22).png": "/website-united-hanger/static/media/home (22).bd0ae196fb1414c8638e.png",
     "static/media/products (4).png": "/website-united-hanger/static/media/products (4).762f9ba90631ec2db5ed.png",
@@ -14,10 +14,10 @@
     "static/media/Vector Smart Object-ai (1)-svg (1).svg": "/website-united-hanger/static/media/Vector Smart Object-ai (1)-svg (1).6282d71172a98e8c91af9b3dae9cef2a.svg",
     "index.html": "/website-united-hanger/index.html",
     "main.d3079a0d.css.map": "/website-united-hanger/static/css/main.d3079a0d.css.map",
-    "main.d9c7a87a.js.map": "/website-united-hanger/static/js/main.d9c7a87a.js.map"
+    "main.e5d485c4.js.map": "/website-united-hanger/static/js/main.e5d485c4.js.map"
   },
   "entrypoints": [
     "static/css/main.d3079a0d.css",
-    "static/js/main.d9c7a87a.js"
+    "static/js/main.e5d485c4.js"
   ]
 }
