@@ -35,12 +35,12 @@ function Nav(){
                 }
             } else {
                 if (location.pathname === "/home") {
-                    setColorLink("#ffffff");
+                    setColorLink("#09609a");
                 } else if (location.pathname === "/inquiries") {
                     setColorLink("#09609a");
                 }
                 else if (location.pathname === "/products") {
-                    setColorLink("#ffffff")
+                    setColorLink("#09609a")
                 }else if (location.pathname === "/inquiry-Form"){
                     setColorLink("#09609a")
                 }

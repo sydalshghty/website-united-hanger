@@ -319,6 +319,134 @@
     color: var(--background-col);
     cursor: pointer;
 }
+
+.p-size,
+.p-color,
+.p-materials{
+    cursor: pointer;
+}
+.col-Size{
+  /*  padding-top: 10px;*/
+    border-radius: 12px !important;
+}
+.content-size{
+    cursor: pointer;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+.content-size:hover{
+    background-color: #1572b5;
+    color: white !important;
+}
+.loading-p{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    font-size: 17px;
+    color: #1572b5;
+}
+.col-Color{
+/*    padding-bottom: 40px;*/
+    border-radius: 12px !important;
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+.content-color{
+    height: 35px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.5s ease;
+}
+.content-color:hover{
+    background-color: #1572b5;
+}
+.content-color:hover .color-name{
+    color: white !important;
+    transition: color 0.5s ease;
+}
+.color-name{
+    width: 70px;
+    text-align: start;
+}
+.icon-color{
+    width: 22px !important;
+    height: 22px !important;
+    border-radius: 50%;
+  /*  border-color: transparent !important;*/
+}
+.col-materials{
+    border-radius: 12px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.col-materials.show{
+    height: 200px;
+    transition: height 0.5s ease;
+}
+.col-materials div{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+.all-materials{
+    margin-top: 20px;
+    width: 340px;
+    height: 0px;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: height 0.5s ease;
+}
+.all-materials.show{
+    height: 170px;
+}
+.all-materials div{
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 35px;
+    padding-left: 10px;
+    text-transform: uppercase;
+    color: var(--color-p);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+     border-bottom: 1px solid var(--border-color-p);
+}
+.all-materials div:hover{
+    background-color: #1572b5;
+    color: white;
+}
+.col-Yes-and-No .no .icon,
+.col-Yes-and-No .yes .icon{
+    cursor: pointer;
+}
+.col-Yes-and-No .no .icon.click-no,
+.col-Yes-and-No .yes .icon.click-yes{
+   background-color: #11954c !important;
+   border: 1px solid white;
+}
+.upload-logo{
+    cursor: pointer;
+}
+.upload-logo .icon{
+    cursor: pointer;
+}
 @media (max-width: 1200px){
     .inquiries-departemant .hanger-Name{
         width: 37%;
@@ -335,7 +463,8 @@
     .inquiries-departemant .hanger-Name .col-Yes-and-No,
     .inquiries-departemant .hanger-Name .col-Size,
     .inquiries-departemant .hanger-Name .add-inquiry,
-    .inquiries-departemant .inquiries-Details .send-inquiry{
+    .inquiries-departemant .inquiries-Details .send-inquiry,
+    .all-materials{
         width: 300px;
     }
 }
@@ -347,7 +476,8 @@
     .inquiries-departemant .hanger-Name .col-Yes-and-No,
     .inquiries-departemant .hanger-Name .col-Size,
     .inquiries-departemant .hanger-Name .add-inquiry,
-    .inquiries-departemant .inquiries-Details .send-inquiry{
+    .inquiries-departemant .inquiries-Details .send-inquiry,
+    .all-materials{
         width: 250px;
     }
     .inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No{
@@ -384,7 +514,8 @@
     .inquiries-departemant .hanger-Name .col-Size,
     .inquiries-departemant .hanger-Name .add-inquiry,
     .inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .upload-logo,
-    .inquiries-departemant .inquiries-Details .send-inquiry{
+    .inquiries-departemant .inquiries-Details .send-inquiry,
+    .all-materials{
         width: 350px;
     }
     .inquiries-departemant .inquiries-Details{
@@ -403,7 +534,8 @@
     .inquiries-departemant .hanger-Name .col-Size,
     .inquiries-departemant .hanger-Name .add-inquiry,
     .inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .upload-logo,
-    .inquiries-departemant .inquiries-Details .send-inquiry{
+    .inquiries-departemant .inquiries-Details .send-inquiry,
+    .all-materials{
         width: 300px;
     }
     .inquiries-departemant .inquiries-Details .send-inquiry{
