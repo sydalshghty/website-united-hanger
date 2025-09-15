@@ -3,12 +3,7 @@ import productimgone from "../images/products (1).png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from "react-router-dom";
-//import catalogImgOne from "../images/Cataloge-images-7__4_-removebg-preview.png";
-//import catalogImgTwo from "../images/Cataloge-images-7__5_-removebg-preview.png";
-//import catalogImgThree from "../images/Cataloge-images-7__6_-removebg-preview.png";
-//import catalogImgFour from "../images/Cataloge-images-7__7_-removebg-preview.png";
 import { useState,useEffect } from "react";
-//import Footerproducts from "./footer-Products";
 function AllProducts(){
 
     const navigate = useNavigate();
@@ -28,8 +23,6 @@ function AllProducts(){
     useEffect(() => {
         getAllProducts();
     },[]);
-
-    console.log(products);
 
     return(
         <>

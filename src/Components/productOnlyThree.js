@@ -9,8 +9,6 @@ function ProductOnlyThree() {
 
     const {ProductID} = useParams();
 
-    console.log(ProductID);
-
     const getProductInformation = useCallback(async () => {
         await fetch(`https://united-hanger-2025.up.railway.app/api/products/product/${ProductID}`,{
             method: "GET"
@@ -32,11 +30,6 @@ function ProductOnlyThree() {
 
     console.log(AllImgesProduct[0][0]);
 
-    /*const ALLImagesProduct = [...Material.images.map((img) => {
-        return img.image_path
-    })]
-*/
-    //console.log(ALLImagesProduct)
     const mainImgProduct = AllImgesProduct[0][0];
     const imgOne = AllImgesProduct[0][0];
     const imgTwo = AllImgesProduct[0][1];

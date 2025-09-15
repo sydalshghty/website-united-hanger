@@ -10,7 +10,7 @@
 .inquiries-departemant{
     display: flex;
     width: 100%;
-    height: 120vh;
+    height: 100vh;
     margin-top: -116px;
     position: relative;
     z-index: 500;
@@ -319,14 +319,12 @@
     color: var(--background-col);
     cursor: pointer;
 }
-
 .p-size,
 .p-color,
 .p-materials{
     cursor: pointer;
 }
 .col-Size{
-  /*  padding-top: 10px;*/
     border-radius: 12px !important;
 }
 .content-size{
@@ -350,10 +348,7 @@
     color: #1572b5;
 }
 .col-Color{
-/*    padding-bottom: 40px;*/
-    border-radius: 12px !important;
-    padding-top: 10px;
-    padding-bottom: 40px;
+   border-radius: 12px !important;
 }
 .content-color{
     height: 35px;
@@ -364,13 +359,6 @@
     gap: 5px;
     transition: background-color 0.5s ease;
 }
-.content-color:hover{
-    background-color: #1572b5;
-}
-.content-color:hover .color-name{
-    color: white !important;
-    transition: color 0.5s ease;
-}
 .color-name{
     width: 70px;
     text-align: start;
@@ -379,7 +367,6 @@
     width: 22px !important;
     height: 22px !important;
     border-radius: 50%;
-  /*  border-color: transparent !important;*/
 }
 .col-materials{
     border-radius: 12px !important;
@@ -416,8 +403,6 @@
 }
 .all-materials div{
     cursor: pointer;
-    margin-top: 10px;
-    margin-bottom: 10px;
     width: 100%;
     height: 35px;
     padding-left: 10px;
@@ -427,10 +412,6 @@
     justify-content: start;
     align-items: center;
      border-bottom: 1px solid var(--border-color-p);
-}
-.all-materials div:hover{
-    background-color: #1572b5;
-    color: white;
 }
 .col-Yes-and-No .no .icon,
 .col-Yes-and-No .yes .icon{
@@ -446,6 +427,163 @@
 }
 .upload-logo .icon{
     cursor: pointer;
+}
+
+/* Update-Changes-Inquiries */
+
+.All-Names-Products{
+    width: 340px;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    border-radius: 12px;
+    height: 0px;
+    overflow: hidden;
+    opacity: 0;
+    transition: height 0.5s ease;
+}
+.All-Names-Products p{
+    padding-left: 15px;
+    height: 35px;
+    color: var(--color-p);
+    border-bottom: 1px solid var(--color-p);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
+}
+.All-Names-Products.show{
+    height: fit-content;
+    opacity: 1;
+}
+.col-one{
+    cursor: pointer;
+}
+.active-click {
+  background-color: #11954c;
+  color: white !important;
+}
+/**/
+.col-Size,
+.hanger-Name .col-one,
+.col-Color .color,
+.col-materials{
+    width: 100%;
+    height: 40px !important;
+}
+.hanger-Name .col-one,
+.col-Color .color{
+    border-radius: 12px !important;
+}
+.col-Size div,
+.new-col-size,
+.col-Color .color,
+.col-materials div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 12px;
+    border-bottom: none !important;
+    margin-bottom: 0px !important;
+    text-align: center;
+    cursor: pointer;
+}
+.col-Size div .icon-size{
+    margin-top: 30px !important;
+}
+.all-colors-product{
+    margin-top: 20px;
+}
+.col-Color .color h3{
+    margin-top: 10px !important;
+}
+.col-Color .color .p-color{
+    margin-top: 30px !important;
+}
+.col-materials{
+    position: relative;
+    z-index: 1000;
+}
+.col-Size{
+    margin-bottom: 20px;
+}
+.All-sizes-Product,
+.all-colors-product,
+.all-materials{
+    width: 340px;
+    height: 0px;
+    overflow: hidden;
+    opacity: 0;
+    background-color: white;
+    border-radius: 12px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    transition: height 0.5s ease;
+}
+.All-sizes-Product.show,
+.all-colors-product.show,
+.all-materials.show{
+    height: fit-content;
+    opacity: 1;
+}
+.All-sizes-Product .col-size,
+.all-colors-product .content-color{
+    height: 35px;
+    border-bottom: 1px solid #afb0af;
+    padding-left: 10px;
+    color: #afb0af;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+}
+.hanger-Name .col-one{
+    margin-bottom: 10px;
+}
+.loading-data,
+.col-size .loading-data{
+    width: 100%;
+    text-align: center !important;
+    margin-top: 20px   !important;
+    margin-bottom: 20px !important;
+    color: #afb0af;
+}
+.col-size .loading-data{
+    border-color: #ffffff !important;
+}
+.All-sizes-Product{
+    border-bottom: transparent !important;
+}
+.content-Details{
+    height: fit-content !important;
+}
+.col-quantity{
+    margin-top: 20px;
+    width: 340px;
+    height: 35px;
+}
+.col-quantity input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    font-size: 15px;
+    color: #1572b5;
+    padding: 10px;
+    opacity: 0;
+}
+.col-quantity input.show{
+    opacity: 1;
+}
+.col-quantity input::placeholder{
+    padding-left: 5px;
 }
 @media (max-width: 1200px){
     .inquiries-departemant .hanger-Name{
@@ -464,7 +602,11 @@
     .inquiries-departemant .hanger-Name .col-Size,
     .inquiries-departemant .hanger-Name .add-inquiry,
     .inquiries-departemant .inquiries-Details .send-inquiry,
-    .all-materials{
+    .All-sizes-Product,
+    .all-colors-product,
+    .all-materials,
+    .All-Names-Products,
+    .col-quantity{
         width: 300px;
     }
 }
@@ -477,18 +619,21 @@
     .inquiries-departemant .hanger-Name .col-Size,
     .inquiries-departemant .hanger-Name .add-inquiry,
     .inquiries-departemant .inquiries-Details .send-inquiry,
-    .all-materials{
+    .all-materials,
+    .All-Names-Products.show,
+    .All-sizes-Product,
+    .all-colors-product,
+    .all-materials,
+    .All-Names-Products,
+    .col-quantity{
         width: 250px;
     }
     .inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No{
         flex-direction: column;
+        gap: 20px;
     }
     .inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No div{
         display: flex;
-    }
-    .inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .no,
-    .inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .yes{
-        display: none;
     }
     .inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .upload-logo{
         width: 250px;
@@ -515,8 +660,13 @@
     .inquiries-departemant .hanger-Name .add-inquiry,
     .inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .upload-logo,
     .inquiries-departemant .inquiries-Details .send-inquiry,
-    .all-materials{
-        width: 350px;
+    .all-materials,
+    .All-sizes-Product,
+    .all-colors-product,
+    .all-materials,
+    .All-Names-Products,
+    .col-quantity{
+        width: 350px !important;
     }
     .inquiries-departemant .inquiries-Details{
         width: 100%;
@@ -535,8 +685,13 @@
     .inquiries-departemant .hanger-Name .add-inquiry,
     .inquiries-departemant .hanger-Name .col-logo .col-Yes-and-No .upload-logo,
     .inquiries-departemant .inquiries-Details .send-inquiry,
-    .all-materials{
-        width: 300px;
+    .all-materials,
+    .All-sizes-Product,
+    .all-colors-product,
+    .all-materials,
+    .All-Names-Products,
+    .col-quantity{
+        width: 300px !important;
     }
     .inquiries-departemant .inquiries-Details .send-inquiry{
         margin-top: 20px;
@@ -546,4 +701,30 @@
     .inquiries-departemant .inquiries-Details{
         padding: 20px 30px;
     }
+}
+@media (max-width: 992px) {
+    .inquiries-departemant{
+        position: relative;
+        z-index: 222222222222222222222;
+    }
+    .inquiries-departemant .inquiries-Details{
+        padding-bottom: 100px !important;
+    }
+}
+@media (max-width: 768px) {
+    .inquiries-departemant{
+        margin-top: -120px;
+    }
+    .inquiries-departemant .hanger-Name{
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+@media (min-width: 768px) {
+    .return-home-icon{
+        display: none;
+    }
+}
+.col-logo{
+    margin-top: 40px !important;
 }

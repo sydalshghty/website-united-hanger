@@ -1,6 +1,5 @@
 import "../CSS/product-Only.css";
 import backgroundproduct from "../images/PRODUCT (14).png";
-//import productImg from "../images/PRODUCT__1_-removebg-preview.png";
 import { useParams } from "react-router-dom";
 import { useCallback, useEffect, useState } from "react";
 function ProductOnlyOne(){
@@ -24,8 +23,6 @@ function ProductOnlyOne(){
     getALLImages.push(Product.map((img,index) => {
         return img.image_path
     }))
-
-    console.log(getALLImages[0][0]);
 
     return(
         <div className="product-only-one">

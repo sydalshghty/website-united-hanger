@@ -36,34 +36,6 @@ function Plan() {
 export default Plan;
 
 
-//import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-//import "leaflet/dist/leaflet.css";
-
-/*function Plan() {
-  return (
-    <div className="plan-content">
-      <div className="container-Map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=YOUR_EMBED_LINK"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
-      <div className="text-content">
-        <h2>keep in touch</h2>
-        <h2 className="head">Our Factory</h2>
-      </div>
-    </div>
-  );
-}
-
-
-export default Plan;*/
-
 
 
 

@@ -1,7 +1,6 @@
 import "../CSS/form.css";
 import { useState,useEffect } from "react";
 import { useRef } from "react";
-//import { useNavigate } from "react-router-dom";
 function Form(){
 
     const [DataSettings,setDataSettings] = useState([]);
@@ -19,11 +18,6 @@ function Form(){
     },[]);
 
     console.log(DataSettings)
-
-/*   const navigate = useNavigate();*/
-  /*  const handleClick = () => {
-        navigate("/inquiry-Form")
-    }*/
 
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");

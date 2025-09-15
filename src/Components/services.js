@@ -1,7 +1,5 @@
 import "../CSS/services.css";
 import myImgOne from "../images/home (35) - Copy.png";
-
-
 function Services(){
     return(
         <div className="services">

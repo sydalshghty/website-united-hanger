@@ -4,7 +4,6 @@
 }
 .header{
     position: relative;
-  /*  height: 900px;*/
   height: 100vh;
     box-sizing: border-box; 
     overflow: hidden;
@@ -201,7 +200,6 @@
     float: left;
    position: absolute;
     z-index: 200;
-  /* transform: translatex(-60%);*/
    transform: translateY(60%);
     display: flex;
     left: 50%;
@@ -392,3 +390,4 @@
         height: 120vh;
     }
 }
+

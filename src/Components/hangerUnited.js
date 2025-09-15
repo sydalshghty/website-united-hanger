@@ -18,8 +18,6 @@ function HangerUnited(){
         getAllSettings();
     },[]);
 
-    console.log(Data);
-
     return(
         <div className="hanger-United">
             <div className="background-image">
