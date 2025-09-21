@@ -22,7 +22,7 @@ function Services(){
     },[])
 
     console.log(services);
-    //src={myImgOne}
+  
     return(
         <div className="services">
                 <img className="img-product" src={myImgOne} alt="img" />
