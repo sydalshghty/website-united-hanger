@@ -59,3 +59,16 @@ html {
   scroll-behavior: smooth;
 }
 /**/
+.content-new-business{
+  width: 200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.content-our-factory{
+  width: 255px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.content-our-factory-mobile{
+  margin-bottom: 10px;
+}

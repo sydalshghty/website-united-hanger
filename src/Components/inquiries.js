@@ -1,26 +1,25 @@
 import "../CSS/inquiries.css";
 import { useState, useEffect, useRef } from "react";
-import Inquiryform from "./inquiry-Form"; 
-
+import Inquiryform from "./inquiry-Form";
+import { FaArrowLeft } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 function Inquiries() {
   const [showForm, setShowForm] = useState(false);
   const [showMaterial, setShowMaterial] = useState(false);
-  const [logoPrint, setLogoPrint] = useState("no"); 
+  const [logoPrint, setLogoPrint] = useState("no");
   const fileInputRef = useRef(null);
   const [logoFile, setLogoFile] = useState(null);
 
-  const handleDivClick = () => {
-    fileInputRef.current.click();
-  };
+  const handleDivClick = () => fileInputRef.current.click();
 
   const handleFileChange = (event) => {
-  const file = event.target.files[0];
-  if (file) {
-    console.log("تم رفع الصورة:", file.name);
-    setLogoFile(file); 
-  }
-};
+    const file = event.target.files[0];
+    if (file) {
+      setLogoFile(file);
+    }
+  };
 
+  // ✅ API Products
   const [showModel, setShowModel] = useState(false);
   const [AllProducts, setAllProducts] = useState([]);
 
@@ -40,61 +39,121 @@ function Inquiries() {
     getAllProducts();
   }, []);
 
+  // ✅ Selections
   const [selectProduct, setSelectProduct] = useState({});
-  const SizesProduct = selectProduct.sizes;
-  const ColorsProduct = selectProduct.colors;
-  const MaterialsProduct = selectProduct.materials;
+  const SizesProduct = selectProduct?.sizes || [];
+  const ColorsProduct = selectProduct?.colors || [];
+  const MaterialsProduct = selectProduct?.materials || [];
 
   const [selectedProductId, setSelectedProductId] = useState(null);
   const [selectedSizeId, setSelectedSizeID] = useState(null);
   const [selectedColorId, setSelectedColorId] = useState(null);
   const [selectedMaterialId, setSelectedMaterialId] = useState(null);
 
+  
   const [showSizes, setShowSizes] = useState(false);
   const [showColors, setShowColor] = useState(false);
 
-  const [nameProduct, setNameProduct] = useState("mh");
-  const [sizeProduct, setSizeProduct] = useState("26 cm");
-  const [colorProduct, setColorProduct] = useState("white");
-  const [materialProduct, setMaterialProduct] = useState("pp");
-  const [quantity, setQuantity] = useState(1); 
+  // ✅ Dynamic Headings
+  const [nameProduct, setNameProduct] = useState("hanger name");
+  const [sizeProduct, setSizeProduct] = useState("size");
+  const [colorProduct, setColorProduct] = useState("color");
+  const [materialProduct, setMaterialProduct] = useState("raw materials");
+  const [quantity, setQuantity] = useState(1);
+
+  // ✅ Inquiries (بدون LocalStorage)
   const [inquiriesList, setInquiriesList] = useState([]);
 
   const handleAddInquiry = () => {
-  if (!selectProduct.id || !selectedSizeId || !selectedMaterialId || !quantity) {
-    alert("Please select all data before adding the inquiry");
-    return;
-  }
+    if (!selectProduct.id || !selectedSizeId || !selectedMaterialId || !quantity) {
+      alert("Please select all data before adding the inquiry");
+      return;
+    }
 
-  const newInquiry = {
-    id: Date.now(),
-    productId: selectProduct.id,
-    name: nameProduct,
-    sizeId: selectedSizeId,
-    size: sizeProduct,
-    colorId: selectedColorId,
-    color: colorProduct,
-    materialId: selectedMaterialId,
-    material: materialProduct,
-    logo: logoPrint,
-    quantity: quantity,
+    const exists = inquiriesList.some(
+      (inq) =>
+        inq.productId === selectProduct.id &&
+        inq.sizeId === selectedSizeId &&
+        inq.colorId === selectedColorId &&
+        inq.materialId === selectedMaterialId &&
+        inq.logo === logoPrint
+    );
+
+    if (exists) {
+      alert("This inquiry has already been added!");
+      return;
+    }
+
+    const newInquiry = {
+      id: Date.now(),
+      productId: selectProduct.id,
+      name: nameProduct,
+      sizeId: selectedSizeId,
+      size: sizeProduct,
+      colorId: selectedColorId,
+      color: colorProduct,
+      materialId: selectedMaterialId,
+      material: materialProduct,
+      logo: logoPrint,
+      quantity: quantity,
+      logoFile: logoFile
+        ? {
+            name: logoFile.name,
+            url: URL.createObjectURL(logoFile),
+          }
+        : null,
+    };
+
+    setInquiriesList([...inquiriesList, newInquiry]);
+    setLogoFile(null);
   };
 
-  setInquiriesList([...inquiriesList, newInquiry]);
-};
-
   const [showQunatity, setShowQuantity] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = () => {
+    setLoading(true);
+    setTimeout(() => setLoading(false), 2000);
+  };
+
+  // ✅ Dropdown Toggles
+  const toggleSizes = () => {
+    if (!selectProduct.id) {
+      alert("Please select a product first");
+      return;
+    }
+    setShowSizes(!showSizes);
+  };
+
+  const toggleColors = () => {
+    if (!selectProduct.id) {
+      alert("Please select a product first");
+      return;
+    }
+    setShowColor(!showColors);
+  };
+
+  const toggleMaterials = () => {
+    if (!selectProduct.id) {
+      alert("Please select a product first");
+      return;
+    }
+    setShowMaterial(!showMaterial);
+  };
 
   return (
     <div className="inquiries-departemant">
       <div className="hanger-Name">
-        <div
-          className="col-one"
-          onClick={() => {
-            setShowModel(!showModel);
-          }}
-        >
-          <h3>hanger name</h3>
+        <div className="col-icon-Left">
+          <div>
+            <Link to={"/Home"}>
+              <FaArrowLeft  className="icon"/>
+            </Link>
+          </div>
+        </div>
+        {/* ✅ اختيار المنتج */}
+        <div className="col-one" onClick={() => setShowModel(!showModel)}>
+          <h3>{nameProduct}</h3>
           <p></p>
         </div>
         <div className={`All-Names-Products ${showModel ? "show" : ""}`}>
@@ -108,98 +167,97 @@ function Inquiries() {
                 setSelectProduct(product);
                 setSelectedProductId(product.id);
                 setNameProduct(product.name);
+                setShowModel(false);
               }}
             >
               {product.name}
             </p>
           ))}
         </div>
+
+        {/* ✅ المقاسات */}
         <div className="col-Size">
-          <div
-            className="new-col-size"
-            onClick={() => setShowSizes(!showSizes)}
-          >
-            <h3>size</h3>
+          <div className="new-col-size" onClick={toggleSizes}>
+            <h3>{sizeProduct}</h3>
             <p className="p-size icon-size"></p>
           </div>
         </div>
         <div className={`All-sizes-Product ${showSizes ? "show" : ""}`}>
-          {SizesProduct &&
-            SizesProduct.map((item) => (
-              <div
-                key={item.id}
-                className={`col-size ${
-                  selectedSizeId === item.id ? "active-click" : ""
-                }`}
-                onClick={() => {
-                  setSelectedSizeID(item.id);
-                  setSizeProduct(`${item.value} ${item.unit}`);
-                }}
-              >
-                <p>
-                  {item.value} {item.unit}
-                </p>
-              </div>
-            ))}
+          {SizesProduct.map((item) => (
+            <div
+              key={item.id}
+              className={`col-size ${
+                selectedSizeId === item.id ? "active-click" : ""
+              }`}
+              onClick={() => {
+                setSelectedSizeID(item.id);
+                setSizeProduct(`${item.value} ${item.unit}`);
+                setShowSizes(false);
+              }}
+            >
+              <p>
+                {item.value} {item.unit}
+              </p>
+            </div>
+          ))}
         </div>
-        <div className="col-Color" onClick={() => setShowColor(!showColors)}>
+
+        {/* ✅ الألوان */}
+        <div className="col-Color" onClick={toggleColors}>
           <div className="color">
-            <h3>color</h3>
+            <h3>{colorProduct}</h3>
             <p className="p-color"></p>
           </div>
         </div>
         <div className={`all-colors-product ${showColors ? "show" : ""}`}>
-          {ColorsProduct &&
-            ColorsProduct.map((color) => (
-              <div
-                key={color.id}
-                className={`white content-color ${
-                  selectedColorId === color.id ? "active-click" : ""
-                }`}
-                onClick={() => {
-                  setSelectedColorId(color.id);
-                  setColorProduct(color.name);
-                }}
-              >
-                <p className="paragraph color-name">{color.name}</p>
-                <p
-                  className="icon icon-color"
-                  style={{ backgroundColor: color.hex_code }}
-                ></p>
-              </div>
-            ))}
+          {ColorsProduct.map((color) => (
+            <div
+              key={color.id}
+              className={`white content-color ${
+                selectedColorId === color.id ? "active-click" : ""
+              }`}
+              onClick={() => {
+                setSelectedColorId(color.id);
+                setColorProduct(color.name);
+                setShowColor(false);
+              }}
+            >
+              <p className="paragraph color-name">{color.name}</p>
+              <p
+                className="icon icon-color"
+                style={{ backgroundColor: color.hex_code }}
+              ></p>
+            </div>
+          ))}
         </div>
-        <div
-          className="col-materials"
-          onClick={() => {
-            setShowMaterial(!showMaterial);
-          }}
-        >
+
+        {/* ✅ المواد الخام */}
+        <div className="col-materials" onClick={toggleMaterials}>
           <div>
-            <h3>raw materials</h3>
+            <h3>{materialProduct}</h3>
             <p className="p-materials"></p>
           </div>
         </div>
         <div className={`all-materials ${showMaterial ? "show" : ""}`}>
-          {MaterialsProduct &&
-            MaterialsProduct.map((item) => (
-              <div
-                key={item.id}
-                className={selectedMaterialId === item.id ? "active-click" : ""}
-                onClick={() => {
-                  setSelectedMaterialId(item.id);
-                  setMaterialProduct(item.name);
-                }}
-              >
-                <p>{item.name}</p>
-              </div>
-            ))}
+          {MaterialsProduct.map((item) => (
+            <div
+              key={item.id}
+              className={selectedMaterialId === item.id ? "active-click" : ""}
+              onClick={() => {
+                setSelectedMaterialId(item.id);
+                setMaterialProduct(item.name);
+                setShowMaterial(false);
+              }}
+            >
+              <p>{item.name}</p>
+            </div>
+          ))}
         </div>
+
+        {/* ✅ الكمية */}
         <div
           className="col-materials col-quantity"
-          onClick={() => {
-            setShowQuantity(!showQunatity);
-          }}
+          onClick={() => setShowQuantity(!showQunatity)}
         >
           <div>
             <h3>quantity</h3>
@@ -216,8 +274,10 @@ function Inquiries() {
             className={`${showQunatity ? "show" : ""}`}
           />
         </div>
+
+        {/* ✅ اللوجو */}
         <div className="col-logo">
-          <h3>logo printing</h3>
+          <h3>logo printing: {logoPrint}</h3>
           <div className="col-Yes-and-No">
             <div className="no">
               <p
@@ -234,25 +294,37 @@ function Inquiries() {
               <p className="paragraph">yes</p>
             </div>
 
-            <div className="upload-logo" onClick={handleDivClick}>
-              <p className="paragraph">upload logo</p>
-              <div>
-                <p className="icon"></p>
+            {logoPrint === "yes" && (
+              <div className="upload-logo" onClick={handleDivClick}>
+                <p className="paragraph">upload logo</p>
+                <div>
+                  <p className="icon"></p>
+                </div>
+                <input
+                  type="file"
+                  accept="image/*"
+                  ref={fileInputRef}
+                  style={{ display: "none" }}
+                  onChange={handleFileChange}
+                />
               </div>
-              <input
-                type="file"
-                accept="image/*"
-                ref={fileInputRef}
-                style={{ display: "none" }}
-                onChange={handleFileChange}
-              />
-            </div>
+            )}
           </div>
         </div>
-        <div className="add-inquiry" onClick={handleAddInquiry}>
-          <p>add inquiry</p>
+
+        {/* ✅ زر إضافة الاستعلام */}
+        <div
+          className="add-inquiry"
+          onClick={() => {
+            handleAddInquiry();
+            handleSubmit();
+          }}
+        >
+          <p disabled={loading}>{loading ? "Sending..." : "Add Inquiry"}</p>
         </div>
       </div>
+
+      {/* ✅ التفاصيل */}
       <div className="inquiries-Details">
         <div className="content-Details">
           <div className="heading">
@@ -260,24 +332,11 @@ function Inquiries() {
           </div>
           <div>
             {inquiriesList.length === 0 ? (
-              <>
-                <div className="model-MH">
-                  <p>model name: mh</p>
-                  <p>size: 26 cm</p>
-                  <p>color: white</p>
-                  <p>raw material: AA</p>
-                  <p>logo print: no</p>
-                  <p>quantity: 1</p>
-                </div>
-                <div className="model-RH">
-                  <p>model name: rh</p>
-                  <p>size: 36 cm</p>
-                  <p>color: black</p>
-                  <p>raw material: pp</p>
-                  <p>quantity: 1</p>
-                  <p>logo print: yes</p>
-                </div>
-              </>
+              <div className="col-no-details">
+                <p style={{ color: "#777", padding: "10px" }}>
+                  No inquiries added yet.
+                </p>
+              </div>
             ) : (
               inquiriesList.map((inq) => (
                 <div
@@ -291,13 +350,36 @@ function Inquiries() {
                   <p>raw material: {inq.material}</p>
                   <p>logo print: {inq.logo}</p>
                   <p>quantity: {inq.quantity}</p>
+
+                  {inq.logoFile && (
+                    <div style={{ marginTop: "10px" }}>
+                      <p>Logo:</p>
+                      <img
+                        src={inq.logoFile.url}
+                        alt={inq.logoFile.name}
+                        style={{
+                          width: "120px",
+                          height: "120px",
+                          objectFit: "contain",
+                          border: "1px solid #ddd",
+                          borderRadius: "5px",
+                          marginTop: "5px",
+                        }}
+                      />
+                    </div>
+                  )}
                 </div>
               ))
             )}
           </div>
         </div>
-        
-        <div className="send-inquiry" onClick={() => setShowForm(true)} style={{cursor: "pointer"}}>
+
+        {/* ✅ إرسال الاستعلام */}
+        <div
+          className="send-inquiry"
+          onClick={() => setShowForm(true)}
+          style={{ cursor: "pointer" }}
+        >
           <p>send inquiry</p>
         </div>
         {showForm && (
@@ -316,6 +398,13 @@ function Inquiries() {
   );
 }
 export default Inquiries;
+
+
+
+
+
+
+
 
 
 

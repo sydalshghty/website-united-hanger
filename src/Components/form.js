@@ -92,7 +92,6 @@ function Form(){
             inputPhone.current.setAttribute("data-place", "")
         }
     }
-
     const inputEmail = useRef(null);
     function FocusInputEmail(){
         if(inputEmail.current){
@@ -129,20 +128,30 @@ function Form(){
             }
         }
     }
+
     return(
         <div className="form-Departemant">
             <div className="address-content">
                 <div className="address-content-one">
-                    <p>Address: VG/C3 Industrial zone,</p>
-                    <p>10th of Ramadan City, Cairo, Egypt</p>
-                    <p>Phone: +20 111 43 777 - +20 112 21 13 999</p>
+                    {!DataSettings ? "" :
+                        <div className="content-our-factory">
+                            <p>
+                                {DataSettings.ourfactory}
+                            </p>
+                        </div>
+                    }
+                    <p style={{marginBottom: "10px"}}>Phone: +20 111 43 777 - +20 112 21 13 999</p>
                     <a href="mailto:info@unitedhanger.com" style={{textDecoration: "none", color: "white", fontSize: "15px"}}>Email: info@unitedhanger.com</a>
                 </div>
                 <div className="address-content-two">
                     <h2 className="head">Business Hours</h2>
-                    <p>Saturday - Wedensday - 9am to 5pm</p>
-                    <p>Thursday - 9am to 2pm</p>
-                    <p>Friday - Closed</p>
+                    {!DataSettings ? "" :
+                        <div className="content-new-business">
+                            <p>
+                                {DataSettings.businesshours}
+                            </p>
+                        </div>
+                    }
                 </div>
             </div>
             <div className="form-content">

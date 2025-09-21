@@ -15,6 +15,7 @@
     position: relative;
     z-index: 500;
     font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden !important;
 }
 .inquiries-departemant .hanger-Name{
     width: 45%;
@@ -727,4 +728,114 @@
 }
 .col-logo{
     margin-top: 40px !important;
+}
+.All-Names-Products,
+.All-sizes-Product,
+.all-colors-product,
+.all-materials{
+    max-height: 58px;
+    overflow-y: auto;
+    border-radius: 12px !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    scrollbar-gutter: stable;
+   border-radius: 4px !important;
+   margin-bottom: 20px;
+}
+.All-Names-Products .product-name,
+.All-sizes-Product .col-size,
+.all-colors-product .content-color,
+.all-materials div{
+    height: 60px;
+}
+.All-Names-Products .product-name:last-child,
+.All-sizes-Product  .col-Size:last-child{
+    border-bottom: transparent !important;
+}
+.All-sizes-Product .active-click,
+.all-colors-product .active-click,
+.all-materials .active-click{
+    border-color: #11954c;
+}
+.col-quantity{
+    margin-bottom: 0px;
+}
+.add-inquiry{
+    margin-top: 10px;
+}
+.col-no-details{
+    height: 250px;
+    width: 300px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+/* General select style */
+select {
+  width: 100%;
+  height: 40px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color-p);
+  font-size: 15px;
+  color: var(--color-p);
+  background-color: var(--background-col);
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+select:hover {
+  background-color: #1572b5;
+  color: #ffffff;
+}
+
+/* Focus effect */
+select:focus {
+  border: 1px solid var(--color-h3-icon);
+  color: #1572b5;
+}
+
+/* Options inside the dropdown */
+select option {
+  padding: 10px;
+  font-size: 15px;
+  color: var(--color-p);
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+/* Hover/focus for options */
+select option:hover,
+select option:focus {
+  background-color: #1572b5;
+  color: #ffffff;
+}
+
+/**/
+@media (min-width: 768px){
+    .col-icon-Left{
+        display: none;
+    }
+}
+.col-icon-Left{
+    margin-bottom: 40px;
+    position: relative;
+    width: 100%;
+    left: 60px;
+}
+.col-icon-Left div{
+    width: 35px;
+    height: 35px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.col-icon-Left div .icon{
+    color: #1572b5;
 }
