@@ -3,9 +3,7 @@ import imgBackground from "../images/home (30)_cleanup (2).png";
 import { useEffect,useState } from "react";
 
 function HangerUnited(){
-
     const [Data,setData] = useState([])
-
     const getAllSettings = async () => {
         await fetch("https://united-hanger-2025.up.railway.app//api/settings",{
             method: "GET"
@@ -13,7 +11,6 @@ function HangerUnited(){
         .then(response => response.json())
         .then(data => setData(data.settings))
     }
-
     useEffect(() => {
         getAllSettings();
     },[]);

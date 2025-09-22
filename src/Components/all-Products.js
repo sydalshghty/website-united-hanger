@@ -5,14 +5,11 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from "react-router-dom";
 import { useState,useEffect } from "react";
 function AllProducts(){
-
     const navigate = useNavigate();
-
     const goToProduct = () => {
         navigate("/product")
     }
     const [products,setProducts] = useState([]);
-
     const getAllProducts = async () => {
        await  fetch("https://united-hanger-2025.up.railway.app//api/products",{
         method: "GET",

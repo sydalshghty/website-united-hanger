@@ -19,7 +19,6 @@ function Inquiries() {
     }
   };
 
-  // ✅ API Products
   const [showModel, setShowModel] = useState(false);
   const [AllProducts, setAllProducts] = useState([]);
 
@@ -39,7 +38,6 @@ function Inquiries() {
     getAllProducts();
   }, []);
 
-  // ✅ Selections
   const [selectProduct, setSelectProduct] = useState({});
   const SizesProduct = selectProduct?.sizes || [];
   const ColorsProduct = selectProduct?.colors || [];
@@ -54,14 +52,12 @@ function Inquiries() {
   const [showSizes, setShowSizes] = useState(false);
   const [showColors, setShowColor] = useState(false);
 
-  // ✅ Dynamic Headings
   const [nameProduct, setNameProduct] = useState("hanger name");
   const [sizeProduct, setSizeProduct] = useState("size");
   const [colorProduct, setColorProduct] = useState("color");
   const [materialProduct, setMaterialProduct] = useState("raw materials");
   const [quantity, setQuantity] = useState(1);
 
-  // ✅ Inquiries (بدون LocalStorage)
   const [inquiriesList, setInquiriesList] = useState([]);
 
   const handleAddInquiry = () => {
@@ -116,7 +112,6 @@ function Inquiries() {
     setTimeout(() => setLoading(false), 2000);
   };
 
-  // ✅ Dropdown Toggles
   const toggleSizes = () => {
     if (!selectProduct.id) {
       alert("Please select a product first");
@@ -151,7 +146,6 @@ function Inquiries() {
             </Link>
           </div>
         </div>
-        {/* ✅ اختيار المنتج */}
         <div className="col-one" onClick={() => setShowModel(!showModel)}>
           <h3>{nameProduct}</h3>
           <p></p>
@@ -174,8 +168,6 @@ function Inquiries() {
             </p>
           ))}
         </div>
-
-        {/* ✅ المقاسات */}
         <div className="col-Size">
           <div className="new-col-size" onClick={toggleSizes}>
             <h3>{sizeProduct}</h3>
@@ -201,8 +193,6 @@ function Inquiries() {
             </div>
           ))}
         </div>
-
-        {/* ✅ الألوان */}
         <div className="col-Color" onClick={toggleColors}>
           <div className="color">
             <h3>{colorProduct}</h3>
@@ -230,8 +220,6 @@ function Inquiries() {
             </div>
           ))}
         </div>
-
-        {/* ✅ المواد الخام */}
         <div className="col-materials" onClick={toggleMaterials}>
           <div>
             <h3>{materialProduct}</h3>
@@ -253,8 +241,6 @@ function Inquiries() {
             </div>
           ))}
         </div>
-
-        {/* ✅ الكمية */}
         <div
           className="col-materials col-quantity"
           onClick={() => setShowQuantity(!showQunatity)}
@@ -274,8 +260,6 @@ function Inquiries() {
             className={`${showQunatity ? "show" : ""}`}
           />
         </div>
-
-        {/* ✅ اللوجو */}
         <div className="col-logo">
           <h3>logo printing: {logoPrint}</h3>
           <div className="col-Yes-and-No">
@@ -311,8 +295,6 @@ function Inquiries() {
             )}
           </div>
         </div>
-
-        {/* ✅ زر إضافة الاستعلام */}
         <div
           className="add-inquiry"
           onClick={() => {
@@ -323,8 +305,6 @@ function Inquiries() {
           <p disabled={loading}>{loading ? "Sending..." : "Add Inquiry"}</p>
         </div>
       </div>
-
-      {/* ✅ التفاصيل */}
       <div className="inquiries-Details">
         <div className="content-Details">
           <div className="heading">
@@ -373,8 +353,6 @@ function Inquiries() {
             )}
           </div>
         </div>
-
-        {/* ✅ إرسال الاستعلام */}
         <div
           className="send-inquiry"
           onClick={() => setShowForm(true)}

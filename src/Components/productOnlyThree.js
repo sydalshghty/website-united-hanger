@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useState,useEffect,useCallback} from "react";
 import { useParams } from "react-router-dom";
-
+import ProductOnlyTwo from "./product-Only-2";
 function ProductOnlyThree() {
     const [Material,setMaterial] = useState([]);
 
@@ -21,14 +21,10 @@ function ProductOnlyThree() {
         getProductInformation()
     },[getProductInformation])
 
-    console.log(Material);
-
     const AllImgesProduct = []
     AllImgesProduct.push(Material.map((img,index) => {
         return img.image_path
     }));
-
-    console.log(AllImgesProduct[0][0]);
 
     const mainImgProduct = AllImgesProduct[0][0];
     const imgOne = AllImgesProduct[0][0];
@@ -63,6 +59,8 @@ function ProductOnlyThree() {
         }
     }
     return(
+        <>
+        <ProductOnlyTwo/>
         <div className="product-only-three">
             <div className="content-products">
                 <div className="product-img-one">
@@ -80,6 +78,7 @@ function ProductOnlyThree() {
                 <FontAwesomeIcon onClick={handleNext} className="icon-right" icon={faArrowRight}/>
             </div>
         </div>
+        </>
     )
 }
 export default ProductOnlyThree;

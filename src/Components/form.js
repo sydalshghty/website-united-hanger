@@ -2,9 +2,7 @@ import "../CSS/form.css";
 import { useState,useEffect } from "react";
 import { useRef } from "react";
 function Form(){
-
     const [DataSettings,setDataSettings] = useState([]);
-
     const getAllSettings = async () => {
         await fetch("https://united-hanger-2025.up.railway.app//api/settings",{
             method: "GET"
@@ -12,12 +10,9 @@ function Form(){
         .then(response => response.json())
         .then(data => setDataSettings(data.settings))
     }
-
     useEffect(() => {
         getAllSettings();
     },[]);
-
-    console.log(DataSettings)
 
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");

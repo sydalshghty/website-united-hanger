@@ -3,7 +3,6 @@ import myImgOne from "../images/home (35) - Copy.png";
 import { useState,useEffect } from "react";
 function Services(){
     const [services,setService] = useState([]);
-
     const getAllServices = async () => {
         try{
             await fetch(`https://united-hanger-2025.up.railway.app/api/services/get_all`,{
@@ -16,13 +15,9 @@ function Services(){
             console.error("Error Not Found Data", error)
         }
     }
-
     useEffect(() => {
         getAllServices();
     },[])
-
-    console.log(services);
-  
     return(
         <div className="services">
                 <img className="img-product" src={myImgOne} alt="img" />

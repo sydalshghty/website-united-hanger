@@ -2,18 +2,14 @@ import "../CSS/inquiry-Form.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-
 function Inquiryform({ onClose, inquiriesList, logoFile }) {
   const [clientName, setClientName] = useState("");
   const [clientEmail, setClientEmail] = useState("");
   const [clientPhone, setClientPhone] = useState("");
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const formData = new FormData();
-
       const data = {
         client: {
           name: clientName,
@@ -29,13 +25,10 @@ function Inquiryform({ onClose, inquiriesList, logoFile }) {
           custom_color_code: inq.customColor || null,
         })),
       };
-
       formData.append("data", JSON.stringify(data));
-
       if (logoFile) {
         formData.append("logo_1", logoFile);
       }
-
       const response = await fetch(
         "https://united-hanger-2025.up.railway.app/api/inquiries/new",
         {
@@ -43,10 +36,8 @@ function Inquiryform({ onClose, inquiriesList, logoFile }) {
           body: formData,
         }
       );
-
       const result = await response.json();
       console.log("API Response:", result);
-
       if (response.ok) {
         alert("Inquiry sent successfully✅");
         onClose();
