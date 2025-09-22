@@ -7,6 +7,7 @@ import Inquiries from "./Components/inquiries";
 import Contact from "./Components/contact";
 import ProductOnly from "./Components/product-Only";
 import Inquiryform from "./Components/inquiry-Form";
+import WhatsApp from "./Components/WhatsApp";
 function Master(){
     return(
         <>
@@ -22,6 +23,7 @@ function Master(){
             <Route path="inquiry-Form" element = {<Inquiryform/>}/>
             <Route path="products/:ProductID" element={<ProductOnly/>}/>
         </Routes>
+        <WhatsApp/>
         </>
     )
 }

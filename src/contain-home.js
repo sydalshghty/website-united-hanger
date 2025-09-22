@@ -5,7 +5,6 @@ import Plan from "./Components/plan";
 import Form from "./Components/form";
 import Addressmobile from "./Components/addressmobile";
 import Footer from "./Components/footer";
-
 function Containhome(){
     return(
         <>
