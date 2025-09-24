@@ -1,5 +1,5 @@
 import "../CSS/product-Only.css";
-import backgroundproduct from "../images/PRODUCT (14).png";
+//import backgroundproduct from "/public/images/PRODUCT.png";
 import { useParams } from "react-router-dom";
 import { useCallback, useEffect, useState } from "react";
 function ProductOnlyOne(){
@@ -26,7 +26,7 @@ function ProductOnlyOne(){
 
     return(
         <div className="product-only-one">
-            <img className="background-img" src= {backgroundproduct} alt="img-product"/>
+            <img className="background-img" src={"/images/PRODUCT.png"} alt="background-img"/>
             <div>
             <img className="product-img" src= {getALLImages[0][0]} alt="img-product"/>
             </div>
