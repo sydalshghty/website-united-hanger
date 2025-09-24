@@ -1,84 +1,84 @@
 import "../CSS/productOnly-3.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { useState,useEffect,useCallback} from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import ProductOnlyTwo from "./product-Only-2";
-function ProductOnlyThree() {
-    const [Material,setMaterial] = useState([]);
 
-    const {ProductID} = useParams();
+function ProductOnlyThree() {
+    const [images, setImages] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const { ProductID } = useParams();
 
     const getProductInformation = useCallback(async () => {
-        await fetch(`https://united-hanger-2025.up.railway.app/api/products/product/${ProductID}`,{
-            method: "GET"
-        })
-        .then(response => response.json())
-        .then(data => setMaterial(data.product.images))
-    },[ProductID])
+        try {
+            const response = await fetch(`https://united-hanger-2025.up.railway.app/api/products/product/${ProductID}`);
+            const data = await response.json();
+            if (data.product && data.product.images) {
+                setImages(data.product.images.map(img => img.image_path));
+            }
+        } catch (err) {
+            console.error("Error fetching product:", err);
+        }
+    }, [ProductID]);
 
     useEffect(() => {
-        getProductInformation()
-    },[getProductInformation])
-
-    const AllImgesProduct = []
-    AllImgesProduct.push(Material.map((img,index) => {
-        return img.image_path
-    }));
-
-    const mainImgProduct = AllImgesProduct[0][0];
-    const imgOne = AllImgesProduct[0][0];
-    const imgTwo = AllImgesProduct[0][1];
-    const imgThree = AllImgesProduct[0][2];
-    const imgFour = AllImgesProduct[0][3];
-    
-
-    const allImagesProduct = [
-        mainImgProduct,
-        imgOne,
-        imgTwo,
-        imgThree,
-        imgFour
-    ]
-
-    const [currentIndex, setCurrentIndex] = useState(0);
+        getProductInformation();
+    }, [getProductInformation]);
 
     const handleNext = () => {
-        if (currentIndex === 4) {
-            return false;
-        } else {
-            setCurrentIndex(currentIndex + 1)
-        }
-    }
+        setCurrentIndex((prev) =>
+            prev === images.length - 1 ? 0 : prev + 1
+        );
+    };
 
     const handlePrev = () => {
-        if (currentIndex === 0) {
-            return false;
-        } else{
-            setCurrentIndex(currentIndex - 1);
-        }
-    }
-    return(
+        setCurrentIndex((prev) =>
+            prev === 0 ? images.length - 1 : prev - 1
+        );
+    };
+
+    const handleThumbnailClick = (index) => {
+        setCurrentIndex(index);
+    };
+
+    return (
         <>
-        <ProductOnlyTwo/>
-        <div className="product-only-three">
-            <div className="content-products">
-                <div className="product-img-one">
-                    <img src={allImagesProduct[currentIndex]} alt="product-img-one"/>
+            <ProductOnlyTwo />
+            <div className="product-only-three">
+                <div className="content-products">
+                    {/* الصورة الرئيسية */}
+                    <div className="product-img-one">
+                        {images.length > 0 && (
+                            <img src={images[currentIndex]} alt="main-product" style={{ cursor: "pointer" }} />
+                        )}
+                    </div>
+
+                    {/* الصور المصغرة */}
+                    <div className="product-img-two">
+                        {images.map((img, index) => (
+                            <img
+                                key={index}
+                                src={img}
+                                alt={`product-${index}`}
+                                className={currentIndex === index ? "active-thumbnail" : ""}
+                                style={{ cursor: "pointer" }}
+                                onClick={() => handleThumbnailClick(index)
+
+                                }
+                            />
+                        ))}
+                    </div>
                 </div>
-                <div className="product-img-two">
-                    <img src={imgOne} alt="product-one"/>
-                    <img src={imgTwo} alt="product-two"/>
-                    <img src={imgThree} alt="product-three"/>
-                    <img src={imgFour} alt="product-four"/>
+
+                {/* أزرار التنقل */}
+                <div className="button-icons">
+                    <FontAwesomeIcon onClick={handlePrev} className="icon-left" icon={faArrowLeft} />
+                    <FontAwesomeIcon onClick={handleNext} className="icon-right" icon={faArrowRight} />
                 </div>
             </div>
-            <div className="button-icons">
-                <FontAwesomeIcon onClick={handlePrev} className="icon-left" icon={faArrowLeft}/>
-                <FontAwesomeIcon onClick={handleNext} className="icon-right" icon={faArrowRight}/>
-            </div>
-        </div>
         </>
-    )
+    );
 }
+
 export default ProductOnlyThree;
