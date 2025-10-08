@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "./static/css/main.d2876b89.css",
+    "main.css": "./static/css/main.16a2dba2.css",
     "main.js": "./static/js/main.94424a36.js",
     "static/media/home (24).png": "./static/media/home (24).2a60b2a6558548b8d783.png",
     "static/media/home (22).png": "./static/media/home (22).bd0ae196fb1414c8638e.png",
@@ -10,11 +10,11 @@
     "static/media/logo-united-hanger.svg": "./static/media/logo-united-hanger.aeeba08ab040e198155ab6d73b501acc.svg",
     "static/media/cart-icon.svg": "./static/media/cart-icon.83b3dfa870263e692004d1137fe3a95a.svg",
     "index.html": "./index.html",
-    "main.d2876b89.css.map": "./static/css/main.d2876b89.css.map",
+    "main.16a2dba2.css.map": "./static/css/main.16a2dba2.css.map",
     "main.94424a36.js.map": "./static/js/main.94424a36.js.map"
   },
   "entrypoints": [
-    "static/css/main.d2876b89.css",
+    "static/css/main.16a2dba2.css",
     "static/js/main.94424a36.js"
   ]
 }
