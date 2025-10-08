@@ -1,24 +1,31 @@
 import "../CSS/hangerUnited.css";
 import imgBackground from "../images/home (30)_cleanup (2).png";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 
-function HangerUnited(){
-    const [Data,setData] = useState([])
+function HangerUnited() {
+    const [Data, setData] = useState([])
+
     const getAllSettings = async () => {
-        await fetch("https://united-hanger-2025.up.railway.app//api/settings",{
-            method: "GET"
-        })
-        .then(response => response.json())
-        .then(data => setData(data.settings))
-    }
+        try {
+            await fetch("https://united-hanger-2025.up.railway.app/api/settings", {
+                method: "GET"
+            })
+                .then(response => response.json())
+                .then(data => setData(data.settings));
+        } catch (error) {
+            console.error("Error Not Found Data", error);
+        }
+    };
+
+
     useEffect(() => {
         getAllSettings();
-    },[]);
+    }, []);
 
-    return(
+    return (
         <div className="hanger-United">
             <div className="background-image">
-                <img src={imgBackground} alt="img"/>
+                <img src={imgBackground} alt="img" />
             </div>
             <div className="container">
                 <div className="lorem-content">

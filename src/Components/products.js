@@ -1,13 +1,13 @@
-import ProductsHome from "./products-Home";
 import Footerproducts from "./footer-Products";
-import NewAllProducts from "./newAllProducts";
-function Products(){
-    return(
-        <>
-        <ProductsHome/>
-        <NewAllProducts/>
-        <Footerproducts/>
-        </>
+import Modules from "./Modules";
+import NavbarCategories from "./navbar-categories";
+function Products() {
+    return (
+        <div className="products-departament">
+            <NavbarCategories />
+            <Modules />
+            <Footerproducts />
+        </div>
     )
 }
 export default Products;

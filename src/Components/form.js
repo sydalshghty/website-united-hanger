@@ -3,11 +3,16 @@ import { useState, useEffect } from "react";
 function Form() {
     const [DataSettings, setDataSettings] = useState([]);
     const getAllSettings = async () => {
-        await fetch("https://united-hanger-2025.up.railway.app//api/settings", {
-            method: "GET"
-        })
-            .then(response => response.json())
-            .then(data => setDataSettings(data.settings))
+        try {
+            await fetch("https://united-hanger-2025.up.railway.app//api/settings", {
+                method: "GET"
+            })
+                .then(response => response.json())
+                .then(data => setDataSettings(data.settings))
+        }
+        catch (error) {
+            console.error("Error Not Found Data", error)
+        }
     }
     useEffect(() => {
         getAllSettings();

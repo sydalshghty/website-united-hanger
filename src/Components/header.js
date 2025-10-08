@@ -11,6 +11,7 @@ function Header() {
   const [sliders, setSliders] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
 
+
   const getAboutUs = useCallback(async () => {
     const res = await fetch(
       "https://united-hanger-2025.up.railway.app/api/settings"
@@ -44,65 +45,66 @@ function Header() {
   };
 
   return (
-    <div className="header">
-      <div className="container">
-        <div className="text-content">
-          {sliders.length > 0 && (
-            <>
-              <p className="p-one">{sliders[activeIndex].title}</p>
-              <div className="paragraphs">
-                <p>{sliders[activeIndex].description}</p>
-              </div>
-            </>
-          )}
-        </div>
-        <div className="icons">
-          <FontAwesomeIcon
-            onClick={handlePrev}
-            id="icon-left"
-            className={`icon-left ${activeIndex === 0 ? "active" : ""}`}
-            icon={faArrowLeft}
-          />
-          <FontAwesomeIcon
-            onClick={handleNext}
-            id="icon-right"
-            className={`icon-right ${
-              activeIndex === sliders.length - 1 ? "active" : ""
-            }`}
-            icon={faArrowRight}
-          />
-        </div>
-      </div>
-      <div className="images-slider">
-        <div className="all-images">
-          {sliders.map((slide, index) => (
-            <img
-              key={index}
-              className={activeIndex === index ? "active" : ""}
-              src={slide.image_path}
-              alt={`slider-${index}`}
+    <>
+      <div className="header">
+        <div className="container">
+          <div className="text-content">
+            {sliders.length > 0 && (
+              <>
+                <p className="p-one">{sliders[activeIndex].title}</p>
+                <div className="paragraphs">
+                  <p>{sliders[activeIndex].description}</p>
+                </div>
+              </>
+            )}
+          </div>
+          <div className="icons">
+            <FontAwesomeIcon
+              onClick={handlePrev}
+              id="icon-left"
+              className={`icon-left ${activeIndex === 0 ? "active" : ""}`}
+              icon={faArrowLeft}
             />
-          ))}
+            <FontAwesomeIcon
+              onClick={handleNext}
+              id="icon-right"
+              className={`icon-right ${activeIndex === sliders.length - 1 ? "active" : ""
+                }`}
+              icon={faArrowRight}
+            />
+          </div>
         </div>
-      </div>
-      <div className="about-us">
-        <div className="about-content">
-          <h3>about us ?</h3>
-          <div className="p-one-content">
+        <div className="images-slider">
+          <div className="all-images">
+            {sliders.map((slide, index) => (
+              <img
+                key={index}
+                className={activeIndex === index ? "active" : ""}
+                src={slide.image_path}
+                alt={`slider-${index}`}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="about-us">
+          <div className="about-content">
+            <h3>about us ?</h3>
+            <div className="p-one-content">
+              <p style={{ letterSpacing: "0.5px" }}>{aboutus}</p>
+            </div>
+          </div>
+          <div className="img-about">
+            <img src={imgHome23} alt="img-about" />
+          </div>
+        </div>
+        <div className="about-mobile">
+          <div className="container">
+            <h3>about us ?</h3>
             <p style={{ letterSpacing: "0.5px" }}>{aboutus}</p>
           </div>
         </div>
-        <div className="img-about">
-          <img src={imgHome23} alt="img-about" />
-        </div>
       </div>
-      <div className="about-mobile">
-        <div className="container">
-          <h3>about us ?</h3>
-          <p style={{ letterSpacing: "0.5px" }}>{aboutus}</p>
-        </div>
-      </div>
-    </div>
+    </>
   );
 }
 

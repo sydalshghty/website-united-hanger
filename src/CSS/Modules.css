@@ -1,0 +1,117 @@
+.Modules-departament{
+    margin-top: 60px;
+    margin-bottom: 60px;
+    width: 100%;
+    height: 100%;
+}
+.Modules-departament .container{
+    width: 100%;
+    height: 100%;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+.Modules-departament .container .all-modules{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.Modules-departament .container .all-modules .col-product{
+    width: 295px;
+    height: fit-content;
+    height: 500px;
+    border: 1px solid #BDBDBD;
+    border-radius: 16px;
+    background-color: white;
+    margin-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+}
+.img-product{
+    width: 263px;
+    height: 263px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+.img-product img{
+    width: 263px;
+    height: 263px;
+}
+.col-cart{
+    width: 100%;
+    text-align: end;
+    margin-bottom: 8px;
+}
+.col-cart img{
+    cursor: pointer;
+    padding: 16px;
+}
+.content-information{
+    background-color: #E4E4E4;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 145px;
+    padding: 16px;
+    padding-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.p-title{
+    font-size: 24px;
+    font-weight: 400;
+    color: #57595B;
+}
+.all-colors{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.all-colors li{
+    width: 24px;
+    height: 24px;
+    border-radius: 50px;
+    list-style-type: none;
+}
+.all-material-product{
+    width: 100%;
+    display: flex;
+    gap: 8px;
+}
+.col-material{
+    width: 55px;
+    height: 24px;
+    border: 1px solid #0673B7;
+    border-radius: 12px;
+    padding: 4px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    color: #0673B7;
+}
+@media (max-width: 800px){
+    .Modules-departament .container .all-modules{
+        justify-content: center;
+    }
+}
+@media (max-width: 550px){
+    /*.Modules-departament{
+        margin-top: 100px;
+    }*/
+}
+@media (max-width: 450px){
+    .img-product img{
+        width: 100%;
+        height: 100%;
+    }
+}
+.loading-data{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

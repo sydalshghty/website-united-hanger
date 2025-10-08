@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import Inquiryform from "./inquiry-Form";
 import { FaArrowLeft } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+
 function Inquiries() {
   const [showForm, setShowForm] = useState(false);
   const [showMaterial, setShowMaterial] = useState(false);
@@ -48,7 +49,6 @@ function Inquiries() {
   const [selectedColorId, setSelectedColorId] = useState(null);
   const [selectedMaterialId, setSelectedMaterialId] = useState(null);
 
-  
   const [showSizes, setShowSizes] = useState(false);
   const [showColors, setShowColor] = useState(false);
 
@@ -94,9 +94,9 @@ function Inquiries() {
       quantity: quantity,
       logoFile: logoFile
         ? {
-            name: logoFile.name,
-            url: URL.createObjectURL(logoFile),
-          }
+          name: logoFile.name,
+          url: URL.createObjectURL(logoFile),
+        }
         : null,
     };
 
@@ -142,7 +142,7 @@ function Inquiries() {
         <div className="col-icon-Left">
           <div>
             <Link to={"/Home"}>
-              <FaArrowLeft  className="icon"/>
+              <FaArrowLeft className="icon" />
             </Link>
           </div>
         </div>
@@ -154,9 +154,8 @@ function Inquiries() {
           {AllProducts.map((product) => (
             <p
               key={product.id}
-              className={`product-name ${
-                selectedProductId === product.id ? "active-click" : ""
-              }`}
+              className={`product-name ${selectedProductId === product.id ? "active-click" : ""
+                }`}
               onClick={() => {
                 setSelectProduct(product);
                 setSelectedProductId(product.id);
@@ -178,9 +177,9 @@ function Inquiries() {
           {SizesProduct.map((item) => (
             <div
               key={item.id}
-              className={`col-size ${
-                selectedSizeId === item.id ? "active-click" : ""
-              }`}
+              className={`col-sizes ${selectedSizeId === item.id ? "active-click" : ""
+                }`}
+              style={{ padding: "15px", color: "#afb0af" }}
               onClick={() => {
                 setSelectedSizeID(item.id);
                 setSizeProduct(`${item.value} ${item.unit}`);
@@ -203,9 +202,8 @@ function Inquiries() {
           {ColorsProduct.map((color) => (
             <div
               key={color.id}
-              className={`white content-color ${
-                selectedColorId === color.id ? "active-click" : ""
-              }`}
+              className={`white content-color ${selectedColorId === color.id ? "active-click" : ""
+                }`}
               onClick={() => {
                 setSelectedColorId(color.id);
                 setColorProduct(color.name);
@@ -305,6 +303,7 @@ function Inquiries() {
           <p disabled={loading}>{loading ? "Sending..." : "Add Inquiry"}</p>
         </div>
       </div>
+
       <div className="inquiries-Details">
         <div className="content-Details">
           <div className="heading">
@@ -360,6 +359,7 @@ function Inquiries() {
         >
           <p>send inquiry</p>
         </div>
+
         {showForm && (
           <div className="popup-overlay">
             <div className="popup-content">
@@ -367,6 +367,21 @@ function Inquiries() {
                 onClose={() => setShowForm(false)}
                 inquiriesList={inquiriesList}
                 logoFile={logoFile}
+                onSendSuccess={() => {
+                  setInquiriesList([]);
+                  setSelectProduct({});
+                  setSelectedProductId(null);
+                  setSelectedSizeID(null);
+                  setSelectedColorId(null);
+                  setSelectedMaterialId(null);
+                  setNameProduct("hanger name");
+                  setSizeProduct("size");
+                  setColorProduct("color");
+                  setMaterialProduct("raw materials");
+                  setQuantity(1);
+                  setLogoFile(null);
+                  setLogoPrint("no");
+                }}
               />
             </div>
           </div>
@@ -375,7 +390,11 @@ function Inquiries() {
     </div>
   );
 }
+
 export default Inquiries;
+
+
+
 
 
 

@@ -1,12 +1,10 @@
-import ProductOnlyOne from "./product-Only-1";
-import ProductOnlyThree from "./productOnlyThree";
+import ProductContain from "./Product-Contain";
 import FooterProductOnly from "./footer-product-only";
-function ProductOnly(){
-    return(
+function ProductOnly() {
+    return (
         <>
-        <ProductOnlyOne/>
-        <ProductOnlyThree/>
-        <FooterProductOnly/>
+            <ProductContain />
+            <FooterProductOnly />
         </>
     )
 }

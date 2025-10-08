@@ -1,100 +1,57 @@
 import "../CSS/nav.css";
-import logo from "../images/Vector Smart Object-ai (1)-svg (1).svg";
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link, useLocation } from "react-router-dom";
+import logo from "../images/logo-united-hanger.svg";
+import { Link } from "react-router-dom";
+import { IoSearch } from "react-icons/io5";
+import { FaBars } from "react-icons/fa6";
 import { useState } from "react";
-import { useEffect } from "react";
-function Nav(){
-    const [isActive, setIsActive] = useState(false);
-    const [isBars, setBars] = useState(true);
+import { FaXmark } from "react-icons/fa6";
 
-    const [colorLink,setColorLink] = useState("#ffffff");
-    const location = useLocation();
-    
-    const handleBars = () => {
-        setBars(!isBars)
-    }
+function Nav() {
+    const [shownav, setshownav] = useState(false);
+    const [bars, setbars] = useState(true);
 
-    const handleToggle = () => {
-        setIsActive( !isActive )
-    }
-
-    const handleClick = () => {
-        handleBars();
-        handleToggle();
-    }
-    useEffect(() => {
-        const updateColorLink = () => {
-            if (window.innerWidth < 768) {
-                if (location.pathname === "/home") {
-                    setColorLink("#ffffff");
-                } else {
-                    setColorLink("#ffffff");
-                }
-            } else {
-                if (location.pathname === "/home") {
-                    setColorLink("#09609a");
-                } else if (location.pathname === "/inquiries") {
-                    setColorLink("#09609a");
-                }
-                else if (location.pathname === "/products") {
-                    setColorLink("#09609a")
-                }else if (location.pathname === "/inquiry-Form"){
-                    setColorLink("#09609a")
-                }
-                 else {
-                    setColorLink("#09609a");
-                }
-            }
-        };
-    
-        updateColorLink();
-    
-        window.addEventListener('resize', updateColorLink);
-    
-        return () => {
-            window.removeEventListener('resize', updateColorLink); 
-        };
-    }, [location]);
-    
-    return(
-        <div className="nav">
-            <div className="container">
-            <div className="header-content">
-                    <div className="img-logo">
-                        <img src= {logo} alt="logo"/>
+    return (
+        <>
+            <div className="navbar-departament">
+                <div className="content-navbar">
+                    <img src={logo} alt="united-hanger" className="logo-united-hanger" />
+                    <div className="col-search">
+                        <input type="text" placeholder="Search" />
+                        <IoSearch className="search-icon" />
                     </div>
-                    <ul className= {isActive ? "active" : ""}>
+                    <ul className={`${shownav ? "show" : ""}`}>
                         <li>
-                            <Link style={{color: colorLink}} to={"/home"}>home</Link>
+                            <Link to={"home"}>home</Link>
                         </li>
                         <li>
-                            <Link style={{color: colorLink}} to={"products"}>products</Link>
+                            <Link to={"products"}>products</Link>
                         </li>
                         <li>
-                            <Link style={{color: colorLink}} to={"about"}>about</Link>
+                            <Link to={"about"}>about</Link>
                         </li>
                         <li>
-                            <Link style={{color: colorLink}} to={"contact"}>contact</Link>
+                            <Link to={"contact"}>contact</Link>
                         </li>
                         <li>
-                            <Link style={{color: colorLink}} to={"inquiries"}>inquiries</Link>
+                            <Link to={"inquiries"}>inquiries</Link>
                         </li>
                     </ul>
-                    <div className="icon-bars" onClick={handleClick}>
-                        {isBars ? (
-                            <FontAwesomeIcon icon={ faBars }/>
-                        ) :
-                        (
-                            <FontAwesomeIcon icon={ faTimes }/>
-                        )
-                        }
-                    </div>
+                    {bars ?
+                        <FaBars className="bars-icon" onClick={() => {
+                            setshownav(true);
+                            setbars(false)
+                        }} />
+                        :
+                        <FaXmark className="bars-icon"
+                            onClick={() => {
+                                setshownav(false);
+                                setbars(true)
+                            }}
+                        />
+                    }
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 export default Nav;

@@ -11,11 +11,11 @@
     display: flex;
     width: 100%;
     height: 100vh;
-    margin-top: -116px;
+   /* margin-top: -116px;*/
     position: relative;
     z-index: 500;
     font-family: Arial, Helvetica, sans-serif;
-    overflow-x: hidden !important;
+    overflow: hidden !important;
 }
 .inquiries-departemant .hanger-Name{
     width: 45%;
@@ -705,16 +705,16 @@
 @media (max-width: 992px) {
     .inquiries-departemant{
         position: relative;
-        z-index: 222222222222222222222;
+      /*  z-index: 222222222222222222222;*/
     }
     .inquiries-departemant .inquiries-Details{
         padding-bottom: 100px !important;
     }
 }
 @media (max-width: 768px) {
-    .inquiries-departemant{
+   /* .inquiries-departemant{
         margin-top: -120px;
-    }
+    }*/
     .inquiries-departemant .hanger-Name{
         padding-top: 60px;
         padding-bottom: 60px;
@@ -792,4 +792,18 @@
 }
 .col-icon-Left div .icon{
     color: #1572b5;
+}
+@media (max-width: 850px){
+    .inquiries-departemant{
+    height: fit-content;
+}
+}
+@media (max-width: 768px){
+    .inquiries-departemant{
+        margin-top: 120px;
+    }
+}
+.col-sizes{
+    border-bottom: 1px solid #afb0af;
+    cursor: pointer;
 }

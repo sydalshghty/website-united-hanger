@@ -3,8 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
-import ProductOnlyTwo from "./product-Only-2";
-
 function ProductOnlyThree() {
     const [images, setImages] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -44,7 +42,6 @@ function ProductOnlyThree() {
 
     return (
         <>
-            <ProductOnlyTwo />
             <div className="product-only-three">
                 <div className="content-products">
                     {/* الصورة الرئيسية */}

@@ -2,10 +2,12 @@ import "../CSS/inquiry-Form.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-function Inquiryform({ onClose, inquiriesList, logoFile }) {
+
+function Inquiryform({ onClose, inquiriesList, logoFile, onSendSuccess }) {
   const [clientName, setClientName] = useState("");
   const [clientEmail, setClientEmail] = useState("");
   const [clientPhone, setClientPhone] = useState("");
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -17,7 +19,7 @@ function Inquiryform({ onClose, inquiriesList, logoFile }) {
           phone: clientPhone,
         },
         inquiries: inquiriesList.map((inq) => ({
-          product_id: inq.productId, 
+          product_id: inq.productId,
           size_id: inq.sizeId,
           color_id: inq.colorId || null,
           material_id: inq.materialId,
@@ -25,10 +27,13 @@ function Inquiryform({ onClose, inquiriesList, logoFile }) {
           custom_color_code: inq.customColor || null,
         })),
       };
+
       formData.append("data", JSON.stringify(data));
+
       if (logoFile) {
         formData.append("logo_1", logoFile);
       }
+
       const response = await fetch(
         "https://united-hanger-2025.up.railway.app/api/inquiries/new",
         {
@@ -36,13 +41,16 @@ function Inquiryform({ onClose, inquiriesList, logoFile }) {
           body: formData,
         }
       );
+
       const result = await response.json();
       console.log("API Response:", result);
+
       if (response.ok) {
-        alert("Inquiry sent successfully✅");
+        alert("Inquiry sent successfully ✅");
+        if (onSendSuccess) onSendSuccess(); // ← تفريغ البيانات هنا
         onClose();
       } else {
-        alert("Error:" + (result.message || "server error"));
+        alert("Error: " + (result.message || "server error"));
       }
     } catch (error) {
       console.error("Error sending inquiry:", error);
@@ -101,4 +109,5 @@ function Inquiryform({ onClose, inquiriesList, logoFile }) {
 }
 
 export default Inquiryform;
+
 
