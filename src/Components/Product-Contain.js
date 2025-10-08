@@ -117,7 +117,7 @@ function ProductContain() {
                                 {!productData.colors ? (
                                     <h3>Loading...</h3>
                                 ) : (
-                                    <div className="content-bullets">
+                                    <div className="content-bullets-colors" style={{ display: "flex", gap: "20px" }}>
                                         {productData.colors.map((color) => (
                                             <ul key={color.id}>
                                                 <li style={{ backgroundColor: color.hex_code }}></li>

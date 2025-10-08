@@ -75,3 +75,6 @@ html {
 .products-departament{
   height: fit-content;
 }
+.footer-product-only{
+  margin-top: -600px !important;
+}
