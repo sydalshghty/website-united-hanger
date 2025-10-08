@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "./static/css/main.b5df3a13.css",
-    "main.js": "./static/js/main.d3af914a.js",
+    "main.css": "./static/css/main.a2301fc3.css",
+    "main.js": "./static/js/main.a8980712.js",
     "static/media/home (24).png": "./static/media/home (24).2a60b2a6558548b8d783.png",
     "static/media/home (22).png": "./static/media/home (22).bd0ae196fb1414c8638e.png",
-    "static/media/products (4).png": "./static/media/products (4).762f9ba90631ec2db5ed.png",
     "static/media/home (35) - Copy.png": "./static/media/home (35) - Copy.f10c6451b9585b9393ea.png",
     "static/media/home (23).png": "./static/media/home (23).360d60908eaeba9db5c3.png",
     "static/media/home (30)_cleanup (2).png": "./static/media/home (30)_cleanup (2).c46a302bb9bf1682d507.png",
-    "static/media/Vector Smart Object-ai (1)-svg (1).svg": "./static/media/Vector Smart Object-ai (1)-svg (1).6282d71172a98e8c91af9b3dae9cef2a.svg",
+    "static/media/logo-united-hanger.svg": "./static/media/logo-united-hanger.aeeba08ab040e198155ab6d73b501acc.svg",
     "static/media/cart-icon.svg": "./static/media/cart-icon.83b3dfa870263e692004d1137fe3a95a.svg",
     "index.html": "./index.html",
-    "main.b5df3a13.css.map": "./static/css/main.b5df3a13.css.map",
-    "main.d3af914a.js.map": "./static/js/main.d3af914a.js.map"
+    "static/media/right-icon.svg": "./static/media/right-icon.bd1b78315ff58caafa0a7f31b15c3578.svg",
+    "static/media/left-icon.svg": "./static/media/left-icon.c48b7eb8b5154dd8b2128c45e54892e4.svg",
+    "main.a2301fc3.css.map": "./static/css/main.a2301fc3.css.map",
+    "main.a8980712.js.map": "./static/js/main.a8980712.js.map"
   },
   "entrypoints": [
-    "static/css/main.b5df3a13.css",
-    "static/js/main.d3af914a.js"
+    "static/css/main.a2301fc3.css",
+    "static/js/main.a8980712.js"
   ]
 }
