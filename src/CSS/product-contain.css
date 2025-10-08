@@ -3,7 +3,6 @@
     height: 100%;
     padding-left: 100px;
     padding-right: 100px;
-  /*  margin-bottom: 100px;*/
 }
 @media (min-width: 1800px){
     .product-contain{
@@ -125,7 +124,7 @@
 }
 .content-bullets-colors{
     position: relative;
-    z-index: 222222222222222222222222;
+  /*  z-index: 222222222222222222222222;*/
     display: flex;
     gap: 20px;
 }
