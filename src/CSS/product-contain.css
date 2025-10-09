@@ -257,3 +257,19 @@
          margin-top: 40px;
     }
 }
+.btn-color-product{
+    cursor: pointer;
+}
+.col-size,
+.raw-material{
+    cursor: pointer;
+}
+.col-size.click,
+.raw-material.click{
+    background-color: #0673B7;
+    border: none;
+    color: white;
+}
+.raw-material{
+
+}
