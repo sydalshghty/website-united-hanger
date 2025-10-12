@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.6938a3ab.css",
-    "main.js": "./static/js/main.ac4ac089.js",
+    "main.js": "./static/js/main.9f8ec8d4.js",
     "static/media/home (24).png": "./static/media/home (24).2a60b2a6558548b8d783.png",
     "static/media/home (22).png": "./static/media/home (22).bd0ae196fb1414c8638e.png",
     "static/media/home (35) - Copy.png": "./static/media/home (35) - Copy.f10c6451b9585b9393ea.png",
@@ -9,13 +9,12 @@
     "static/media/home (30)_cleanup (2).png": "./static/media/home (30)_cleanup (2).c46a302bb9bf1682d507.png",
     "static/media/logo-united-hanger.svg": "./static/media/logo-united-hanger.81ef6064a9451e847af4df7cc0164643.svg",
     "static/media/cart-icon.svg": "./static/media/cart-icon.c1212c007dcd1f6b0d79c35fba8dbf51.svg",
-    "static/media/shopping-cart-01 (4).svg": "./static/media/shopping-cart-01 (4).eee3d3d6318f5d86e640cf6017ba5504.svg",
     "index.html": "./index.html",
     "main.6938a3ab.css.map": "./static/css/main.6938a3ab.css.map",
-    "main.ac4ac089.js.map": "./static/js/main.ac4ac089.js.map"
+    "main.9f8ec8d4.js.map": "./static/js/main.9f8ec8d4.js.map"
   },
   "entrypoints": [
     "static/css/main.6938a3ab.css",
-    "static/js/main.ac4ac089.js"
+    "static/js/main.9f8ec8d4.js"
   ]
 }
