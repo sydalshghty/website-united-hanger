@@ -1,63 +1,90 @@
+/* الشكل العام لزر واتساب */
 .col-whatsapp {
     position: fixed;
     right: 25px;
     bottom: 25px;
-    width: 60px;
-    height: 60px;
-    background-color: #25d366;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    z-index: 2000;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    animation: float 1s ease-in-out infinite;
     text-decoration: none;
+    z-index: 2000000000000000000000000000;
+    transition: all 0.3s ease;
+    animation: float 1s ease-in-out infinite;
 }
 
-.col-whatsapp .icon {
+/* زر واتساب (للديسكتوب فقط) */
+.col-whatsapp.whatsapp {
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.col-whatsapp.whatsapp .icon {
     font-size: 30px;
     color: white;
 }
 
-.col-whatsapp:hover {
+.col-whatsapp.whatsapp:hover {
     transform: scale(1.1);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* حركة خفيفة */
+/* زر الموبايل (Phone) */
+.col-whatsapp.phone {
+    background-color: #128c7e;
+    right: 15px;
+    bottom: 20px;
+    height: 50px;
+    border-radius: 30px;
+    padding: 0 15px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.col-whatsapp.phone .icon {
+    font-size: 22px;
+    color: white;
+}
+
+.phone-number {
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* حركة بسيطة */
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-6px); }
 }
-
-/* عند الموبايل */
-@media (max-width: 768px) {
-    .col-whatsapp {
-        width: auto;
-        height: 50px;
-        right: 15px;
-        bottom: 20px;
-        padding: 0 15px;
-        border-radius: 30px;
-        gap: 10px;
-        background-color: #128c7e;
-    }
-
-    .col-whatsapp.phone {
-        background-color: #128c7e;
-    }
-
-    .col-whatsapp .icon {
-        font-size: 22px;
-    }
-
-    .phone-number {
-        color: white;
-        font-size: 15px;
-        font-weight: 500;
+@media (min-width: 768px){
+    .col-whatsapp.whatsapp,
+    .col-whatsapp.phone{
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
+.col-whatsapp.phone{
+    display: none;
+}
+@media (max-width: 768px){
+    .col-whatsapp.phone{
+        display: block;
+        display: flex;
+    }
+}
+
+@media (max-width: 768px){
+    .col-whatsapp.whatsapp{
+        display: none;
+    }
+}
+
+
 

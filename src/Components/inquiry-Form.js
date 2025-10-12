@@ -47,7 +47,7 @@ function Inquiryform({ onClose, inquiriesList, logoFile, onSendSuccess }) {
 
       if (response.ok) {
         alert("Inquiry sent successfully ✅");
-        if (onSendSuccess) onSendSuccess(); // ← تفريغ البيانات هنا
+        if (onSendSuccess) onSendSuccess();
         onClose();
       } else {
         alert("Error: " + (result.message || "server error"));
