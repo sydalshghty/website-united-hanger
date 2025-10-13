@@ -91,15 +91,16 @@ function ProductContain() {
 
     const handleSelectColor = (color) => {
         setSelectedColor(color.id);
-        toast.success(` Color selected: ${color.name}`);
     };
 
     const sizeMessage = (size) => {
-        toast.success(` Size selected: ${size.value} ${size.unit}`);
+        console.log(size)
+        // toast.success(` Size selected: ${size.value} ${size.unit}`);
     }
 
     const materialMessage = (material) => {
-        toast.success(` Material Selected: ${material.name}`);
+        console.log(material)
+        // toast.success(` Material Selected: ${material.name}`);
     }
 
     return (
