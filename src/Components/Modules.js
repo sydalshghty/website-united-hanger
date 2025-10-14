@@ -2,16 +2,41 @@ import "../CSS/Modules.css";
 import cartIcon from "../images/cart-icon.svg";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import NavbarCategories from "./navbar-categories";
+
 function Modules() {
-    const [allproducts, setAllProducts] = useState([]);
+    const [allProducts, setAllProducts] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     const getAllProducts = async () => {
         try {
-            const response = await fetch("https://united-hanger-2025.up.railway.app/api/products");
+            setLoading(true);
+            const response = await fetch(
+                "https://united-hanger-2025.up.railway.app/api/v2/products/filter"
+            );
             const data = await response.json();
+            console.log("✅ All Products:", data.products);
             setAllProducts(data.products || []);
         } catch (error) {
-            console.error("Error Not Found Data", error);
+            console.error("Error fetching all products", error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const getProductsByCategory = async (categoryId) => {
+        try {
+            setLoading(true);
+            const response = await fetch(
+                `https://united-hanger-2025.up.railway.app/api/v2/products/filter?category_id=${categoryId}`
+            );
+            const data = await response.json();
+            console.log("✅ Products by Category:", data.products);
+            setAllProducts(data.products || []);
+        } catch (error) {
+            console.error("Error filtering products", error);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -19,16 +44,28 @@ function Modules() {
         getAllProducts();
     }, []);
 
+    const handleCategoryChange = (categoryId) => {
+        console.log("🟢 Selected Category ID:", categoryId);
+        if (categoryId === "all") {
+            getAllProducts();
+        } else {
+            getProductsByCategory(categoryId);
+        }
+    };
+
     return (
-        <div className="Modules-departament">
+        <div className="Modules-departament" style={{ minHeight: "60vh" }}>
+            <NavbarCategories onCategoryChange={handleCategoryChange} />
             <div className="container">
                 <div className="all-modules">
-                    {allproducts.length === 0 ? (
-                        <h1 className="loading-data">Loading Products...</h1>
+                    {loading ? (
+                        <h1 className="loading-data" style={{ height: "40vh", width: "100%", textAlign: "center", display: "flex", justifyContent: "center", alignItems: "center" }}>Loading Products...</h1>
+                    ) : allProducts.length === 0 ? (
+                        <h1 className="loading-data">No Products Found</h1>
                     ) : (
-                        allproducts.map((product) => (
-                            <Link to={`/products/${product.id}`}>
-                                <div className="col-product" key={product.id}>
+                        allProducts.map((product) => (
+                            <Link to={`/products/${product.id}`} key={product.id}>
+                                <div className="col-product">
                                     <div className="img-product">
                                         <img
                                             src={product.images?.[0]?.image_path || "/fallback.png"}
@@ -44,7 +81,7 @@ function Modules() {
                                         <div className="all-colors">
                                             {product.colors?.map((color) => (
                                                 <li
-                                                    key={color.id}
+                                                    key={`${product.id}-${color.id}`}
                                                     style={{ backgroundColor: color.hex_code }}
                                                 ></li>
                                             ))}
@@ -52,7 +89,10 @@ function Modules() {
 
                                         <div className="all-material-product">
                                             {product.materials?.map((material) => (
-                                                <p className="col-material" key={material.id}>
+                                                <p
+                                                    className="col-material"
+                                                    key={`${product.id}-${material.id}`}
+                                                >
                                                     {material.name}
                                                 </p>
                                             ))}
@@ -69,3 +109,9 @@ function Modules() {
 }
 
 export default Modules;
+
+
+
+
+
+

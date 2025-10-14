@@ -15,34 +15,67 @@
 li{
     list-style-type: none;
 }
-.all-btn{
-    width: 51px;
+.all-links-categories{
+    width: 100%;
+    display: flex !important;
+    gap: 30px;
+}
+.all-links-categories div,
+.all-links{
+    width: fit-content;
     height: 32px;
-    background-color: #0673B7;
     border-radius: 4px;
     padding: 8px 16px;
 }
-.all-btn a{
-    font-size: 16px;
+.all-links-categories div a,
+.all-links a{
+     font-size: 16px;
+    color: #0673B7;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+.all-links a{
     color: white;
-    text-decoration: none;
-    letter-spacing: 0.5px;
 }
-.btn-category{
-    width: 73px;
-    height: 32px;
-    background-color: #FFFFFF;
-    border-radius: 4px;
+.category-item {
     padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 }
-.btn-category a{
-    color: #9E9E9E;
+
+.category-item:hover {
+    background-color: #e0e0e0; 
+}
+
+.category-item.active {
+    background-color: #0673B7;
+}
+
+.category-item.active a {
+    color: #fff; 
+}
+
+.category-item a {
+    color: #0673B7;
     text-decoration: none;
-    font-size: 16px;
-    letter-spacing: 0.5px;
+}
+.navbar-categories{
+    margin-top: -30px;
+    margin-bottom: 40px;
 }
 @media (max-width: 768px){
     .navbar-categories{
         margin-top: 120px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .all-btn{
+        gap: 10px !important;
+    }
+    .all-links-categories div,
+    .all-links{
+        height: 25px !important;
+
     }
 }
