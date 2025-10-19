@@ -23,7 +23,7 @@ function ProductContain() {
         const getProductData = async () => {
             try {
                 const response = await fetch(
-                    `https://united-hanger-2025.up.railway.app/api/products/product/${ProductID}`
+                    `https://united-hanger-2025.up.railway.app/api/v2/products/product/${ProductID}`
                 );
                 const data = await response.json();
                 setProductData(data.product);
