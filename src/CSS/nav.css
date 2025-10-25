@@ -1,13 +1,16 @@
 /*Update Changes*/
 .navbar-departament{
     width: 100%;
-    height: 100%;
+   height: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .navbar-departament .content-navbar{
     width: 100%;
     height: 150px;
-    padding: 24px 100px;
+    padding: 24px 64px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -100,40 +103,91 @@ ul li a{
         display: none;
     }
 }
+.home-logo{
+    display: none;
+    width: 138px;
+    height: 100px;
+    cursor: pointer;
+}
 @media (max-width: 768px){
-    .navbar-departament .content-navbar{
+    .navbar-departament.home-nav .content-navbar{
         height: 100px;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        background-color: white;
+        background-color: #0088FF;
         z-index: 1000000;
+    }
+    .navbar-departament.scrolled .content-navbar{
+        background-color: white;
     }
     .logo-united-hanger{
         width: fit-content;
         height: 100px;
     }
     ul{
-        /*display: none;*/
         flex-direction: column;
         position: absolute;
         width: 100%;
         height: 0px;
         overflow: hidden;
         left: 0;
-        top: 100px;
-        background-color: white;
+        top: 110px;
+        background-color: #0088FF;
         transition: height 0.5s ease;
     }
     ul.show{
-        height: 350px;
+        height: 320px;
     }
     ul li{
-        border-bottom: 1px solid #0673B7;
-        padding: 20px;
+        border-bottom: 1px solid #fff;
+        padding: 10px;
+        padding-left: 30px;
+        display: flex;
+        align-items: center;
     }
-    ul li:last-child{
-        border-bottom: transparent;
+    .navbar-departament ul li a{
+        color: #fff !important;
+        height: 100%;
     }
+}
+.navbar-departament {
+  background-color: white;
+  transition: all 0.4s ease;
+}
+.navbar-departament.home-nav {
+  background-color: #0088FF;
+  box-shadow: none;
+}
+
+.navbar-departament.home-nav ul li a,
+.navbar-departament.home-nav .search-icon {
+  color: white;
+}
+.navbar-departament.home-nav .home-logo{
+    display: block;
+}
+.navbar-departament.home-nav .main-logo{
+    display: none;
+}
+.navbar-departament.home-nav .col-search{
+    border-color: white;
+}
+.navbar-departament.home-nav .col-search input{
+    background-color: transparent;
+    color: white !important;
+}
+.navbar-departament.home-nav .col-search input::placeholder{
+    color: white;
+}
+.navbar-departament.home-nav .bars-icon {
+  color: white;
+}
+.navbar-departament.scrolled {
+  background-color: white;
+}
+.navbar-departament.scrolled ul li a,
+.navbar-departament.scrolled .bars-icon {
+  color: #0673B7;
 }

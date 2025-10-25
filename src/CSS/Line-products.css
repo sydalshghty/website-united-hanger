@@ -1,0 +1,94 @@
+.line-products-departament{
+    width: 100%;
+    height: 100%;
+    background-color: #F7F8F980;
+    padding-left: 64px;
+    padding-right: 64px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    margin-bottom: 200px;
+}
+.line-products-departament h1{
+    text-align: center;
+    margin-top: 60px;
+    font-size: 40px;
+    font-weight: 700;
+    color: #0C0D0D;
+    letter-spacing: 1%;
+}
+.line-products-departament .all-line-products{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 60px;
+}
+@media (max-width: 1400px){
+    .line-products-departament .all-line-products{
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+@media (max-width: 992px){
+    .line-products-departament .all-line-products{
+        justify-content: center;
+    }
+    .line-products-departament h1{
+        font-size: 30px;
+    }
+}
+@media (max-width: 768px){
+    .line-products-departament h1{
+        font-size: 25px;
+    }
+}
+.line-products-departament .all-line-products .col-product{
+   width: 310px;
+   height: 375px;
+    background-color: #FFFFFF;
+    padding: 24px 16px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.5s ease;
+}
+.line-products-departament .all-line-products .col-product:hover{
+    background-color: #f6f6f6;
+}
+.line-products-departament .all-line-products .col-product img{
+    width: 100%;
+    height: fit-content;
+}
+.line-products-departament .all-line-products .col-product p{
+    font-size: 24px;
+    font-weight: 600;
+    color: #0C0D0D;
+    letter-spacing: 0.5px;
+}
+.line-products-departament .see-all-products{
+  /*  display: flex;
+    justify-content: flex-end;*/
+    text-align: end;
+    margin-top: 40px;
+    gap: 8px;
+}
+.line-products-departament .see-all-products div{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.line-products-departament .see-all-products a{
+    font-size: 20px;
+    font-weight: 500;
+    color: #00468B;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+.line-products-departament .see-all-products img{
+    cursor: pointer;
+}

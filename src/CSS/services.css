@@ -120,7 +120,10 @@
             .services .services-content {
                 margin-top: 95px;
             }
-        
+            .services .services-content .content-text ul{
+                position: relative;
+                z-index: 5;
+            }
             .services .services-content .content-text {
                 height: 220px;
             }
@@ -130,9 +133,6 @@
             }
     .services .img-two{
         z-index: 15;
-    }
-    .services .services-content .content-text ul{
-        display: none;
     }
     .services .services-content .content-text p{
         width: 85%;
@@ -167,4 +167,16 @@
         margin-top: 20px;
         font-size: 13px;
     }
+}
+.services li{
+    position: relative;
+}
+.services li::before{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: #ffffff;
+    left: -40px;
+    top: 50%;
 }

@@ -23,9 +23,9 @@ function HangerUnited() {
     }, []);
 
     return (
-        <div className="hanger-United">
-            <div className="background-image">
-                <img src={imgBackground} alt="img" />
+        <div className="hanger-United about-united-hanger" style={{ width: "100%", height: "100vh", position: "relative" }}>
+            <div className="background-image" style={{ position: "absolute", width: "100%", height: "100%" }}>
+                <img src={imgBackground} alt="img" style={{ width: "100%", height: "100%" }} />
             </div>
             <div className="container">
                 <div className="lorem-content">

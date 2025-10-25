@@ -1,0 +1,114 @@
+.unique-features{
+    width: 100%;
+    padding-left: 64px;
+    padding-right: 64px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    background-color: #00468B;
+}
+.unique-features h1{
+    margin-bottom: 48px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+.unique-features .all-services{
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+@media (max-width: 1400px){
+    .unique-features .all-services{
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 992px){
+    .unique-features .all-services{
+        justify-content: center;
+    }
+}
+@media (max-width: 600px){
+    .unique-features h1{
+        font-size: 35px;
+    }
+}
+@media (max-width: 520px){
+    .unique-features h1{
+        font-size: 25px;
+    }
+}
+@media (max-width: 450px){
+    .unique-features h1{
+        font-size: 20px;
+    }
+}
+.all-services .content-service{
+    position: relative;
+    min-width: 310px;
+    min-height: 450px;
+}
+.all-services .content-service .bg-service{
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+}
+.all-services .content-service .col-service-one,
+.unique-features .all-services .content-service .col-service-two{
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.unique-features .all-services .content-service .col-service-one img{
+    width: 100%;
+}
+.unique-features .all-services .content-service .col-service-one img:nth-child(1){
+    height: 100%;
+}
+.unique-features .all-services .content-service .col-service-one img:nth-child(2){
+    width: fit-content;
+    margin-top: -80px;
+    border-radius: 8px;
+}
+.unique-features .all-services .content-service .col-service-one p{
+    margin-bottom: 30px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 0.5px;
+}
+.unique-features .all-services .content-service .col-service-two{
+    top: 60px;
+    padding-left: 12px;
+    padding-right: 12px;
+    gap: 30px;
+    opacity: 0;
+}
+.unique-features .all-services .content-service .col-service-two img{
+    width: fit-content;
+    border-radius: 8px;
+}
+.unique-features .all-services .content-service .col-service-two p{
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+    text-align: center;
+    line-height: 1.2;
+}
+.all-services .content-service:hover .col-service-one,
+.all-services .content-service:hover .col-service-two{
+    transition: opacity 0.5s ease;
+}
+.all-services .content-service:hover .col-service-one{
+    opacity: 0;
+}
+.all-services .content-service:hover .col-service-two{
+    opacity: 1;
+}

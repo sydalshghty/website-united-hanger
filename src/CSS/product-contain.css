@@ -22,6 +22,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 100px;
 }
 .product-contain .container .contain-product-1{
     width: 505px;
@@ -345,4 +346,9 @@
 }
 .contain-product-1{
     margin-top: -600px;
+}
+@media (max-width: 768px){
+    .product-contain .container{
+        margin-top: 40px;
+    }
 }

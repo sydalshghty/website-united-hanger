@@ -1,0 +1,30 @@
+.slider-banners{
+    width: 100%;
+    height: 100%;
+    margin-top: 110px;
+}
+.slider-banners .slider-img{
+    width: 100%;
+    height: 100%;
+}
+.swiper-pagination-bullet {
+  background: #ddd !important; 
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  width: 16px !important;
+  height: 16px !important;
+  margin-bottom: 10px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #FFFFFF !important;
+  opacity: 1;
+}
+.col-images {
+  width: 100%;
+  height: 100%;
+}
+.slider-img {
+  width: 100%;
+  height: 100%;
+}
