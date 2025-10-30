@@ -3,6 +3,8 @@
     height: 100%;
     padding-left: 100px;
     padding-right: 100px;
+    background-color: #f6f6f6;
+    padding-bottom: 100px;
 }
 @media (min-width: 1800px){
     .product-contain{

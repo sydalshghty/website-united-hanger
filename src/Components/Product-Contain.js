@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { FaAngleLeft } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa6";
-//import shopCart from "../images/shopping-cart-01 (4).svg";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { BsCart2 } from "react-icons/bs";
@@ -95,12 +94,10 @@ function ProductContain() {
 
     const sizeMessage = (size) => {
         console.log(size)
-        // toast.success(` Size selected: ${size.value} ${size.unit}`);
     }
 
     const materialMessage = (material) => {
         console.log(material)
-        // toast.success(` Material Selected: ${material.name}`);
     }
 
     return (
@@ -146,13 +143,13 @@ function ProductContain() {
                                 <p>Colors</p>
                                 <div className="content-bullets-colors" style={{ display: "flex", gap: "20px" }}>
                                     {productData.colors.map((color) => (
-                                        <ul key={color.id}>
-                                            <li
-                                                style={{ backgroundColor: color.hex_code }}
+                                        <div key={color.id}>
+                                            <span
+                                                style={{ backgroundColor: color.hex_code, width: "35px", height: "35px", display: "block" }}
                                                 className={`btn-color-product ${selectedColor === color.id ? "click" : ""}`}
                                                 onClick={() => handleSelectColor(color)}
-                                            ></li>
-                                        </ul>
+                                            ></span>
+                                        </div>
                                     ))}
                                 </div>
 
@@ -201,7 +198,9 @@ function ProductContain() {
                     </div>
                 </div>
             )}
-            <ToastContainer position="top-right" autoClose={3000} />
+            <div>
+                <ToastContainer position="top-right" autoClose={3000} style={{ marginTop: "100px" }} />
+            </div>
         </>
     );
 }

@@ -1,0 +1,131 @@
+.hangers-products{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-left: 64px;
+    padding-right: 64px;
+    padding-bottom: 150px;
+    width: 100%;
+    min-height: 100%;
+    background-color: #00468B;
+}
+.hangers-products h1{
+    padding-top: 80px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+}
+@media (max-width: 768px){
+    .hangers-products h1{
+        font-size: 27px;
+    }
+}
+.hangers-products .all-products{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 60px;
+}
+.hangers-products .all-products .col-product{
+    position: relative;
+    width: 320px !important;
+    height: 480px !important;
+    cursor: pointer;
+}
+.hangers-products .all-products .col-product .bg-product{
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+}
+.hangers-products .all-products .col-product .information-product{
+    position: absolute;
+    z-index: 1;
+}
+.hangers-products .all-products .col-product .information-product .col-image{
+    width: 100%;
+    height: 200px;
+    margin-top: 40px;
+}
+.hangers-products .all-products .col-product .information-product div img{
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hangers-products .all-products .col-product .information-product .content-text{
+    padding: 16px;
+    height: 100%;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: absolute;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    display: flex;
+    justify-content: center;
+    margin-top: -30px;
+}
+.hangers-products .all-products .col-product .information-product  div{
+    width: 100%;
+}
+.hangers-products .all-products .col-product .information-product .content-text p{
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+}
+.hangers-products .all-products .col-product .information-product .content-text ul{
+    display: flex;
+    gap: 8px;
+}
+.hangers-products .all-products .col-product .information-product .content-text div span{
+    width: 24px;
+    height: 24px;
+    border-radius: 50px;
+    background-color: #1A954E;
+    cursor: pointer;
+}
+.hangers-products .all-products .col-product .information-product .content-text .all-hangers-materials{
+    display: flex;
+    gap: 8px;
+}
+.hangers-products .all-products .col-product .information-product .content-text .all-hangers-materials .col-hangers-material{
+    width: 55px;
+    height: 24px;
+    border: 1px solid #FFFFFF;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+.col-cart{
+    display: flex;
+    justify-content: end;
+    padding: 16px;
+    opacity: 0;
+     transition: opacity 0.5s ease;
+}
+.col-cart .cart-icon-product,
+.all-btns img{
+   max-width: fit-content; 
+   cursor: pointer;
+}
+.all-btns{
+    display: flex;
+    margin-top: 15px;
+    width: 100%;
+    justify-content: space-between;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.hangers-products .all-products .col-product:hover .col-cart{
+    opacity: 1;
+}
+
+

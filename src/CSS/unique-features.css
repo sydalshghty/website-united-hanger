@@ -16,9 +16,9 @@
 .unique-features .all-services{
     display: flex;
     justify-content: center;
-    gap: 24px;
+    gap: 60px;
 }
-@media (max-width: 1400px){
+@media (max-width: 1550px){
     .unique-features .all-services{
         justify-content: space-between;
         flex-wrap: wrap;
@@ -46,8 +46,8 @@
 }
 .all-services .content-service{
     position: relative;
-    min-width: 310px;
-    min-height: 450px;
+    min-width: 330px;
+    min-height: 500px;
 }
 .all-services .content-service .bg-service{
     position: absolute;
@@ -69,6 +69,7 @@
 }
 .unique-features .all-services .content-service .col-service-one img:nth-child(1){
     height: 100%;
+    width: 100%;
 }
 .unique-features .all-services .content-service .col-service-one img:nth-child(2){
     width: fit-content;

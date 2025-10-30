@@ -322,9 +322,9 @@ function Inquiries() {
           />
         </div>
 
-        <div className="col-logo">
+        <div className="col-logo" style={{ marginLeft: "-100px" }}>
           <h3>logo printing: {logoPrint}</h3>
-          <div className="col-Yes-and-No">
+          <div className="col-Yes-and-No" style={{ display: "flex", gap: "40px" }}>
             <div className="no">
               <p
                 className={`icon ${logoPrint === "no" ? "click-no" : ""}`}
@@ -357,7 +357,6 @@ function Inquiries() {
             )}
           </div>
         </div>
-
         <div
           className="add-inquiry"
           onClick={() => {
@@ -368,7 +367,6 @@ function Inquiries() {
           <p disabled={loading}>{loading ? "Sending..." : "Add Inquiry"}</p>
         </div>
       </div>
-
       <div className="inquiries-Details">
         <div className="content-Details">
           <div className="heading">
@@ -428,7 +426,6 @@ function Inquiries() {
           )}
 
         </div>
-
         <div
           className="send-inquiry"
           onClick={() => setShowForm(true)}
@@ -436,7 +433,6 @@ function Inquiries() {
         >
           <p>send inquiry</p>
         </div>
-
         {showForm && (
           <div className="popup-overlay">
             <div className="popup-content">

@@ -5,6 +5,7 @@ import bottomhangers from "../images/bottom-Hangers (2).svg";
 import blankethangers from "../images/blanket-Hangers.svg";
 import babywearhangers from "../images/babywear-Hangers (2).svg";
 import "../CSS/Line-products.css";
+
 function LineProducts() {
     const allproducts = [
         { id: 1, img: tophangers, title: "Top Hangers" },
@@ -12,7 +13,6 @@ function LineProducts() {
         { id: 3, img: blankethangers, title: "Blanket Hangers" },
         { id: 4, img: babywearhangers, title: "Babywear Hangers" }
     ]
-
 
     return (
         <div className="line-products-departament">

@@ -1,10 +1,10 @@
 import ProductContain from "./Product-Contain";
-import FooterProductOnly from "./footer-product-only";
+import NewFooter from "./new-footer";
 function ProductOnly() {
     return (
         <>
             <ProductContain />
-            <FooterProductOnly />
+            <NewFooter />
         </>
     )
 }

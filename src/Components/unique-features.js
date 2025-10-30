@@ -1,68 +1,51 @@
-import serviceImg from "../images/img-service.png";
-import iconImg from "../images/icon-service (3).svg";
 import bgService from "../images/Rectangle 39329 (2).png";
 import "../CSS/unique-features.css";
+import { useState, useEffect } from "react";
 function UniqueFeatures() {
+    const [services, setServices] = useState([]);
+    const getAllServices = async () => {
+        try {
+            await fetch(`https://united-hanger-2025.up.railway.app/api/services/get_all`, {
+                method: "GET"
+            })
+                .then((response) => response.json())
+                .then(data => setServices(data.services))
+        }
+        catch (error) {
+            console.error("Error not found data", error)
+        }
+    }
+    useEffect(() => {
+        getAllServices();
+    }, [])
+    console.log(services);
+
     return (
         <div className="unique-features">
             <h1>Our Unique Features</h1>
             <div className="all-services">
-                <div className="content-service">
-                    <img src={bgService} alt="bg-service" className="bg-service" />
-                    <div className="col-service-one">
-                        <img src={serviceImg} alt="img-service" />
-                        <img src={iconImg} alt="img-icon" />
-                        <p>Customized Logo Printing</p>
-                    </div>
-                    <div className="col-service-two">
-                        <img src={iconImg} alt="img-icon" />
-                        <p>Elevate your brand with precision logo printing in one
-                            or two colors. Our advanced printing technology ensures crisp,
-                            durable branding directly on the hanger a professional touch your customers will remember.</p>
-                    </div>
-                </div>
-                <div className="content-service">
-                    <img src={bgService} alt="bg-service" className="bg-service" />
-                    <div className="col-service-one">
-                        <img src={serviceImg} alt="img-service" />
-                        <img src={iconImg} alt="img-icon" />
-                        <p>Customized Logo Printing</p>
-                    </div>
-                    <div className="col-service-two">
-                        <img src={iconImg} alt="img-icon" />
-                        <p>Elevate your brand with precision logo printing in one
-                            or two colors. Our advanced printing technology ensures crisp,
-                            durable branding directly on the hanger a professional touch your customers will remember.</p>
-                    </div>
-                </div>
-                <div className="content-service">
-                    <img src={bgService} alt="bg-service" className="bg-service" />
-                    <div className="col-service-one">
-                        <img src={serviceImg} alt="img-service" />
-                        <img src={iconImg} alt="img-icon" />
-                        <p>Customized Logo Printing</p>
-                    </div>
-                    <div className="col-service-two">
-                        <img src={iconImg} alt="img-icon" />
-                        <p>Elevate your brand with precision logo printing in one
-                            or two colors. Our advanced printing technology ensures crisp,
-                            durable branding directly on the hanger a professional touch your customers will remember.</p>
-                    </div>
-                </div>
-                <div className="content-service">
-                    <img src={bgService} alt="bg-service" className="bg-service" />
-                    <div className="col-service-one">
-                        <img src={serviceImg} alt="img-service" />
-                        <img src={iconImg} alt="img-icon" />
-                        <p>Customized Logo Printing</p>
-                    </div>
-                    <div className="col-service-two">
-                        <img src={iconImg} alt="img-icon" />
-                        <p>Elevate your brand with precision logo printing in one
-                            or two colors. Our advanced printing technology ensures crisp,
-                            durable branding directly on the hanger a professional touch your customers will remember.</p>
-                    </div>
-                </div>
+                {!services ?
+                    ""
+                    :
+                    <>
+                        {services.map((service, index) => {
+                            return (
+                                <div className="content-service" key={service.id}>
+                                    <img src={bgService} alt="bg-service" className="bg-service" />
+                                    <div className="col-service-one">
+                                        <img src={service.image_path} alt="img-service" style={{ marginBottom: "20px" }} />
+                                        <img src={service.icon_image_path} alt="img-icon" />
+                                        <p>{service.title}</p>
+                                    </div>
+                                    <div className="col-service-two">
+                                        <img src={service.icon_image_path} alt="img-icon" />
+                                        <p>{service.description}</p>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </>
+                }
             </div>
         </div>
     )
