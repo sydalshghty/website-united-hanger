@@ -3,7 +3,7 @@
     padding-left: 64px;
     padding-right: 64px;
     padding-top: 48px;
-    padding-bottom: 48px;
+    padding-bottom: 100px;
     background-color: #00468B;
 }
 .unique-features h1{
@@ -18,36 +18,11 @@
     justify-content: center;
     gap: 60px;
 }
-@media (max-width: 1550px){
-    .unique-features .all-services{
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-}
-@media (max-width: 992px){
-    .unique-features .all-services{
-        justify-content: center;
-    }
-}
-@media (max-width: 600px){
-    .unique-features h1{
-        font-size: 35px;
-    }
-}
-@media (max-width: 520px){
-    .unique-features h1{
-        font-size: 25px;
-    }
-}
-@media (max-width: 450px){
-    .unique-features h1{
-        font-size: 20px;
-    }
-}
 .all-services .content-service{
     position: relative;
-    min-width: 330px;
-    min-height: 500px;
+    min-width: 310px;
+    min-height: 400px;
+    margin-bottom: 20px;
 }
 .all-services .content-service .bg-service{
     position: absolute;
@@ -70,10 +45,11 @@
 .unique-features .all-services .content-service .col-service-one img:nth-child(1){
     height: 100%;
     width: 100%;
+    margin-top: -15px;
 }
 .unique-features .all-services .content-service .col-service-one img:nth-child(2){
     width: fit-content;
-    margin-top: -80px;
+    margin-top: -100px;
     border-radius: 8px;
 }
 .unique-features .all-services .content-service .col-service-one p{
@@ -113,3 +89,35 @@
 .all-services .content-service:hover .col-service-two{
     opacity: 1;
 }
+@media (max-width: 1550px){
+    .unique-features .all-services{
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 992px){
+    .unique-features .all-services{
+        justify-content: center;
+    }
+}
+@media (max-width: 600px){
+    .unique-features h1{
+        font-size: 35px;
+    }
+}
+@media (max-width: 520px){
+    .unique-features h1{
+        font-size: 25px;
+    }
+}
+@media (max-width: 450px){
+    .unique-features h1{
+        font-size: 20px;
+    }
+}
+/*@media (max-width: 768px){
+    .all-services .content-service{
+        width: 250px !important;
+        height: 400px !important;
+    }
+}*/

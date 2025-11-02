@@ -166,3 +166,13 @@
         margin-bottom: 20px;
     }
  }
+ @media (max-width: 768px){
+    .new-footer-departament{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .div-one,
+    .col-logo{
+        width: 98%;
+    }
+ }

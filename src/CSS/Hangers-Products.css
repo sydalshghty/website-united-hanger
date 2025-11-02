@@ -127,5 +127,17 @@
 .hangers-products .all-products .col-product:hover .col-cart{
     opacity: 1;
 }
+@media (max-width: 768px){
+    .hangers-products{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+@media (max-width: 600px){
+    .hangers-products h1{
+        font-size: 25px;
+    }
+
+}
 
 

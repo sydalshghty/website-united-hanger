@@ -111,3 +111,19 @@
         height: 300px;
     }
 }
+@media (max-width: 768px){
+    .ourfactory-update-departament .container .content-information-ourfactory h1{
+        font-size: 25px;
+    }
+    .ourfactory-update-departament .container .content-information-ourfactory p{
+        font-size: 15px;
+    }
+    .ourfactory-update-departament{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .ourfactory-update-departament .container .content-information-ourfactory button{
+        height: 40px;
+        font-size: 15px;
+    }
+}

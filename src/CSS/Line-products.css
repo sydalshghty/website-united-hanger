@@ -91,3 +91,24 @@
 .line-products-departament .see-all-products img{
     cursor: pointer;
 }
+@media (max-width: 768px){
+    .line-products-departament{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+@media (max-width: 600px){
+    .line-products-departament h1{
+        font-size: 20px;
+    }
+    .line-products-departament .all-line-products .col-product{
+        width: 100% !important;
+        height: 300px !important;
+    }
+    .line-products-departament .all-line-products .col-product p{
+        font-size: 20px;
+    }
+    .line-products-departament .all-line-products .col-product img{
+        height: 180px;
+    }
+}
