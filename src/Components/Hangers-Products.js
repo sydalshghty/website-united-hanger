@@ -46,7 +46,7 @@ function HangersProducts() {
                     spaceBetween={20}
                     slidesPerView={5}
                     autoplay={{
-                        delay: 2000,
+                        delay: 800,
                         pauseOnMouseEnter: true,
                         disableOnInteraction: false,
                     }}
