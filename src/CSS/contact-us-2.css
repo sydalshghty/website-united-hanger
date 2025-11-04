@@ -1,0 +1,26 @@
+.contact-us-2{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 40px 64px;
+    height: 100%;
+    justify-content: space-between;
+    gap: 100px;
+}
+@media (max-width: 1800px){
+    .contact-us-2{
+        gap: 40px;
+    }
+}
+@media (max-width: 1500px){
+    .contact-us-2{
+        padding-left: 20px;
+    }
+}
+@media (max-width: 992px){
+    .contact-us-2{
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+}

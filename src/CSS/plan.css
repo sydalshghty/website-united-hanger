@@ -4,10 +4,7 @@
 }
 .plan-content{
     position: relative;
-    width: calc(100% - 120px);
-    margin-left: 120px;
-    height: 700px;
-    margin-top: 110px;
+    width: 100%;
 }
 .plan-content .container-Map{
     position: absolute;
@@ -16,39 +13,12 @@
 }
 @media (max-width: 992px){
     .plan-content{
-        margin-left: 0;
         width: 100%;
         height: 500px;
     }
 }
 @media (max-width: 520px){
     .plan-content{
-        height: 400px;
-    }
-}
-.plan-content .text-content{
-    position: absolute;
-    z-index: 1;
-    background-color: var(--background);
-    color: var(--color-text);
-    font-family: Arial, Helvetica, sans-serif;
-    bottom: 0;
-    width: 300px;
-    height: 160px;
-    padding: 40px;
-}
-.plan-content .text-content h2:nth-child(1){
-    text-transform: uppercase;
-    font-size: 25px;
-    font-weight: 200;
-    margin-bottom: 60px;
-}
-.plan-content .text-content .head{
-    font-size: 18px;      
-    font-weight: 400;
-}
-@media (max-width: 620px){
-    .plan-content .text-content{
-        display: none;
+        height: 250px;
     }
 }

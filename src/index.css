@@ -87,3 +87,9 @@ html {
   width: 100% !important;
   height: 100vh !important;
 }
+@media (max-width: 768px) {
+  .navbar-departament,
+  .content-navbar{
+    height: 80px !important;
+  }
+}
