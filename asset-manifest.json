@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "./static/css/main.aba8633b.css",
-    "main.js": "./static/js/main.ff7f88b9.js",
+    "main.css": "./static/css/main.7c1c19c9.css",
+    "main.js": "./static/js/main.e85de129.js",
     "static/media/babywear-Hangers (2).svg": "./static/media/babywear-Hangers (2).6ba0df415868d5f9a89ad55ecbf23b2d.svg",
     "static/media/Top-Hangers.svg": "./static/media/Top-Hangers.10ad599823ae5c74bd749ba38ddc20a5.svg",
     "static/media/bottom-Hangers (2).svg": "./static/media/bottom-Hangers (2).17a903b7984a2a873224d18e747013c1.svg",
-    "static/media/contact-bg-1.png": "./static/media/contact-bg-1.b71cb44dc5e973f9502e.png",
+    "static/media/contact-us-bg.jpg": "./static/media/contact-us-bg.4aee873757905c86d63f.jpg",
     "static/media/blanket-Hangers.svg": "./static/media/blanket-Hangers.0c11c36b7c9b7acca503b22981fdccdb.svg",
     "static/media/home (35) - Copy.png": "./static/media/home (35) - Copy.f10c6451b9585b9393ea.png",
     "static/media/c_Page_16 1.png": "./static/media/c_Page_16 1.8d457e2edf26e18cae8c.png",
@@ -20,11 +20,11 @@
     "static/media/chevron-right (5).svg": "./static/media/chevron-right (5).d6cf9cc18c20a880b0a124938185a264.svg",
     "static/media/right-icon-product.svg": "./static/media/right-icon-product.d331c229d9f6320d29e3853ee0153f7a.svg",
     "static/media/left-icon-product.svg": "./static/media/left-icon-product.687515e6be7c5c693e3d925808b48f34.svg",
-    "main.aba8633b.css.map": "./static/css/main.aba8633b.css.map",
-    "main.ff7f88b9.js.map": "./static/js/main.ff7f88b9.js.map"
+    "main.7c1c19c9.css.map": "./static/css/main.7c1c19c9.css.map",
+    "main.e85de129.js.map": "./static/js/main.e85de129.js.map"
   },
   "entrypoints": [
-    "static/css/main.aba8633b.css",
-    "static/js/main.ff7f88b9.js"
+    "static/css/main.7c1c19c9.css",
+    "static/js/main.e85de129.js"
   ]
 }
