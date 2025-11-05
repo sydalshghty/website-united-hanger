@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import Inquiryform from "./inquiry-Form";
 import { FaArrowLeft } from "react-icons/fa6";
 import { Link, useLocation } from "react-router-dom";
-
+import { CgUnavailable } from "react-icons/cg";
 function Inquiries() {
   const location = useLocation();
   const orderDetails = location.state;
@@ -251,6 +251,7 @@ function Inquiries() {
           ))}
         </div>
 
+        {/* === Colors Section === */}
         <div className="col-Color" onClick={toggleColors}>
           <div className="color">
             <h3>{colorProduct}</h3>
@@ -259,24 +260,71 @@ function Inquiries() {
         </div>
 
         <div className={`all-colors-product ${showColors ? "show" : ""}`}>
-          {ColorsProduct.map((color) => (
-            <div
-              key={color.id}
-              className={`white content-color ${selectedColorId === color.id ? "active-click" : ""}`}
-              onClick={() => {
-                setSelectedColorId(color.id);
-                setColorProduct(color.name);
-                setShowColor(false);
-              }}
-            >
-              <p className="paragraph color-name">{color.name}</p>
-              <p
-                className="icon icon-color"
-                style={{ backgroundColor: color.hex_code }}
-              ></p>
-            </div>
-          ))}
+          {(() => {
+            if (!selectProduct.id) {
+              return <p style={{ padding: "10px", color: "#999" }}>Please select a product first</p>;
+            }
+
+            const selectedMaterial = MaterialsProduct.find(
+              (m) => m.id === selectedMaterialId
+            );
+
+            // ✅ لو الخامة لا تدعم الألوان (no_color = true)
+            if (selectedMaterial && selectedMaterial.no_color) {
+              return (
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    padding: "10px",
+                    color: "#777",
+                  }}
+                >
+                  <CgUnavailable style={{ color: "#ff4d4f", fontSize: "18px" }} />
+                  <p>This material does not support colors.</p>
+                </div>
+              );
+            }
+
+            // ✅ لو الخامة تدعم الألوان، نعرضها بشكل طبيعي
+            let availableColors = ColorsProduct;
+
+            if (selectedMaterial && selectedMaterial.colors) {
+              availableColors = ColorsProduct.filter((color) =>
+                selectedMaterial.colors.some((c) => c.id === color.id)
+              );
+            }
+
+            if (availableColors.length === 0) {
+              return (
+                <p style={{ padding: "10px", color: "#999" }}>
+                  No colors available for this material
+                </p>
+              );
+            }
+
+            return availableColors.map((color) => (
+              <div
+                key={color.id}
+                className={`white content-color ${selectedColorId === color.id ? "active-click" : ""
+                  }`}
+                onClick={() => {
+                  setSelectedColorId(color.id);
+                  setColorProduct(color.name);
+                  setShowColor(false);
+                }}
+              >
+                <p className="paragraph color-name">{color.name}</p>
+                <p
+                  className="icon icon-color"
+                  style={{ backgroundColor: color.hex_code }}
+                ></p>
+              </div>
+            ));
+          })()}
         </div>
+
 
         <div className="col-materials" onClick={toggleMaterials}>
           <div>
@@ -322,7 +370,7 @@ function Inquiries() {
           />
         </div>
 
-        <div className="col-logo" style={{ marginLeft: "-100px" }}>
+        <div className="col-logo">
           <h3>logo printing: {logoPrint}</h3>
           <div className="col-Yes-and-No" style={{ display: "flex", gap: "40px" }}>
             <div className="no">

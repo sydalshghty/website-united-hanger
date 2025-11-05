@@ -52,6 +52,7 @@ function Modules() {
             getProductsByCategory(categoryId);
         }
     };
+    console.log(allProducts);
 
     return (
         <div className="Modules-departament" style={{ minHeight: "60vh" }}>

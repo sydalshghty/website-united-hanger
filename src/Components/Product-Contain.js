@@ -1,11 +1,11 @@
 import "../CSS/product-contain.css";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { FaAngleLeft } from "react-icons/fa6";
-import { FaChevronRight } from "react-icons/fa6";
+import { FaAngleLeft, FaChevronRight } from "react-icons/fa6";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { BsCart2 } from "react-icons/bs";
+import { CgUnavailable } from "react-icons/cg";
 
 function ProductContain() {
     const navigate = useNavigate();
@@ -17,6 +17,7 @@ function ProductContain() {
     const [selectedSize, setSelectedSize] = useState(null);
     const [selectedMaterial, setSelectedMaterial] = useState(null);
     const [selectedColor, setSelectedColor] = useState(null);
+    const [showColors, setShowColors] = useState(true);
 
     useEffect(() => {
         const getProductData = async () => {
@@ -64,9 +65,35 @@ function ProductContain() {
         }, 200);
     };
 
+    const handleSelectColor = (color) => {
+        setSelectedColor(color.id);
+    };
+
+    const handleSelectMaterial = (material) => {
+        setSelectedMaterial(material.id);
+        if (material.no_color) {
+            setShowColors(false);
+            setSelectedColor(null);
+        } else {
+            setShowColors(true);
+        }
+
+        console.log("✅ Selected Material:", material);
+    };
+
     const handleOrderNow = () => {
-        if (!selectedColor && !selectedSize && !selectedMaterial) {
-            toast.error("Please select product details before adding to cart");
+        if (!selectedMaterial) {
+            toast.error("Please select a material");
+            return;
+        }
+
+        if (showColors && !selectedColor) {
+            toast.error("Please select a color");
+            return;
+        }
+
+        if (!selectedSize) {
+            toast.error("Please select a size");
             return;
         }
 
@@ -77,7 +104,7 @@ function ProductContain() {
         const selectedData = {
             productName: productData.name,
             image: productData.main_image || productData.images[0]?.image_path,
-            color: selectedColorObj ? selectedColorObj.name : null,
+            color: selectedColorObj ? selectedColorObj.name : "No Color",
             size: selectedSizeObj ? `${selectedSizeObj.value} ${selectedSizeObj.unit}` : null,
             material: selectedMaterialObj ? selectedMaterialObj.name : null,
             product: productData,
@@ -87,23 +114,10 @@ function ProductContain() {
         navigate("/inquiries", { state: selectedData });
     };
 
-
-    const handleSelectColor = (color) => {
-        setSelectedColor(color.id);
-    };
-
-    const sizeMessage = (size) => {
-        console.log(size)
-    }
-
-    const materialMessage = (material) => {
-        console.log(material)
-    }
-
     return (
         <>
             {!productData ? (
-                <h1 className="loading-data">Loading Data...</h1>
+                <h1 className="loading-data" style={{ fontSize: "35px", color: "#BDBDBD", height: "65vh", width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>Loading Product Data...</h1>
             ) : (
                 <div className="product-contain">
                     <div className="container">
@@ -138,22 +152,56 @@ function ProductContain() {
                                 ))}
                             </div>
                         </div>
+
                         <div className="product-information" id="product-information">
                             <div className="all-colors" id="all-colors-product">
                                 <p>Colors</p>
-                                <div className="content-bullets-colors" style={{ display: "flex", gap: "20px" }}>
-                                    {productData.colors.map((color) => (
-                                        <div key={color.id}>
-                                            <span
-                                                style={{ backgroundColor: color.hex_code, width: "35px", height: "35px", display: "block" }}
-                                                className={`btn-color-product ${selectedColor === color.id ? "click" : ""}`}
-                                                onClick={() => handleSelectColor(color)}
-                                            ></span>
-                                        </div>
-                                    ))}
-                                </div>
 
+                                {showColors ? (
+                                    <div
+                                        className="content-bullets-colors"
+                                        style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}
+                                    >
+                                        {productData.colors.map((color) => (
+                                            <div key={color.id}>
+                                                <span
+                                                    style={{
+                                                        backgroundColor: color.hex_code,
+                                                        width: "35px",
+                                                        height: "35px",
+                                                        display: "block",
+                                                        borderRadius: "50%",
+                                                        border: "1px solid #ccc",
+                                                        cursor: "pointer",
+                                                    }}
+                                                    className={`btn-color-product ${selectedColor === color.id ? "click" : ""
+                                                        }`}
+                                                    onClick={() => handleSelectColor(color)}
+                                                ></span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <div
+                                        className="no-colors-message"
+                                        style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            gap: "8px",
+                                            marginTop: "10px",
+                                            color: "#777",
+                                            fontSize: "15px",
+                                            background: "#f7f7f7",
+                                            borderRadius: "8px",
+                                            width: "fit-content",
+                                        }}
+                                    >
+                                        <CgUnavailable style={{ color: "#ff4d4f", fontSize: "40px" }} />
+                                        <p style={{ margin: 0, fontSize: "17px" }}>This material does not support colors.</p>
+                                    </div>
+                                )}
                             </div>
+
                             <div className="all-Sizes">
                                 <p className="title-sizes">Sizes</p>
                                 <div className="content-sizes">
@@ -161,13 +209,9 @@ function ProductContain() {
                                         <div
                                             key={size.id}
                                             className={`col-size ${selectedSize === size.id ? "click" : ""}`}
-                                            onClick={() =>
-                                                setSelectedSize(size.id)
-                                            }
+                                            onClick={() => setSelectedSize(size.id)}
                                         >
-                                            <p onClick={() => {
-                                                sizeMessage(size);
-                                            }}>{size.value}</p>
+                                            <p>{size.value}</p>
                                         </div>
                                     ))}
                                 </div>
@@ -180,11 +224,9 @@ function ProductContain() {
                                         <div
                                             key={material.id}
                                             className={`raw-material ${selectedMaterial === material.id ? "click" : ""}`}
-                                            onClick={() => setSelectedMaterial(material.id)}
+                                            onClick={() => handleSelectMaterial(material)}
                                         >
-                                            <p onClick={() => {
-                                                materialMessage(material);
-                                            }}>{material.name}</p>
+                                            <p>{material.name}</p>
                                         </div>
                                     ))}
                                 </div>
@@ -192,18 +234,22 @@ function ProductContain() {
 
                             <div className="col-addTocart" onClick={handleOrderNow}>
                                 <BsCart2 style={{ fontSize: "25px", color: "#fff" }} />
-                                <p>add to cart</p>
+                                <p>Add to cart</p>
                             </div>
                         </div>
                     </div>
                 </div>
             )}
-            <div>
-                <ToastContainer position="top-right" autoClose={3000} style={{ marginTop: "100px" }} />
-            </div>
+            <ToastContainer position="top-right" autoClose={3000} style={{ marginTop: "100px" }} />
         </>
     );
 }
 
 export default ProductContain;
+
+
+
+
+
+
 
