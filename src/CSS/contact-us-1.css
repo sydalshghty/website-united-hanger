@@ -7,8 +7,19 @@
     width: 100%;
     height: 100%;
 }
-@media (max-width: 768px){
+@media (max-width: 992px){
     .contact-us-1{
         margin-top: 80px;
+    }
+    .title-contact-us{
+        font-size: 45px !important;
+    }
+}
+@media (max-width: 520px){
+    .contact-us-1-content{
+        top: 35% !important;
+    }
+    .title-contact-us{
+        font-size: 30px !important;
     }
 }
