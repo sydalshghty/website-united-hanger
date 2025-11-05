@@ -12,7 +12,6 @@ function WhatsApp() {
                 aria-label="Call us"
             >
                 <FaPhoneAlt className="icon" />
-                <span className="phone-number">+20 111 434 6777</span>
             </a>
             <a
                 href={`https://wa.me/${phoneNumber}`}
