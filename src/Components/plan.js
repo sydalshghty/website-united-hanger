@@ -36,7 +36,7 @@ function Plan() {
                     <GoogleMap
                         mapContainerStyle={containerStyle}
                         center={center}
-                        zoom={4.5}
+                        zoom={3.8}
                         options={{
                             zoomControl: true,
                             streetViewControl: false,
