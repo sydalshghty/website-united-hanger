@@ -1,0 +1,21 @@
+.section-about-1 img{
+    width: 100%;
+    height: 80vh;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+@media (max-width: 2200px){
+    .section-about-1 img{
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+@media (max-width: 768px) {
+    .about-page-departament{
+        margin-top: 80px !important;
+    }
+    .section-about-1 img{
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}

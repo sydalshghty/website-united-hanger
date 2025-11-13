@@ -1,4 +1,4 @@
-import ourFactoryImg from "../images/c_Page_16 1.png";
+import ourFactoryImg from "../images/c_Page_16 1 (1).png";
 import "../CSS/ourfactory.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -10,7 +10,7 @@ function OurFactory() {
                 method: "GET"
             })
                 .then((response) => response.json())
-                .then(data => setSettings(data.settings.ourfactory))
+                .then(data => setSettings(data.settings));
         }
         catch (error) {
             console.error("Error Not Found Data", error)
@@ -20,12 +20,14 @@ function OurFactory() {
         getAllsettings();
     }, [])
 
+    console.log(settings);
+
     return (
         <div className="ourfactory-update-departament">
             <div className="container">
                 <div className="content-information-ourfactory">
                     <h1>Our Factory</h1>
-                    <p>{settings}</p>
+                    <p>{settings.ourfactory}</p>
                     <Link to={"/about"}>
                         <button>Explore more</button>
                     </Link>

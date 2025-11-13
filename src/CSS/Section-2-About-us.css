@@ -1,0 +1,89 @@
+.section-about-2{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.section-about-2 .container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+.section-about-2 .container .content-about-2{
+   /* width: 644px;*/
+   width: 50%;
+}
+.section-about-2 .container .content-about-2 h2{
+    font-size: 48px;
+    font-weight: 800;
+    color: #000000;
+    letter-spacing: 0.1px;
+    margin-bottom: 20px;
+}
+.section-about-2 .container .content-about-2 p{
+    font-size: 24px;
+    font-weight: 400;
+    color: #000000;
+    letter-spacing: 0.1px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+@media (max-width: 1300px){
+    .section-about-2 .container .content-about-2{
+        width: 500px;
+    }
+    .section-about-2 .container .content-about-2 h2{
+        font-size: 40px;
+    }
+    .section-about-2 .container .content-about-2 p{
+        font-size: 20px;
+    }
+    .section-about-2 .container{
+        gap: 50px;
+    }
+}
+@media (max-width: 1100px){
+    .section-about-2 .container{
+        flex-direction: column;
+    }
+    .section-about-2 .container .content-about-2{
+        width: 100%;
+    }
+    .section-about-2 .container .image-about-2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (max-width: 768px){
+    .section-about-2 .container{
+        gap: 20px;
+    }
+    .section-about-2 .container .content-about-2 h2{
+        font-size: 30px;
+    }
+    .section-about-2 .container .content-about-2 p{
+        font-size: 16px;
+    }
+    .section-about-2 .container .image-about-2 img{
+        height: 500px;
+    }
+}
+@media (max-width: 520px){
+    .section-about-2 .container{
+        gap: 20px;
+    }
+    .section-about-2 .container .content-about-2 h2{
+        font-size: 25px;
+    }
+    .section-about-2 .container .content-about-2 p{
+        font-size: 14px;
+    }
+    .section-about-2 .container .image-about-2 img{
+        width: 350px;
+        height: 350px;
+    }
+}

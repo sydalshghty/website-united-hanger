@@ -1,0 +1,30 @@
+.section-about4{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 40px;
+}
+.section-about4 .container{
+    width: 100%;
+    height: 100%;
+}
+.section-about4 .container h2{
+    text-align: center;
+    font-size: 48px;
+    font-weight: 600;
+    color: #000000;
+}
+.section-about4 .container .all-images-factory{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    letter-spacing: 0.5px;
+}
+@media (max-width: 768px) {
+    .section-about4 .container h2{
+        font-size: 35px;
+    }
+}

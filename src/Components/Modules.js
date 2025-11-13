@@ -3,7 +3,6 @@ import cartIcon from "../images/cart-icon.svg";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NavbarCategories from "./navbar-categories";
-
 function Modules() {
     const [allProducts, setAllProducts] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -62,7 +61,7 @@ function Modules() {
                     {loading ? (
                         <h1 className="loading-data" style={{ height: "40vh", width: "100%", textAlign: "center", display: "flex", justifyContent: "center", alignItems: "center" }}>Loading Products...</h1>
                     ) : allProducts.length === 0 ? (
-                        <h1 className="loading-data">No Products Found</h1>
+                        <h1 className="loading-data" style={{ display: "flex", width: "100%", height: "40vh", justifyContent: "center", alignItems: "center" }}>No Products Found</h1>
                     ) : (
                         allProducts.map((product) => (
                             <Link to={`/products/${product.id}`} key={product.id}>

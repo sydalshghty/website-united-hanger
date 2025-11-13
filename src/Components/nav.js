@@ -29,6 +29,11 @@ function Nav() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [isHome]);
 
+    const handleNavbar = () => {
+        setshownav(false);
+        setbars(true);
+    };
+
     return (
         <div className="new-fixed-navbar" style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "110px", zIndex: "9999999999999999999999999" }}>
             <div
@@ -42,11 +47,25 @@ function Nav() {
                         <IoSearch className="search-icon" />
                     </div>
                     <ul className={`${shownav ? "show" : ""}`}>
-                        <li><Link to="home">home</Link></li>
-                        <li><Link to="products">products</Link></li>
-                        <li><Link to="about">about</Link></li>
-                        <li><Link to="contact">contact</Link></li>
-                        <li><Link to="inquiries">inquiries</Link></li>
+                        <li><Link to="home" onClick={() => {
+                            handleNavbar();
+                        }}>home</Link></li>
+                        <li><Link to="products" onClick={() => {
+                            handleNavbar();
+                        }}
+                        >products</Link></li>
+                        <li><Link to="about" onClick={() => {
+                            handleNavbar();
+                        }}
+                        >about</Link></li>
+                        <li><Link to="contact" onClick={() => {
+                            handleNavbar();
+                        }}
+                        >contact</Link></li>
+                        <li><Link to="inquiries" onClick={() => {
+                            handleNavbar();
+                        }}
+                        >inquiries</Link></li>
                     </ul>
                     {bars ? (
                         <FaBars

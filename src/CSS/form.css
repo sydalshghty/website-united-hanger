@@ -7,12 +7,12 @@
     --submit-color: #0f4f83;
 }
 .form-Departemant{
-    min-width: 668px;
+    min-width: 60%;
     height: 100%;
 }
 @media (max-width: 1800px){
     .form-Departemant{
-       min-width: 500px !important; 
+       min-width: 50% !important; 
     }
 }
 .form-Departemant .form-content h2{

@@ -1,6 +1,28 @@
 import { Link } from "react-router-dom";
 import "../CSS/new-footer.css";
+import { useState, useEffect } from "react";
+
 function NewFooter() {
+    const [allLocations, setAllLocations] = useState([]);
+    const getAllLocations = async () => {
+        try {
+            await fetch(`https://united-hanger-2025.up.railway.app/api/locations`, {
+                method: "GET"
+            })
+                .then((response) => response.json())
+                .then(data => setAllLocations(data.locations));
+        }
+        catch (error) {
+            console.error("Error not found data")
+        }
+    }
+
+    useEffect(() => {
+        getAllLocations();
+    }, []);
+
+    console.log(allLocations);
+
     return (
         <div className="new-footer-departament">
             <div className="content-footer">
@@ -30,74 +52,31 @@ function NewFooter() {
                         </li>
                     </div>
                 </div>
-                <div className="col-egypt div-one">
-                    <h3>EGYPT</h3>
-                    <div>
-                        <img src={"/location-icon.svg"} alt="location-img" />
-                        <p>Industrial zone c3,
-                            10th of Ramadan City, Cairo</p>
-                    </div>
-                    <div>
-                        <img src={"/phone-icon.svg"} alt="phone-img" />
-                        <p>+20 112 21 13 999
-                            /
-                            +20 111 43 46 777</p>
-                    </div>
-                    <div>
-                        <img src={"/mail-icon.svg"} alt="email-img" />
-                        <Link to={"mailto:ksasales@unitedhanger.com"}>ksasales@unitedhanger.com</Link>
-                    </div>
-                </div>
-                <div className="col-saudiaArabia div-one">
-                    <h3>SAUDI ARABIA</h3>
-                    <div>
-                        <img src={"/location-icon.svg"} alt="location-img" />
-                        <p>Shadwan street , Difa’a district,
-                            Alkharj Road , Riyadh</p>
-                    </div>
-                    <div>
-                        <img src={"/phone-icon.svg"} alt="phone-img" />
-                        <p>+966 555 122 319</p>
-                    </div>
-                    <div>
-                        <img src={"/mail-icon.svg"} alt="email-img" />
-                        <Link to={"mailto:ksasales@unitedhanger.com"}>ksasales@unitedhanger.com</Link>
-                    </div>
-                </div>
-                <div className="col-Italy div-one">
-                    <h3>ITALY</h3>
-                    <div>
-                        <img src={"/location-icon.svg"} alt="location-img" />
-                        <p>Contrada mulini 8,
-                            21034 Cocquio, Trevisago (VA)</p>
-                    </div>
-                    <div>
-                        <img src={"/phone-icon.svg"} alt="phone-img" />
-                        <p>+39 349 6729646
-                            /
-                            +39 033 21580586</p>
-                    </div>
-                    <div>
-                        <img src={"/mail-icon.svg"} alt="email-img" />
-                        <Link to={"mailto:mhkhankan@unitedhanger.com"}>mhkhankan@unitedhanger.com</Link>
-                    </div>
-                </div>
-                <div className="col-Turkey div-one">
-                    <h3>TURKEY</h3>
-                    <div>
-                        <img src={"/location-icon.svg"} alt="location-img" />
-                        <p>Beyazit Grand Pazar, Divrikli Sok,
-                            14/16 Istanbul</p>
-                    </div>
-                    <div>
-                        <img src={"/phone-icon.svg"} alt="phone-img" />
-                        <p>+90 539 556 05 29</p>
-                    </div>
-                    <div>
-                        <img src={"/mail-icon.svg"} alt="email-img" />
-                        <Link to={"mailto:tursales@unitedhanger.com"}>tursales@unitedhanger.com</Link>
-                    </div>
-                </div>
+                {allLocations.length === 0 ?
+                    <h2 style={{ width: "70%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", fontSize: "35px" }}>Loading data...</h2>
+                    :
+                    <>
+                        {allLocations.map((location, index) => {
+                            return (
+                                <div className="col-egypt div-one" key={location.id}>
+                                    <h3>{location.country_name}</h3>
+                                    <div>
+                                        <img src={"/location-icon.svg"} alt="location-img" />
+                                        <p>{location.name}</p>
+                                    </div>
+                                    <div>
+                                        <img src={"/phone-icon.svg"} alt="phone-img" />
+                                        <p>{location.phones}</p>
+                                    </div>
+                                    <div>
+                                        <img src={"/mail-icon.svg"} alt="email-img" />
+                                        <Link to={`mailto:${location.emails}`}>{location.emails}</Link>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </>
+                }
             </div>
             <div className="copyright-col">
                 <p>Copyright © 2025 United Hanger. Commercial Registration No. 1010701348. (United Hanger Company) VAT Number 310916821400003. All rights reserved </p>
