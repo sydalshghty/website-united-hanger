@@ -1,4 +1,4 @@
-import ourFactoryImg from "../images/c_Page_16 1 (1).png";
+import ourFactoryImg from "../images/Our Factory-new-img.jpg";
 import "../CSS/ourfactory.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -32,8 +32,10 @@ function OurFactory() {
                         <button>Explore more</button>
                     </Link>
                 </div>
-                <div className="col-image">
-                    <img src={ourFactoryImg} alt="our factory img" />
+                <div className="content-image">
+                    <div className="col-image" style={{ width: "422px", height: "597px", borderRadius: "12px", position: "relative" }}>
+                        <img src={ourFactoryImg} alt="our factory img" style={{ position: "absolute", width: "100%", height: "100%", borderRadius: "12px" }} />
+                    </div>
                 </div>
             </div>
         </div>

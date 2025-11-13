@@ -23,6 +23,10 @@
     margin-top: 20px;
     letter-spacing: 0.5px;
 }
+.section-about4 .container .all-images-factory img{
+    width: 313px;
+    height: 417px;
+}
 @media (max-width: 768px) {
     .section-about4 .container h2{
         font-size: 35px;
