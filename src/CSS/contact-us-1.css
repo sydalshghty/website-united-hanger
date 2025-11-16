@@ -1,12 +1,12 @@
 .contact-us-1{
     width: 100%;
-   /* height: 70vh;*/
     margin-top: 110px;
     height: 100%;
 }
 .contact-us-1 img{
     width: 100%;
-    height: 75vh;
+    height: 77vh;
+    object-fit: cover;
 }
 @media (max-width: 1800px){
     .contact-us-1 img{
