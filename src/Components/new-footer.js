@@ -21,8 +21,6 @@ function NewFooter() {
         getAllLocations();
     }, []);
 
-    console.log(allLocations);
-
     return (
         <div className="new-footer-departament">
             <div className="content-footer">

@@ -18,7 +18,6 @@ function UniqueFeatures() {
     useEffect(() => {
         getAllServices();
     }, [])
-    console.log(services);
 
     return (
         <div className="unique-features">

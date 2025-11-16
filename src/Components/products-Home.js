@@ -1,10 +1,9 @@
 import "../CSS/products-home.css";
 import productsImg from "../images/products (4).png";
-
 function ProductsHome() {
-    return(
+    return (
         <div className="products-home">
-            <img src= {productsImg} alt="products-img"/>
+            <img src={productsImg} alt="products-img" />
         </div>
     )
 }

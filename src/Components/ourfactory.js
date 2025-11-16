@@ -18,9 +18,7 @@ function OurFactory() {
     }
     useEffect(() => {
         getAllsettings();
-    }, [])
-
-    console.log(settings);
+    }, []);
 
     return (
         <div className="ourfactory-update-departament">

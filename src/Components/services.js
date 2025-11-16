@@ -19,7 +19,6 @@ function Services() {
         getAllServices();
     }, []);
 
-    console.log(services)
     return (
         <div className="services" style={{ height: "100vh", position: "relative" }}>
             <img className="img-product" src={myImgOne} alt="img" />

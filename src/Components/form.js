@@ -1,23 +1,6 @@
 import "../CSS/form.css";
 import { useState } from "react";
 function Form() {
-    /*  const [DataSettings, setDataSettings] = useState([]);
-      const getAllSettings = async () => {
-          try {
-              await fetch("https://united-hanger-2025.up.railway.app//api/settings", {
-                  method: "GET"
-              })
-                  .then(response => response.json())
-                  .then(data => setDataSettings(data.settings))
-          }
-          catch (error) {
-              console.error("Error Not Found Data", error)
-          }
-      }
-      useEffect(() => {
-          getAllSettings();
-      }, []);*/
-
     //validation-Form
     const [name, setname] = useState("");
     const [phone, setphone] = useState("");
