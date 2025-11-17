@@ -2,11 +2,9 @@ import { Link } from "react-router-dom";
 import "../CSS/navbar-categories.css";
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-
 
 function NavbarCategories({ onCategoryChange = () => { } }) {
     const [categories, setCategories] = useState([]);
@@ -30,7 +28,7 @@ function NavbarCategories({ onCategoryChange = () => { } }) {
 
     const handleCategoryClick = (categoryId) => {
         setActiveCategory(categoryId);
-        onCategoryChange(categoryId); // 🔥 نبلغ الأب بالتغيير
+        onCategoryChange(categoryId);
     };
 
     return (
@@ -43,23 +41,24 @@ function NavbarCategories({ onCategoryChange = () => { } }) {
                     <Link to="#">All</Link>
                 </div>
                 <Swiper
-                    modules={[Autoplay]}
-                    spaceBetween={20}
+                    spaceBetween={10}
                     slidesPerView={5}
                     autoplay={{ delay: 1000 }}
                     loop={true}
-                    speed={1000}
+                    speed={2000}
                 >
                     {categories.length > 0 &&
                         categories.map((category, index) => {
                             return (
-                                <SwiperSlide key={category.id}
-                                    className={`category-item ${activeCategory === category.id ? "active" : ""}`}
-                                    onClick={() => handleCategoryClick(category.id)}
-                                >
-                                    <Link to="#">{category.name}</Link>
+                                <>
+                                    <SwiperSlide key={category.id}
+                                        className={`category-item ${activeCategory === category.id ? "active" : ""}`}
+                                        onClick={() => handleCategoryClick(category.id)}
+                                    >
+                                        <Link to="#">{category.name}</Link>
 
-                                </SwiperSlide>
+                                    </SwiperSlide>
+                                </>
                             )
                         })}
                 </Swiper>
@@ -69,6 +68,7 @@ function NavbarCategories({ onCategoryChange = () => { } }) {
 }
 
 export default NavbarCategories;
+
 
 
 
