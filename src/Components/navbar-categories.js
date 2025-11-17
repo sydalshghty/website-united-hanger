@@ -9,7 +9,7 @@ import "swiper/css/effect-fade";
 function NavbarCategories({ onCategoryChange = () => { } }) {
     const [categories, setCategories] = useState([]);
     const [activeCategory, setActiveCategory] = useState("all");
-
+    //navbar-categories//
     const getAllCategories = async () => {
         try {
             const response = await fetch(
