@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.41b11459.css",
-    "main.js": "./static/js/main.329396eb.js",
+    "main.css": "./static/css/main.c7bacb6f.css",
+    "main.js": "./static/js/main.5eb89a69.js",
     "static/media/Our Factory-new-img.jpg": "./static/media/Our Factory-new-img.86792ff9b14601808145.jpg",
     "static/media/babywear-Hangers (2).svg": "./static/media/babywear-Hangers (2).6ba0df415868d5f9a89ad55ecbf23b2d.svg",
     "static/media/Top-Hangers.svg": "./static/media/Top-Hangers.10ad599823ae5c74bd749ba38ddc20a5.svg",
@@ -29,11 +29,11 @@
     "static/media/chevron-right (5).svg": "./static/media/chevron-right (5).d6cf9cc18c20a880b0a124938185a264.svg",
     "static/media/right-icon-product.svg": "./static/media/right-icon-product.d331c229d9f6320d29e3853ee0153f7a.svg",
     "static/media/left-icon-product.svg": "./static/media/left-icon-product.687515e6be7c5c693e3d925808b48f34.svg",
-    "main.41b11459.css.map": "./static/css/main.41b11459.css.map",
-    "main.329396eb.js.map": "./static/js/main.329396eb.js.map"
+    "main.c7bacb6f.css.map": "./static/css/main.c7bacb6f.css.map",
+    "main.5eb89a69.js.map": "./static/js/main.5eb89a69.js.map"
   },
   "entrypoints": [
-    "static/css/main.41b11459.css",
-    "static/js/main.329396eb.js"
+    "static/css/main.c7bacb6f.css",
+    "static/js/main.5eb89a69.js"
   ]
 }
