@@ -70,6 +70,7 @@ function Modules() {
                                         <img
                                             src={product.images?.[0]?.image_path || "/fallback.png"}
                                             alt={product.name}
+                                            style={{ objectFit: "contain" }}
                                         />
                                     </div>
                                     <div className="col-cart">

@@ -70,6 +70,7 @@ function AllProducts() {
                     className="background-products"
                     src={productimgone}
                     alt="img-product-one"
+                    style={{ objectFit: "contain" }}
                 />
 
                 {loading ? (
@@ -83,6 +84,7 @@ function AllProducts() {
                                         <img
                                             src={product.images?.[0]?.image_path || ""}
                                             alt={product.name}
+                                            style={{ objectFit: "contain" }}
                                         />
                                     </div>
                                     <div className="product-text">

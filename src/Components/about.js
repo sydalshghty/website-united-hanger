@@ -36,7 +36,7 @@ function About() {
             <div>
                 <div className="hanger-United" style={{ width: "100%", height: "100vh", position: "relative" }}>
                     <div className="background-image" style={{ position: "absolute", width: "100%", height: "100%" }}>
-                        <img src={myHangerImg} alt="img" style={{ width: "100%", height: "100%" }} />
+                        <img src={myHangerImg} alt="img" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
                     </div>
                     <div className="container">
                         <div className="lorem-content" style={{ opacity: 0 }}>

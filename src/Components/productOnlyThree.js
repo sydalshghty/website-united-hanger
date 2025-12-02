@@ -47,7 +47,7 @@ function ProductOnlyThree() {
                     {/* الصورة الرئيسية */}
                     <div className="product-img-one">
                         {images.length > 0 && (
-                            <img src={images[currentIndex]} alt="main-product" style={{ cursor: "pointer" }} />
+                            <img src={images[currentIndex]} alt="main-product" style={{ cursor: "pointer", objectFit: "contain" }} />
                         )}
                     </div>
 
@@ -59,7 +59,7 @@ function ProductOnlyThree() {
                                 src={img}
                                 alt={`product-${index}`}
                                 className={currentIndex === index ? "active-thumbnail" : ""}
-                                style={{ cursor: "pointer" }}
+                                style={{ cursor: "pointer", objectFit: "contain" }}
                                 onClick={() => handleThumbnailClick(index)
 
                                 }

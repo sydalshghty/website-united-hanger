@@ -32,7 +32,8 @@ function OurFactory() {
                 </div>
                 <div className="content-image">
                     <div className="col-image" style={{ width: "422px", height: "597px", borderRadius: "12px", position: "relative" }}>
-                        <img src={ourFactoryImg} alt="our factory img" style={{ position: "absolute", width: "100%", height: "100%", borderRadius: "12px" }} />
+                        <img src={ourFactoryImg} alt="our factory img"
+                            style={{ position: "absolute", width: "100%", height: "100%", borderRadius: "12px", objectFit: "contain" }} />
                     </div>
                 </div>
             </div>

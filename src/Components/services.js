@@ -21,7 +21,7 @@ function Services() {
 
     return (
         <div className="services" style={{ height: "100vh", position: "relative" }}>
-            <img className="img-product" src={myImgOne} alt="img" />
+            <img className="img-product" src={myImgOne} alt="img" style={{ objectFit: "contain" }} />
             <div className="services-content" style={{ position: "absolute", bottom: 0 }}>
                 <div className="heading-services">
                     <h1>services</h1>

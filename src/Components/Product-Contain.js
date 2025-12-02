@@ -133,6 +133,7 @@ function ProductContain() {
                                         src={productData.images[currentIndex].image_path}
                                         alt="product-image"
                                         className={`product-img ${fade ? "fade" : ""}`}
+                                        style={{ objectFit: "contain" }}
                                     />
                                     <div className="col-btn-icon" onClick={handleNext}>
                                         <FaChevronRight />
@@ -147,7 +148,7 @@ function ProductContain() {
                                         key={img.id}
                                         onClick={() => handleImageClick(index)}
                                     >
-                                        <img src={img.image_path} alt="product-img" />
+                                        <img src={img.image_path} alt="product-img" style={{ objectFit: "contain" }} />
                                     </div>
                                 ))}
                             </div>

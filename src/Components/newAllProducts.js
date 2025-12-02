@@ -36,7 +36,7 @@ function NewAllProducts() {
                     return (
                         <div className="col-product" key={product.id}>
                             <div className="col-image">
-                                <img src={product.images[0].image_path} alt="img-product" />
+                                <img src={product.images[0].image_path} alt="img-product" style={{ objectFit: "contain" }} />
                             </div>
                             <div className="product-text">
                                 <h5 className="heading-one">{product.name}</h5>

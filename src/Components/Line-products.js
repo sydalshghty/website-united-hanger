@@ -21,7 +21,7 @@ function LineProducts() {
                 {allproducts.map((product, index) => {
                     return (
                         <div className="col-product" key={product.id}>
-                            <img src={product.img} alt="img-product" />
+                            <img src={product.img} alt="img-product" style={{ objectFit: "contain" }} />
                             <p>{product.title}</p>
                         </div>
                     )

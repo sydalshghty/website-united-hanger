@@ -32,12 +32,12 @@ function UniqueFeatures() {
                                 <div className="content-service" key={service.id}>
                                     <img src={bgService} alt="bg-service" className="bg-service" />
                                     <div className="col-service-one">
-                                        <img src={service.image_path} alt="img-service" style={{ marginBottom: "20px" }} />
-                                        <img src={service.icon_image_path} alt="img-icon" />
+                                        <img src={service.image_path} alt="img-service" style={{ marginBottom: "20px", objectFit: "contain" }} />
+                                        <img src={service.icon_image_path} alt="img-icon" style={{ objectFit: "contain" }} />
                                         <p>{service.title}</p>
                                     </div>
                                     <div className="col-service-two">
-                                        <img src={service.icon_image_path} alt="img-icon" />
+                                        <img src={service.icon_image_path} alt="img-icon" style={{ objectFit: "contain" }} />
                                         <p>{service.description}</p>
                                     </div>
                                 </div>
