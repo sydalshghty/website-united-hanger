@@ -93,3 +93,25 @@ html {
     height: 80px !important;
   }
 }
+
+/**/
+.image-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+   background-color: rgba(43, 42, 42, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; 
+    cursor: pointer;
+}
+
+.image-popup {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+

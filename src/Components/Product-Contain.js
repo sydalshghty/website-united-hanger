@@ -114,6 +114,12 @@ function ProductContain() {
         navigate("/inquiries", { state: selectedData });
     };
 
+    //new update
+    const [popupImage, setPopupImage] = useState(null);
+    const handlePopupImage = (imagePath) => {
+        setPopupImage(imagePath);
+    };
+
     return (
         <>
             {!productData ? (
@@ -123,7 +129,6 @@ function ProductContain() {
                     <div className="container">
                         <div className="contain-product-1">
                             <h1 className="title-product">{productData.name}</h1>
-
                             <div className="contain-product-images">
                                 <div className="main-image-product">
                                     <div className="col-btn-icon" onClick={handlePrev}>
@@ -140,20 +145,23 @@ function ProductContain() {
                                     </div>
                                 </div>
                             </div>
-
                             <div className="all-images-product">
                                 {productData.images.map((img, index) => (
                                     <div
                                         className={`col-image ${index === currentIndex ? "active" : ""}`}
                                         key={img.id}
-                                        onClick={() => handleImageClick(index)}
+                                        onClick={() => {
+                                            handlePopupImage(img.image_path)
+                                            handleImageClick(index)
+
+                                        }
+                                        }
                                     >
                                         <img src={img.image_path} alt="product-img" style={{ objectFit: "contain" }} />
                                     </div>
                                 ))}
                             </div>
                         </div>
-
                         <div className="product-information" id="product-information">
                             <div className="all-colors" id="all-colors-product">
                                 <p>Colors</p>
@@ -202,7 +210,6 @@ function ProductContain() {
                                     </div>
                                 )}
                             </div>
-
                             <div className="all-Sizes">
                                 <p className="title-sizes">Sizes</p>
                                 <div className="content-sizes">
@@ -217,7 +224,6 @@ function ProductContain() {
                                     ))}
                                 </div>
                             </div>
-
                             <div className="raw-material-content">
                                 <p className="title-material">Raw Materials</p>
                                 <div className="all-raw-materials">
@@ -232,7 +238,6 @@ function ProductContain() {
                                     ))}
                                 </div>
                             </div>
-
                             <div className="col-addTocart" onClick={handleOrderNow}>
                                 <BsCart2 style={{ fontSize: "25px", color: "#fff" }} />
                                 <p>Add to cart</p>
@@ -242,11 +247,21 @@ function ProductContain() {
                 </div>
             )}
             <ToastContainer position="top-right" autoClose={3000} style={{ marginTop: "100px" }} />
+            {popupImage && (
+                <div
+                    className="image-popup-overlay"
+                    onClick={() => setPopupImage(null)}
+                >
+                    <img src={popupImage} alt="Popup" className="image-popup" />
+                </div>
+            )}
+
         </>
     );
 }
 
 export default ProductContain;
+
 
 
 

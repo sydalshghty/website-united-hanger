@@ -66,11 +66,12 @@ function Modules() {
                         allProducts.map((product) => (
                             <Link to={`/products/${product.id}`} key={product.id}>
                                 <div className="col-product">
-                                    <div className="img-product">
+                                    <div className="img-product" style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "100%" }}>
                                         <img
+
                                             src={product.images?.[0]?.image_path || "/fallback.png"}
                                             alt={product.name}
-                                            style={{ objectFit: "contain" }}
+                                            style={{ objectFit: "contain", marginTop: "-180px" }}
                                         />
                                     </div>
                                     <div className="col-cart">

@@ -83,7 +83,7 @@ function HangersProducts() {
 
                                         <div className="col-image" style={{ display: "flex", width: "100%", justifyContent: "center", alignItems: "center" }}>
                                             <img
-                                                style={{ objectFit: "contain" }}
+                                                style={{ objectFit: "contain", display: "flex", justifyContent: "center", alignItems: "center", minwidth: "100%" }}
                                                 src={product.images[0]?.image_path}
                                                 alt={product.name}
                                             />
