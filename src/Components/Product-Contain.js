@@ -19,6 +19,9 @@ function ProductContain() {
     const [selectedColor, setSelectedColor] = useState(null);
     const [showColors, setShowColors] = useState(true);
 
+    // display images state
+    const [displayImages, setDisplayImages] = useState([]);
+
     useEffect(() => {
         const getProductData = async () => {
             try {
@@ -26,7 +29,27 @@ function ProductContain() {
                     `https://united-hanger-2025.up.railway.app/api/v2/products/product/${ProductID}`
                 );
                 const data = await response.json();
-                setProductData(data.product);
+
+                if (!data.product) return;
+
+                let images = data.product.images || [];
+
+                images = [...images].sort((a, b) => a.image_type - b.image_type);
+
+                const mainImage = images.find(img => img.image_type === 0);
+
+                const mainImageIndex = mainImage
+                    ? images.findIndex(img => img.id === mainImage.id)
+                    : 0;
+
+                setProductData({
+                    ...data.product,
+                    images: images,
+                });
+
+                setCurrentIndex(mainImageIndex);
+                setDisplayImages(images); // initialize displayImages
+
             } catch (error) {
                 console.error("Error Not Found Data", error);
             }
@@ -36,22 +59,22 @@ function ProductContain() {
     }, [ProductID]);
 
     const handleNext = () => {
-        if (!productData?.images) return;
+        if (!displayImages?.length) return;
         setFade(true);
         setTimeout(() => {
             setCurrentIndex((prevIndex) =>
-                prevIndex === productData.images.length - 1 ? 0 : prevIndex + 1
+                prevIndex === displayImages.length - 1 ? 0 : prevIndex + 1
             );
             setFade(false);
         }, 200);
     };
 
     const handlePrev = () => {
-        if (!productData?.images) return;
+        if (!displayImages?.length) return;
         setFade(true);
         setTimeout(() => {
             setCurrentIndex((prevIndex) =>
-                prevIndex === 0 ? productData.images.length - 1 : prevIndex - 1
+                prevIndex === 0 ? displayImages.length - 1 : prevIndex - 1
             );
             setFade(false);
         }, 200);
@@ -114,10 +137,25 @@ function ProductContain() {
         navigate("/inquiries", { state: selectedData });
     };
 
-    //new update
+    // popup image
     const [popupImage, setPopupImage] = useState(null);
     const handlePopupImage = (imagePath) => {
         setPopupImage(imagePath);
+    };
+
+    // control bar
+    const [checked, setChecked] = useState(false);
+
+    const handleSizeClick = (size) => {
+        setSelectedSize(size.id);
+
+        if (checked && size.images_with_bar?.length) {
+            setDisplayImages(size.images_with_bar);
+            setCurrentIndex(0);
+        } else if (!checked && size.images_without_bar?.length) {
+            setDisplayImages(size.images_without_bar);
+            setCurrentIndex(0);
+        }
     };
 
     return (
@@ -128,14 +166,14 @@ function ProductContain() {
                 <div className="product-contain">
                     <div className="container">
                         <div className="contain-product-1">
-                            <h1 className="title-product">{productData.name}</h1>
+                            <h1 className="title-product" style={{ textTransform: "capitalize" }}>{productData.name}</h1>
                             <div className="contain-product-images">
                                 <div className="main-image-product">
                                     <div className="col-btn-icon" onClick={handlePrev}>
                                         <FaAngleLeft />
                                     </div>
                                     <img
-                                        src={productData.images[currentIndex].image_path}
+                                        src={displayImages[currentIndex]?.image_path}
                                         alt="product-image"
                                         className={`product-img ${fade ? "fade" : ""}`}
                                         style={{ objectFit: "contain" }}
@@ -146,26 +184,23 @@ function ProductContain() {
                                 </div>
                             </div>
                             <div className="all-images-product">
-                                {productData.images.map((img, index) => (
+                                {displayImages.map((img, index) => (
                                     <div
                                         className={`col-image ${index === currentIndex ? "active" : ""}`}
                                         key={img.id}
                                         onClick={() => {
                                             handlePopupImage(img.image_path)
                                             handleImageClick(index)
-
-                                        }
-                                        }
+                                        }}
                                     >
                                         <img src={img.image_path} alt="product-img" style={{ objectFit: "contain" }} />
                                     </div>
                                 ))}
                             </div>
                         </div>
-                        <div className="product-information" id="product-information">
+                        <div className="product-information" id="product-information" style={{ gap: 25 }}>
                             <div className="all-colors" id="all-colors-product">
                                 <p>Colors</p>
-
                                 {showColors ? (
                                     <div
                                         className="content-bullets-colors"
@@ -210,6 +245,34 @@ function ProductContain() {
                                     </div>
                                 )}
                             </div>
+                            <div style={{ height: "20px", display: "flex", alignItems: "center", gap: "8px" }}>
+                                <input
+                                    style={{ width: "25px", height: "20px" }}
+                                    type="checkbox"
+                                    checked={checked}
+                                    onChange={() => {
+                                        const newChecked = !checked;
+                                        setChecked(newChecked);
+
+                                        if (!selectedSize) return;
+
+                                        const sizeObj = productData.sizes.find(s => s.id === selectedSize);
+
+                                        if (newChecked && sizeObj?.images_with_bar?.length) {
+                                            setDisplayImages(sizeObj.images_with_bar);
+                                            setCurrentIndex(0);
+                                        } else if (!newChecked && sizeObj?.images_without_bar?.length) {
+                                            setDisplayImages(sizeObj.images_without_bar);
+                                            setCurrentIndex(0);
+                                        }
+                                    }}
+                                />
+                                {checked ?
+                                    <span style={{ textTransform: "capitalize", fontSize: "20px" }}>has bar</span>
+                                    :
+                                    <span style={{ textTransform: "capitalize", fontSize: "20px" }}>no bar</span>
+                                }
+                            </div>
                             <div className="all-Sizes">
                                 <p className="title-sizes">Sizes</p>
                                 <div className="content-sizes">
@@ -217,7 +280,7 @@ function ProductContain() {
                                         <div
                                             key={size.id}
                                             className={`col-size ${selectedSize === size.id ? "click" : ""}`}
-                                            onClick={() => setSelectedSize(size.id)}
+                                            onClick={() => handleSizeClick(size)}
                                         >
                                             <p>{size.value}</p>
                                         </div>
@@ -238,6 +301,9 @@ function ProductContain() {
                                     ))}
                                 </div>
                             </div>
+                            {productData.description === "" ? "" :
+                                <p className="description-product" style={{ textTransform: "capitalize" }}>{productData.description}</p>
+                            }
                             <div className="col-addTocart" onClick={handleOrderNow}>
                                 <BsCart2 style={{ fontSize: "25px", color: "#fff" }} />
                                 <p>Add to cart</p>
@@ -255,12 +321,12 @@ function ProductContain() {
                     <img src={popupImage} alt="Popup" className="image-popup" />
                 </div>
             )}
-
         </>
     );
 }
 
 export default ProductContain;
+
 
 
 

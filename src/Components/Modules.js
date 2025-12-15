@@ -3,7 +3,12 @@ import cartIcon from "../images/cart-icon.svg";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NavbarCategories from "./navbar-categories";
+import { useSearchParams } from "react-router-dom";
+
 function Modules() {
+    const [searchParams] = useSearchParams();
+    const categoryIdFromUrl = searchParams.get("category_id");
+
     const [allProducts, setAllProducts] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -40,8 +45,13 @@ function Modules() {
     };
 
     useEffect(() => {
-        getAllProducts();
-    }, []);
+        if (categoryIdFromUrl) {
+            getProductsByCategory(categoryIdFromUrl);
+        } else {
+            getAllProducts();
+        }
+    }, [categoryIdFromUrl]);
+
 
     const handleCategoryChange = (categoryId) => {
         console.log("🟢 Selected Category ID:", categoryId);
