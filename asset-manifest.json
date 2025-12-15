@@ -1,11 +1,8 @@
 {
   "files": {
-    "main.css": "./static/css/main.52e35703.css",
-    "main.js": "./static/js/main.147953fb.js",
+    "main.css": "./static/css/main.5d2fac79.css",
+    "main.js": "./static/js/main.8533163f.js",
     "static/media/Our Factory-new-img.jpg": "./static/media/Our Factory-new-img.86792ff9b14601808145.jpg",
-    "static/media/babywear-Hangers (2).svg": "./static/media/babywear-Hangers (2).6ba0df415868d5f9a89ad55ecbf23b2d.svg",
-    "static/media/Top-Hangers.svg": "./static/media/Top-Hangers.10ad599823ae5c74bd749ba38ddc20a5.svg",
-    "static/media/bottom-Hangers (2).svg": "./static/media/bottom-Hangers (2).17a903b7984a2a873224d18e747013c1.svg",
     "static/media/section-1-bg-about-us.png": "./static/media/section-1-bg-about-us.8301eb3d227f94706f11.png",
     "static/media/contact-us-bg.jpg": "./static/media/contact-us-bg.4aee873757905c86d63f.jpg",
     "static/media/about-factory-img-3.jpg": "./static/media/about-factory-img-3.bb9de0289ed6e7e0da05.jpg",
@@ -14,7 +11,6 @@
     "static/media/about-factory-img-2.jpg": "./static/media/about-factory-img-2.cb6c8386cc7f2ae442a9.jpg",
     "static/media/who-we-are-.png": "./static/media/who-we-are-.2426ab96ca6550aff959.png",
     "static/media/about-factory-img-4.jpg": "./static/media/about-factory-img-4.09b4e244389f2d47d868.jpg",
-    "static/media/blanket-Hangers.svg": "./static/media/blanket-Hangers.0c11c36b7c9b7acca503b22981fdccdb.svg",
     "static/media/Property 1=hover (2) (3).png": "./static/media/Property 1=hover (2) (3).f4974b79743002e5f100.png",
     "static/media/Rectangle 39329 (2).png": "./static/media/Rectangle 39329 (2).0a34c07451558bc1d693.png",
     "static/media/UH Logo (2).svg": "./static/media/UH Logo (2).a14672063dbd87d008d34a5ba740c1d4.svg",
@@ -29,11 +25,11 @@
     "static/media/chevron-right (5).svg": "./static/media/chevron-right (5).d6cf9cc18c20a880b0a124938185a264.svg",
     "static/media/right-icon-product.svg": "./static/media/right-icon-product.d331c229d9f6320d29e3853ee0153f7a.svg",
     "static/media/left-icon-product.svg": "./static/media/left-icon-product.687515e6be7c5c693e3d925808b48f34.svg",
-    "main.52e35703.css.map": "./static/css/main.52e35703.css.map",
-    "main.147953fb.js.map": "./static/js/main.147953fb.js.map"
+    "main.5d2fac79.css.map": "./static/css/main.5d2fac79.css.map",
+    "main.8533163f.js.map": "./static/js/main.8533163f.js.map"
   },
   "entrypoints": [
-    "static/css/main.52e35703.css",
-    "static/js/main.147953fb.js"
+    "static/css/main.5d2fac79.css",
+    "static/js/main.8533163f.js"
   ]
 }
