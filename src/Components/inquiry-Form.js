@@ -25,6 +25,7 @@ function Inquiryform({ onClose, inquiriesList, logoFile, onSendSuccess }) {
           material_id: inq.materialId,
           quantity: inq.quantity,
           custom_color_code: inq.customColor || null,
+          bar: 0
         })),
       };
 

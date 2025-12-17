@@ -245,34 +245,38 @@ function ProductContain() {
                                     </div>
                                 )}
                             </div>
-                            <div style={{ height: "20px", display: "flex", alignItems: "center", gap: "8px" }}>
-                                <input
-                                    style={{ width: "25px", height: "20px" }}
-                                    type="checkbox"
-                                    checked={checked}
-                                    onChange={() => {
-                                        const newChecked = !checked;
-                                        setChecked(newChecked);
+                            {productData.can_has_bar === false ?
+                                ""
+                                :
+                                <div style={{ height: "20px", display: "flex", alignItems: "center", gap: "8px" }}>
+                                    <input
+                                        style={{ width: "25px", height: "20px" }}
+                                        type="checkbox"
+                                        checked={checked}
+                                        onChange={() => {
+                                            const newChecked = !checked;
+                                            setChecked(newChecked);
 
-                                        if (!selectedSize) return;
+                                            if (!selectedSize) return;
 
-                                        const sizeObj = productData.sizes.find(s => s.id === selectedSize);
+                                            const sizeObj = productData.sizes.find(s => s.id === selectedSize);
 
-                                        if (newChecked && sizeObj?.images_with_bar?.length) {
-                                            setDisplayImages(sizeObj.images_with_bar);
-                                            setCurrentIndex(0);
-                                        } else if (!newChecked && sizeObj?.images_without_bar?.length) {
-                                            setDisplayImages(sizeObj.images_without_bar);
-                                            setCurrentIndex(0);
-                                        }
-                                    }}
-                                />
-                                {checked ?
-                                    <span style={{ textTransform: "capitalize", fontSize: "20px" }}>has bar</span>
-                                    :
-                                    <span style={{ textTransform: "capitalize", fontSize: "20px" }}>no bar</span>
-                                }
-                            </div>
+                                            if (newChecked && sizeObj?.images_with_bar?.length) {
+                                                setDisplayImages(sizeObj.images_with_bar);
+                                                setCurrentIndex(0);
+                                            } else if (!newChecked && sizeObj?.images_without_bar?.length) {
+                                                setDisplayImages(sizeObj.images_without_bar);
+                                                setCurrentIndex(0);
+                                            }
+                                        }}
+                                    />
+                                    {checked ?
+                                        <span style={{ textTransform: "capitalize", fontSize: "20px" }}>has bar</span>
+                                        :
+                                        <span style={{ textTransform: "capitalize", fontSize: "20px" }}>no bar</span>
+                                    }
+                                </div>
+                            }
                             <div className="all-Sizes">
                                 <p className="title-sizes">Sizes</p>
                                 <div className="content-sizes">
