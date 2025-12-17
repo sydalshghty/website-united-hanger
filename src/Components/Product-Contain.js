@@ -198,7 +198,7 @@ function ProductContain() {
                                 ))}
                             </div>
                         </div>
-                        <div className="product-information" id="product-information" style={{ gap: 25 }}>
+                        <div className="product-information" id="product-information" style={{ gap: 25, marginTop: "20px" }}>
                             <div className="all-colors" id="all-colors-product">
                                 <p>Colors</p>
                                 {showColors ? (
