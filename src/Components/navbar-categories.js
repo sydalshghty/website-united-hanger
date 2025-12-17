@@ -48,7 +48,7 @@ function NavbarCategories({ onCategoryChange = () => { } }) {
             onCategoryChange(categoryId);
         }
     };
-
+    //upload new changes
     return (
         <div className="navbar-categories">
             <li className="all-btn" style={{ display: "flex", gap: "30px" }}>
