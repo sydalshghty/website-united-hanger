@@ -198,7 +198,7 @@ function ProductContain() {
                                 ))}
                             </div>
                         </div>
-                        <div className="product-information" id="product-information" style={{ gap: 25, marginTop: "20px" }}>
+                        <div className="product-information" id="product-information" style={{ gap: 25, marginTop: "40px", minWidth: "40%" }}>
                             <div className="all-colors" id="all-colors-product">
                                 <p>Colors</p>
                                 {showColors ? (
@@ -305,13 +305,13 @@ function ProductContain() {
                                     ))}
                                 </div>
                             </div>
-                            {productData.description === "" ? "" :
-                                <p className="description-product" style={{ textTransform: "capitalize" }}>{productData.description}</p>
-                            }
                             <div className="col-addTocart" onClick={handleOrderNow}>
                                 <BsCart2 style={{ fontSize: "25px", color: "#fff" }} />
                                 <p>Add to cart</p>
                             </div>
+                            {productData.description === "" ? "" :
+                                <p className="description-product" style={{ textTransform: "capitalize", fontSize: "15px", letterSpacing: "0.5px" }}>{productData.description}</p>
+                            }
                         </div>
                     </div>
                 </div>
