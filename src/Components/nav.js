@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import { FaBars, FaXmark } from "react-icons/fa6";
 import { useState, useEffect } from "react";
-
+import { useNavigate } from "react-router-dom";
 function Nav() {
     const [shownav, setshownav] = useState(false);
     const [bars, setbars] = useState(true);
@@ -34,13 +34,15 @@ function Nav() {
         setbars(true);
     };
 
+    const navigate = useNavigate("");
+    const handleNavigate = () => navigate("/home");
     return (
         <div className="new-fixed-navbar" style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "110px", zIndex: "9999999999999999999999999" }}>
             <div
                 className={`navbar-departament ${isHome ? (scrolled ? "scrolled" : "home-nav") : ""}`}
             >
                 <div className="content-navbar">
-                    <img src={logo} alt="united-hanger" className="logo-united-hanger main-logo" style={{ cursor: "pointer" }} />
+                    <img src={logo} alt="united-hanger" className="logo-united-hanger main-logo" style={{ cursor: "pointer" }} onClick={handleNavigate} />
                     <img src={homeLogo} alt="united-hanger" className="logo-united-hanger home-logo" style={{ cursor: "pointer" }} />
                     <div className="col-search">
                         <input type="text" placeholder="Search" />
