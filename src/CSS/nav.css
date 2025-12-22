@@ -116,7 +116,7 @@ ul li a{
         top: 0;
         left: 0;
         width: 100%;
-        background-color: #0088FF;
+     /*  background-color: #0088FF;*/
         z-index: 1000000;
     }
     .navbar-departament.scrolled .content-navbar{
@@ -162,9 +162,14 @@ ul li a{
   transition: all 0.4s ease;
 }
 .navbar-departament.home-nav {
-  background-color: #0088FF;
+/*  background-color: #0088FF;*/
   box-shadow: none;
 }
+.navbar-departament.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+}
+
 
 .navbar-departament.home-nav ul li a,
 .navbar-departament.home-nav .search-icon {
@@ -195,4 +200,23 @@ ul li a{
 .navbar-departament.scrolled ul li a,
 .navbar-departament.scrolled .bars-icon {
   color: #0673B7;
+}
+
+/* الشكل الافتراضي للـ navbar */
+.navbar-departament {
+  background-color: white;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* صفحة Home قبل الـ scroll */
+.navbar-departament.home-nav {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* صفحة Home بعد الـ scroll */
+.navbar-departament.scrolled {
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }

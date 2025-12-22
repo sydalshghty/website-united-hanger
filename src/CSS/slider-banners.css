@@ -32,4 +32,10 @@
   .slider-banners{
     margin-top: 80px;
   }
+  .slider-banners .swiper-banners-images{
+    margin-top: -80px !important;
+  }
+  .swiper-pagination-bullet{
+    display: none !important;
+  }
 }

@@ -6,7 +6,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
-
 function SliderBanners() {
     const [sliders, setSliders] = useState([]);
 
@@ -27,6 +26,8 @@ function SliderBanners() {
     return (
         <div className="slider-banners">
             <Swiper
+                className="swiper-banners-images"
+                style={{ marginTop: "-150px" }}
                 modules={[Navigation, Pagination, EffectFade, Autoplay]}
                 navigation={{
                     nextEl: ".custom-next",
@@ -45,9 +46,10 @@ function SliderBanners() {
                 }}
             >
                 {sliders.map((slider, index) => (
-                    <SwiperSlide key={index}>
+                    <SwiperSlide key={index} >
                         <div className="col-images">
                             <img
+
                                 src={slider.image_path}
                                 alt="banner-img"
                                 className="slider-img"
