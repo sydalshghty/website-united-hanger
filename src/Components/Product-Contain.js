@@ -21,6 +21,8 @@ function ProductContain() {
 
     // display images state
     const [displayImages, setDisplayImages] = useState([]);
+    const [activeColorGroup, setActiveColorGroup] = useState(null);
+
 
     useEffect(() => {
         const getProductData = async () => {
@@ -158,6 +160,20 @@ function ProductContain() {
         }
     };
 
+    const handleColorGroupClick = (group) => {
+        setActiveColorGroup(group.id);
+
+        if (!group.images?.length) return;
+
+        const sortedImages = [...group.images].sort(
+            (a, b) => a.image_type - b.image_type
+        );
+
+        setDisplayImages(sortedImages);
+        setCurrentIndex(0);
+    };
+
+
     return (
         <>
             {!productData ? (
@@ -276,6 +292,31 @@ function ProductContain() {
                                         <span style={{ textTransform: "capitalize", fontSize: "20px" }}>no bar</span>
                                     }
                                 </div>
+                            }
+                            {productData.color_groups.length === 0 ?
+                                ""
+                                :
+                                <>
+                                    <h3 className="title-color-groups" style={{ fontSize: "25px", fontWeight: "500" }}>Color Groups</h3>
+                                    <div className="all-colors-groups" style={{ display: "flex", gap: "20px", marginTop: "-20px" }}>
+                                        {productData.color_groups.map((group, index) => {
+                                            return (
+                                                <div className={`color-groups ${activeColorGroup === group.id ? "active" : ""
+                                                    }`} key={group.id}
+                                                    onClick={() => handleColorGroupClick(group)}
+                                                >
+                                                    <div className="content-color-groups" style={{ display: "flex", gap: "15px", marginTop: "15px", borderWidth: "1px", borderStyle: "solid", borderColor: "#ccc", maxWidth: "fit-content", paddingTop: "5px", paddingBottom: "5px", paddingLeft: "25px", paddingRight: "25px", borderRadius: "40px", cursor: "pointer" }}>
+                                                        {group.colors.map((color, index) => {
+                                                            return (
+                                                                <li key={color.id} style={{ width: "25px", height: "25px", backgroundColor: `${color.hex_code}`, borderRadius: "50%" }}></li>
+                                                            )
+                                                        })}
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
+                                </>
                             }
                             <div className="all-Sizes">
                                 <p className="title-sizes">Sizes</p>
